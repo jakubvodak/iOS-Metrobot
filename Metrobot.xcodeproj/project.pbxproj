@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8292BCB4639B4C68BAF57CC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D85F773F994A69BC6E0222 /* libPods.a */; };
+		CB57BFCC196016440055978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCB196016440055978A /* Foundation.framework */; };
+		CB57BFCE196016440055978A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCD196016440055978A /* CoreGraphics.framework */; };
+		CB57BFD0196016440055978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCF196016440055978A /* UIKit.framework */; };
+		CB57BFD6196016440055978A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB57BFD4196016440055978A /* InfoPlist.strings */; };
+		CB57BFD8196016440055978A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57BFD7196016440055978A /* main.m */; };
+		CB57BFDC196016440055978A /* MbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57BFDB196016440055978A /* MbAppDelegate.m */; };
+		CB57BFE4196016440055978A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB57BFE3196016440055978A /* Images.xcassets */; };
+		CB57BFEB196016440055978A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFEA196016440055978A /* XCTest.framework */; };
+		CB57BFEC196016440055978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCB196016440055978A /* Foundation.framework */; };
+		CB57BFED196016440055978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCF196016440055978A /* UIKit.framework */; };
+		CB57BFF5196016440055978A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB57BFF3196016440055978A /* InfoPlist.strings */; };
+		CB57BFF7196016440055978A /* MetrobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57BFF6196016440055978A /* MetrobotTests.m */; };
+		CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00719601F840055978A /* MbAppearanceManager.m */; };
+		CB57C00B19601FA50055978A /* LogService.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00A19601FA50055978A /* LogService.m */; };
+		CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00E19601FEA0055978A /* UIImage+ImageEffects.m */; };
+		CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668AE1960A40F00EEC868 /* LocationViewController.m */; };
+		CB9668B21960A42100EEC868 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668B11960A42100EEC868 /* TimeViewController.m */; };
+		CB9668B51960A66300EEC868 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668B41960A66200EEC868 /* Crashlytics.framework */; };
+		CB9668B71960B0C700EEC868 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668B61960B0C700EEC868 /* MapKit.framework */; };
+		CB9668C01960C22400EEC868 /* StationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668BF1960C22400EEC868 /* StationEntity.m */; };
+		CB9668C31960C2C100EEC868 /* EntranceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668C21960C2C100EEC868 /* EntranceEntity.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB57BFEE196016440055978A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB57BFC0196016440055978A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB57BFC7196016440055978A;
+			remoteInfo = Metrobot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E7D974A849B4C42BA570F4B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A1D85F773F994A69BC6E0222 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB57BFC8196016440055978A /* Metrobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB57BFCB196016440055978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CB57BFCD196016440055978A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CB57BFCF196016440055978A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CB57BFD3196016440055978A /* Metrobot-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Metrobot-Info.plist"; sourceTree = "<group>"; };
+		CB57BFD5196016440055978A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB57BFD7196016440055978A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB57BFD9196016440055978A /* Metrobot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Metrobot-Prefix.pch"; sourceTree = "<group>"; };
+		CB57BFDA196016440055978A /* MbAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MbAppDelegate.h; sourceTree = "<group>"; };
+		CB57BFDB196016440055978A /* MbAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MbAppDelegate.m; sourceTree = "<group>"; };
+		CB57BFE3196016440055978A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CB57BFE9196016440055978A /* MetrobotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetrobotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB57BFEA196016440055978A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CB57BFF2196016440055978A /* MetrobotTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MetrobotTests-Info.plist"; sourceTree = "<group>"; };
+		CB57BFF4196016440055978A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CB57BFF6196016440055978A /* MetrobotTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetrobotTests.m; sourceTree = "<group>"; };
+		CB57C00619601F840055978A /* MbAppearanceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MbAppearanceManager.h; path = Classes/MbAppearanceManager.h; sourceTree = "<group>"; };
+		CB57C00719601F840055978A /* MbAppearanceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MbAppearanceManager.m; path = Classes/MbAppearanceManager.m; sourceTree = "<group>"; };
+		CB57C00919601FA50055978A /* LogService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogService.h; path = Classes/LogService.h; sourceTree = "<group>"; };
+		CB57C00A19601FA50055978A /* LogService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogService.m; path = Classes/LogService.m; sourceTree = "<group>"; };
+		CB57C00D19601FEA0055978A /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Classes/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		CB57C00E19601FEA0055978A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Classes/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		CB57C0101960200A0055978A /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = Classes/Macros.h; sourceTree = "<group>"; };
+		CB57C0111960201C0055978A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
+		CB9668AD1960A40F00EEC868 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = Classes/LocationViewController.h; sourceTree = "<group>"; };
+		CB9668AE1960A40F00EEC868 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = Classes/LocationViewController.m; sourceTree = "<group>"; };
+		CB9668B01960A42100EEC868 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeViewController.h; path = Classes/TimeViewController.h; sourceTree = "<group>"; };
+		CB9668B11960A42100EEC868 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeViewController.m; path = Classes/TimeViewController.m; sourceTree = "<group>"; };
+		CB9668B41960A66200EEC868 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		CB9668B61960B0C700EEC868 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CB9668BE1960C22400EEC868 /* StationEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationEntity.h; path = Classes/StationEntity.h; sourceTree = "<group>"; };
+		CB9668BF1960C22400EEC868 /* StationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationEntity.m; path = Classes/StationEntity.m; sourceTree = "<group>"; };
+		CB9668C11960C2C100EEC868 /* EntranceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntranceEntity.h; path = Classes/EntranceEntity.h; sourceTree = "<group>"; };
+		CB9668C21960C2C100EEC868 /* EntranceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntranceEntity.m; path = Classes/EntranceEntity.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB57BFC5196016440055978A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB9668B71960B0C700EEC868 /* MapKit.framework in Frameworks */,
+				CB57BFCE196016440055978A /* CoreGraphics.framework in Frameworks */,
+				CB9668B51960A66300EEC868 /* Crashlytics.framework in Frameworks */,
+				CB57BFD0196016440055978A /* UIKit.framework in Frameworks */,
+				CB57BFCC196016440055978A /* Foundation.framework in Frameworks */,
+				8292BCB4639B4C68BAF57CC3 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB57BFE6196016440055978A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB57BFEB196016440055978A /* XCTest.framework in Frameworks */,
+				CB57BFED196016440055978A /* UIKit.framework in Frameworks */,
+				CB57BFEC196016440055978A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB57BFBF196016440055978A = {
+			isa = PBXGroup;
+			children = (
+				CB57BFD1196016440055978A /* Metrobot */,
+				CB57BFF0196016440055978A /* MetrobotTests */,
+				CB57BFCA196016440055978A /* Frameworks */,
+				CB57BFC9196016440055978A /* Products */,
+				1E7D974A849B4C42BA570F4B /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		CB57BFC9196016440055978A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB57BFC8196016440055978A /* Metrobot.app */,
+				CB57BFE9196016440055978A /* MetrobotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB57BFCA196016440055978A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB9668B61960B0C700EEC868 /* MapKit.framework */,
+				CB9668B41960A66200EEC868 /* Crashlytics.framework */,
+				CB57BFCB196016440055978A /* Foundation.framework */,
+				CB57BFCD196016440055978A /* CoreGraphics.framework */,
+				CB57BFCF196016440055978A /* UIKit.framework */,
+				CB57BFEA196016440055978A /* XCTest.framework */,
+				A1D85F773F994A69BC6E0222 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB57BFD1196016440055978A /* Metrobot */ = {
+			isa = PBXGroup;
+			children = (
+				CB57C00019601E560055978A /* Service */,
+				CB57C00119601E660055978A /* Category */,
+				CB57C00219601E6F0055978A /* Common */,
+				CB57C00319601E740055978A /* Model */,
+				CB57C00419601E790055978A /* View */,
+				CB57C00519601E7E0055978A /* Controller */,
+				CB57BFDA196016440055978A /* MbAppDelegate.h */,
+				CB57BFDB196016440055978A /* MbAppDelegate.m */,
+				CB57C00619601F840055978A /* MbAppearanceManager.h */,
+				CB57C00719601F840055978A /* MbAppearanceManager.m */,
+				CB57BFE3196016440055978A /* Images.xcassets */,
+				CB57BFD2196016440055978A /* Supporting Files */,
+			);
+			path = Metrobot;
+			sourceTree = "<group>";
+		};
+		CB57BFD2196016440055978A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB57BFD3196016440055978A /* Metrobot-Info.plist */,
+				CB57BFD4196016440055978A /* InfoPlist.strings */,
+				CB57BFD7196016440055978A /* main.m */,
+				CB57BFD9196016440055978A /* Metrobot-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB57BFF0196016440055978A /* MetrobotTests */ = {
+			isa = PBXGroup;
+			children = (
+				CB57BFF6196016440055978A /* MetrobotTests.m */,
+				CB57BFF1196016440055978A /* Supporting Files */,
+			);
+			path = MetrobotTests;
+			sourceTree = "<group>";
+		};
+		CB57BFF1196016440055978A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB57BFF2196016440055978A /* MetrobotTests-Info.plist */,
+				CB57BFF3196016440055978A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB57C00019601E560055978A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CB57C00919601FA50055978A /* LogService.h */,
+				CB57C00A19601FA50055978A /* LogService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		CB57C00119601E660055978A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CB57C00D19601FEA0055978A /* UIImage+ImageEffects.h */,
+				CB57C00E19601FEA0055978A /* UIImage+ImageEffects.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		CB57C00219601E6F0055978A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CB57C0101960200A0055978A /* Macros.h */,
+				CB57C0111960201C0055978A /* Constants.h */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		CB57C00319601E740055978A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB9668BE1960C22400EEC868 /* StationEntity.h */,
+				CB9668BF1960C22400EEC868 /* StationEntity.m */,
+				CB9668C11960C2C100EEC868 /* EntranceEntity.h */,
+				CB9668C21960C2C100EEC868 /* EntranceEntity.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CB57C00419601E790055978A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CB57C00519601E7E0055978A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CB9668AD1960A40F00EEC868 /* LocationViewController.h */,
+				CB9668AE1960A40F00EEC868 /* LocationViewController.m */,
+				CB9668B01960A42100EEC868 /* TimeViewController.h */,
+				CB9668B11960A42100EEC868 /* TimeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB57BFC7196016440055978A /* Metrobot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB57BFFA196016440055978A /* Build configuration list for PBXNativeTarget "Metrobot" */;
+			buildPhases = (
+				47315725AF7B4C77B46AE97B /* Check Pods Manifest.lock */,
+				CB57BFC4196016440055978A /* Sources */,
+				CB57BFC5196016440055978A /* Frameworks */,
+				CB57BFC6196016440055978A /* Resources */,
+				2A3C14BBABB446988FEA4872 /* Copy Pods Resources */,
+				CB9668B31960A64100EEC868 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Metrobot;
+			productName = Metrobot;
+			productReference = CB57BFC8196016440055978A /* Metrobot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CB57BFE8196016440055978A /* MetrobotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB57BFFD196016440055978A /* Build configuration list for PBXNativeTarget "MetrobotTests" */;
+			buildPhases = (
+				CB57BFE5196016440055978A /* Sources */,
+				CB57BFE6196016440055978A /* Frameworks */,
+				CB57BFE7196016440055978A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB57BFEF196016440055978A /* PBXTargetDependency */,
+			);
+			name = MetrobotTests;
+			productName = MetrobotTests;
+			productReference = CB57BFE9196016440055978A /* MetrobotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB57BFC0196016440055978A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Mb;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = uLikeIT;
+				TargetAttributes = {
+					CB57BFE8196016440055978A = {
+						TestTargetID = CB57BFC7196016440055978A;
+					};
+				};
+			};
+			buildConfigurationList = CB57BFC3196016440055978A /* Build configuration list for PBXProject "Metrobot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB57BFBF196016440055978A;
+			productRefGroup = CB57BFC9196016440055978A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB57BFC7196016440055978A /* Metrobot */,
+				CB57BFE8196016440055978A /* MetrobotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB57BFC6196016440055978A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB57BFE4196016440055978A /* Images.xcassets in Resources */,
+				CB57BFD6196016440055978A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB57BFE7196016440055978A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB57BFF5196016440055978A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A3C14BBABB446988FEA4872 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47315725AF7B4C77B46AE97B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CB9668B31960A64100EEC868 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 6a2c06aa6bfac2826abdd4be36988a3124a1f00b faea1823b0440003f02cbf4e39d99737d513e42558a4bbb8eb234cae9af85966";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB57BFC4196016440055978A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB57BFD8196016440055978A /* main.m in Sources */,
+				CB9668C01960C22400EEC868 /* StationEntity.m in Sources */,
+				CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */,
+				CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */,
+				CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */,
+				CB9668C31960C2C100EEC868 /* EntranceEntity.m in Sources */,
+				CB57C00B19601FA50055978A /* LogService.m in Sources */,
+				CB9668B21960A42100EEC868 /* TimeViewController.m in Sources */,
+				CB57BFDC196016440055978A /* MbAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB57BFE5196016440055978A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB57BFF7196016440055978A /* MetrobotTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB57BFEF196016440055978A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB57BFC7196016440055978A /* Metrobot */;
+			targetProxy = CB57BFEE196016440055978A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB57BFD4196016440055978A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB57BFD5196016440055978A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CB57BFF3196016440055978A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB57BFF4196016440055978A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB57BFF8196016440055978A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CB57BFF9196016440055978A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB57BFFB196016440055978A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E7D974A849B4C42BA570F4B /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
+				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CB57BFFC196016440055978A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E7D974A849B4C42BA570F4B /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
+				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CB57BFFE196016440055978A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Metrobot.app/Metrobot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MetrobotTests/MetrobotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CB57BFFF196016440055978A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Metrobot.app/Metrobot";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
+				INFOPLIST_FILE = "MetrobotTests/MetrobotTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB57BFC3196016440055978A /* Build configuration list for PBXProject "Metrobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB57BFF8196016440055978A /* Debug */,
+				CB57BFF9196016440055978A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB57BFFA196016440055978A /* Build configuration list for PBXNativeTarget "Metrobot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB57BFFB196016440055978A /* Debug */,
+				CB57BFFC196016440055978A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB57BFFD196016440055978A /* Build configuration list for PBXNativeTarget "MetrobotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB57BFFE196016440055978A /* Debug */,
+				CB57BFFF196016440055978A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB57BFC0196016440055978A /* Project object */;
+}
