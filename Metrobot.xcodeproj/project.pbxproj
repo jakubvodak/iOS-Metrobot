@@ -29,6 +29,14 @@
 		CB9668B71960B0C700EEC868 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668B61960B0C700EEC868 /* MapKit.framework */; };
 		CB9668C01960C22400EEC868 /* StationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668BF1960C22400EEC868 /* StationEntity.m */; };
 		CB9668C31960C2C100EEC868 /* EntranceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668C21960C2C100EEC868 /* EntranceEntity.m */; };
+		CB9668C519616B6700EEC868 /* metroStations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9668C419616B6700EEC868 /* metroStations.plist */; };
+		CB9668CE1961CE9700EEC868 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668CD1961CE9700EEC868 /* BaseEntity.m */; };
+		CB9668D21962132700EEC868 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D11962132700EEC868 /* Mapbox.framework */; };
+		CB9668D41962135C00EEC868 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D31962135B00EEC868 /* CoreLocation.framework */; };
+		CB9668D61962136500EEC868 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D51962136500EEC868 /* QuartzCore.framework */; };
+		CB9668D81962137400EEC868 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D71962137400EEC868 /* libsqlite3.dylib */; };
+		CB9668DA1962137E00EEC868 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D91962137E00EEC868 /* libz.dylib */; };
+		CB9668DC1962140000EEC868 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB9668DB1962140000EEC868 /* Mapbox.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +86,15 @@
 		CB9668BF1960C22400EEC868 /* StationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationEntity.m; path = Classes/StationEntity.m; sourceTree = "<group>"; };
 		CB9668C11960C2C100EEC868 /* EntranceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntranceEntity.h; path = Classes/EntranceEntity.h; sourceTree = "<group>"; };
 		CB9668C21960C2C100EEC868 /* EntranceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntranceEntity.m; path = Classes/EntranceEntity.m; sourceTree = "<group>"; };
+		CB9668C419616B6700EEC868 /* metroStations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = metroStations.plist; sourceTree = "<group>"; };
+		CB9668CC1961CE9700EEC868 /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseEntity.h; path = Classes/BaseEntity.h; sourceTree = "<group>"; };
+		CB9668CD1961CE9700EEC868 /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEntity.m; path = Classes/BaseEntity.m; sourceTree = "<group>"; };
+		CB9668D11962132700EEC868 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
+		CB9668D31962135B00EEC868 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CB9668D51962136500EEC868 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CB9668D71962137400EEC868 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		CB9668D91962137E00EEC868 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		CB9668DB1962140000EEC868 /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Mapbox.bundle; path = Mapbox.framework/Versions/A/Resources/Mapbox.bundle; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +102,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9668DA1962137E00EEC868 /* libz.dylib in Frameworks */,
+				CB9668D81962137400EEC868 /* libsqlite3.dylib in Frameworks */,
+				CB9668D61962136500EEC868 /* QuartzCore.framework in Frameworks */,
+				CB9668D41962135C00EEC868 /* CoreLocation.framework in Frameworks */,
+				CB9668D21962132700EEC868 /* Mapbox.framework in Frameworks */,
 				CB9668B71960B0C700EEC868 /* MapKit.framework in Frameworks */,
 				CB57BFCE196016440055978A /* CoreGraphics.framework in Frameworks */,
 				CB9668B51960A66300EEC868 /* Crashlytics.framework in Frameworks */,
@@ -130,6 +152,11 @@
 		CB57BFCA196016440055978A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB9668D91962137E00EEC868 /* libz.dylib */,
+				CB9668D71962137400EEC868 /* libsqlite3.dylib */,
+				CB9668D51962136500EEC868 /* QuartzCore.framework */,
+				CB9668D31962135B00EEC868 /* CoreLocation.framework */,
+				CB9668D11962132700EEC868 /* Mapbox.framework */,
 				CB9668B61960B0C700EEC868 /* MapKit.framework */,
 				CB9668B41960A66200EEC868 /* Crashlytics.framework */,
 				CB57BFCB196016440055978A /* Foundation.framework */,
@@ -163,10 +190,12 @@
 		CB57BFD2196016440055978A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CB9668C419616B6700EEC868 /* metroStations.plist */,
 				CB57BFD3196016440055978A /* Metrobot-Info.plist */,
 				CB57BFD4196016440055978A /* InfoPlist.strings */,
 				CB57BFD7196016440055978A /* main.m */,
 				CB57BFD9196016440055978A /* Metrobot-Prefix.pch */,
+				CB9668DB1962140000EEC868 /* Mapbox.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,6 +248,8 @@
 		CB57C00319601E740055978A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CB9668CC1961CE9700EEC868 /* BaseEntity.h */,
+				CB9668CD1961CE9700EEC868 /* BaseEntity.m */,
 				CB9668BE1960C22400EEC868 /* StationEntity.h */,
 				CB9668BF1960C22400EEC868 /* StationEntity.m */,
 				CB9668C11960C2C100EEC868 /* EntranceEntity.h */,
@@ -325,7 +356,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9668DC1962140000EEC868 /* Mapbox.bundle in Resources */,
 				CB57BFE4196016440055978A /* Images.xcassets in Resources */,
+				CB9668C519616B6700EEC868 /* metroStations.plist in Resources */,
 				CB57BFD6196016440055978A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB57BFD8196016440055978A /* main.m in Sources */,
+				CB9668CE1961CE9700EEC868 /* BaseEntity.m in Sources */,
 				CB9668C01960C22400EEC868 /* StationEntity.m in Sources */,
 				CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */,
 				CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */,

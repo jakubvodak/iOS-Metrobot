@@ -6,22 +6,14 @@
 //  Copyright (c) 2014 uLikeIT. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseEntity.h"
 #import <MapKit/MapKit.h>
 
-typedef enum {
-    metroRouteA,
-    metroRouteB,
-    metroRouteC
-} metroRoute;
-
-@interface StationEntity : NSObject
+@interface StationEntity : BaseEntity
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSNumber *lat;
+@property (nonatomic, strong) NSNumber *lng;
 @property (nonatomic, strong) CLLocation *location;
-@property (nonatomic, strong) NSArray *routes;
-
-+ (StationEntity *)initWithName: (NSString *)name metroRoutes: (NSArray *)routes andLocation: (CLLocation *)loc;
-+ (NSArray *)setupContent;
 
 @end

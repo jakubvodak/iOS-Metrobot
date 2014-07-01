@@ -28,10 +28,6 @@
     
     NSLog(@"%@", error);
     
-    if ([error.domain isEqualToString:NSURLErrorDomain]) {
-        return;
-    }
-    
     [Flurry logError:@"API Error" message:error.localizedDescription error:error];
 }
 

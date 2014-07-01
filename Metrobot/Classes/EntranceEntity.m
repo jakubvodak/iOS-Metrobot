@@ -10,18 +10,4 @@
 
 @implementation EntranceEntity
 
-+ (EntranceEntity *)initWithName:(NSString *)name description:(NSString *)description andLocation:(CLLocation *)loc
-{
-    EntranceEntity *entrance = [EntranceEntity new];
-    entrance.name = name;
-    entrance.description = description;
-    entrance.location = loc;
-    return entrance;
-}
-
-+ (NSArray *)setupContent
-{
-    return nil;
-}
-
 @end
