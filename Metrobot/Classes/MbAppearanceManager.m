@@ -29,6 +29,8 @@
     navigationBarAppearance.backgroundColor = [UIColor clearColor];
     [navigationBarAppearance setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     navigationBarAppearance.shadowImage = [[UIImage alloc] init];
+    //navigationBarAppearance.barTintColor = UIColorWithRGBValues(207, 60, 60);
+    navigationBarAppearance.tintColor = [UIColor whiteColor];
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                 [UIColor whiteColor], NSForegroundColorAttributeName, nil];

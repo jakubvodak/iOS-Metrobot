@@ -37,6 +37,8 @@
 		CB9668D81962137400EEC868 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D71962137400EEC868 /* libsqlite3.dylib */; };
 		CB9668DA1962137E00EEC868 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D91962137E00EEC868 /* libz.dylib */; };
 		CB9668DC1962140000EEC868 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB9668DB1962140000EEC868 /* Mapbox.bundle */; };
+		CB9668F21963340000EEC868 /* testLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB9668F11963340000EEC868 /* testLocation.gpx */; };
+		CB9668F519633D3B00EEC868 /* DirectionsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668F419633D3B00EEC868 /* DirectionsTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,9 @@
 		CB9668D71962137400EEC868 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CB9668D91962137E00EEC868 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CB9668DB1962140000EEC868 /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Mapbox.bundle; path = Mapbox.framework/Versions/A/Resources/Mapbox.bundle; sourceTree = SOURCE_ROOT; };
+		CB9668F11963340000EEC868 /* testLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testLocation.gpx; sourceTree = "<group>"; };
+		CB9668F319633D3B00EEC868 /* DirectionsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsTableView.h; path = Classes/DirectionsTableView.h; sourceTree = "<group>"; };
+		CB9668F419633D3B00EEC868 /* DirectionsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsTableView.m; path = Classes/DirectionsTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +195,7 @@
 		CB57BFD2196016440055978A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CB9668F11963340000EEC868 /* testLocation.gpx */,
 				CB9668C419616B6700EEC868 /* metroStations.plist */,
 				CB57BFD3196016440055978A /* Metrobot-Info.plist */,
 				CB57BFD4196016440055978A /* InfoPlist.strings */,
@@ -261,6 +267,8 @@
 		CB57C00419601E790055978A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB9668F319633D3B00EEC868 /* DirectionsTableView.h */,
+				CB9668F419633D3B00EEC868 /* DirectionsTableView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -358,6 +366,7 @@
 			files = (
 				CB9668DC1962140000EEC868 /* Mapbox.bundle in Resources */,
 				CB57BFE4196016440055978A /* Images.xcassets in Resources */,
+				CB9668F21963340000EEC868 /* testLocation.gpx in Resources */,
 				CB9668C519616B6700EEC868 /* metroStations.plist in Resources */,
 				CB57BFD6196016440055978A /* InfoPlist.strings in Resources */,
 			);
@@ -427,6 +436,7 @@
 				CB57BFD8196016440055978A /* main.m in Sources */,
 				CB9668CE1961CE9700EEC868 /* BaseEntity.m in Sources */,
 				CB9668C01960C22400EEC868 /* StationEntity.m in Sources */,
+				CB9668F519633D3B00EEC868 /* DirectionsTableView.m in Sources */,
 				CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */,
 				CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */,
 				CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */,
