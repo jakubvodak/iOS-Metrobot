@@ -12,6 +12,8 @@
 #import "EntranceEntity.h"
 #import <Mapbox/Mapbox.h>
 #import "DirectionsTableView.h"
+#import "LogService.h"
+#import "DirectionsTableHeaderView.h"
 
 #define tableViewHeight 280
 
@@ -29,6 +31,8 @@
 @property (nonatomic, strong) UIView *navigationBarBackgound;
 @property (nonatomic, strong) UIBarButtonItem *closeMapButton;
 
+@property (nonatomic) BOOL startAnimationPreccessed;
+
 @end
 
 @implementation LocationViewController
@@ -39,10 +43,6 @@
     if (self) {
         // Custom initialization
         
-        [self loadData];
-        
-        [self applyAppearance];
-        
     }
     return self;
 }
@@ -50,6 +50,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self loadData];
+    
+    [self applyAppearance];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -88,28 +93,40 @@
 {
     self.title = @"Station";
     
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Background"]];
+    [self.view addSubview:backgroundImage];
+    
+    _locManager = [CLLocationManager new];
+    _locManager.delegate = self;
+    _locManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    
     RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"jakubvodak.ilbppm8e"];
     
-    _mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:tileSource];
+    _mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight) andTilesource:tileSource];
     _mapView.zoom = 15;
     _mapView.hideAttribution=YES;
     _mapView.delegate = self;
-    //_mapView.showsUserLocation=YES;
+    _mapView.showsUserLocation=YES;
     _mapView.alpha = 0;
     [self.view addSubview:_mapView];
     
     _navigationBarBackgound = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 64)];
     _navigationBarBackgound.backgroundColor = [MbAppearanceManager darkBlueColor];
     _navigationBarBackgound.alpha = 0;
-    [self.view addSubview:_navigationBarBackgound];
+    [_mapView addSubview:_navigationBarBackgound];
     
-    _locManager = [CLLocationManager new];
-    _locManager.delegate = self;
-    _locManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 300)];
+    //_overlayView.alpha = 0;
+    _overlayView.backgroundColor = UIColorWithRGBAValues(0, 0, 0, 255);
+    [_mapView addSubview:_overlayView];
     
-    _overlayView = [[UIView alloc] initWithFrame:self.view.bounds];
-    _overlayView.backgroundColor = UIColorWithRGBAValues(0, 0, 0, 180);
-    [self.view addSubview:_overlayView];
+    UIImageView *test = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icn-Pin"]];
+    test.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.mapView addSubview:test];
+    [self.mapView addConstraint:[NSLayoutConstraint constraintWithItem:test attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.mapView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [self.mapView addConstraint:[NSLayoutConstraint constraintWithItem:test attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.mapView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    
     
     _tableView = [[DirectionsTableView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, tableViewHeight)];
     _tableView.delegate = self;
@@ -119,12 +136,11 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [self.view addSubview:_tableView];
     
-    UIView *tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
-    tableHeaderView.backgroundColor = UIColorWithRGBValues(38, 52, 59);
+    DirectionsTableHeaderView *tableHeaderView = [[DirectionsTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     self.tableView.tableHeaderView = tableHeaderView;
     
     _closeMapButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeMap)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Refresh" style:UIBarButtonItemStylePlain target:self action:@selector(startUpdatingLoc)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Location"] style:UIBarButtonItemStylePlain target:self action:@selector(startUpdatingLoc)];
 }
 
 #pragma mark - table view
@@ -147,8 +163,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
+    cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.text = @"Dejvická";
+    cell.textLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:17];
+    cell.backgroundColor = [UIColor clearColor];
     
     return cell;
 }
@@ -169,6 +187,8 @@
     if (_tableView.up) {
         self.overlayView.alpha = (double)(100 - abs(scrollView.contentOffset.y))/100;
         self.navigationBarBackgound.alpha = (double)abs(scrollView.contentOffset.y)/100;
+        self.mapView.frame = CGRectMake(0, 0, 320, 300+abs(scrollView.contentOffset.y));
+        self.overlayView.frame = CGRectMake(0, 0, 320, 300+abs(scrollView.contentOffset.y));
     }
     
     if (scrollView.contentOffset.y < -80 && _tableView.up) {
@@ -205,16 +225,20 @@
     [self findNearestStations:newLocation];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    [[LogService sharedInstance] logError:error];
+}
+
 #pragma mark - map view
 
 - (void)mapViewRegionDidChange:(RMMapView *)mapView
 {
-    if (_currentStation) {
+    if (_currentStation && self.mapView.alpha == 0) {
         [UIView animateWithDuration:0.3 delay:0.5 options:UIViewAnimationOptionLayoutSubviews animations:^{
             self.mapView.alpha = 1;
-        } completion:^(BOOL finished){
-
-        }];
+            self.overlayView.backgroundColor = UIColorWithRGBAValues(0, 0, 0, 170);
+        } completion:nil];
     }
 }
 
@@ -240,9 +264,10 @@
 
 - (void)refreshScreen
 {
-    [_mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentStation.lat.doubleValue - 0.003, self.currentStation.lng.doubleValue)];
+    [_mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentStation.lat.doubleValue, self.currentStation.lng.doubleValue)];
     
-    if (self.tableView.up == NO) {
+    if (!self.startAnimationPreccessed) {
+        self.startAnimationPreccessed = YES;
         [self showHideTable];
     }
 }
@@ -308,7 +333,8 @@
     
     self.tableView.layer.position = CGPointMake(destinationPoint.x, destinationPoint.y);
     self.tableView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
-    
+
+
 }
 
 @end

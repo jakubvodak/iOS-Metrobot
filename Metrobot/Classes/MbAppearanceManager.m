@@ -29,17 +29,31 @@
     navigationBarAppearance.backgroundColor = [UIColor clearColor];
     [navigationBarAppearance setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     navigationBarAppearance.shadowImage = [[UIImage alloc] init];
-    //navigationBarAppearance.barTintColor = UIColorWithRGBValues(207, 60, 60);
     navigationBarAppearance.tintColor = [UIColor whiteColor];
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+                                [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont fontWithName:[MbAppearanceManager fontNameLight] size:17], NSFontAttributeName,nil];
     [navigationBarAppearance setTitleTextAttributes:attributes];
 }
 
 + (UIColor *)darkBlueColor
 {
     return UIColorWithRGBValues(21, 27, 31);
+}
+
++ (NSString *)fontNameLight
+{
+    return @"MuseoSans-100";
+}
+
++ (NSString *)fontNameMedium
+{
+    return @"MuseoSans-300";
+}
+
++ (NSString *)fontNameStrong
+{
+    return @"MuseoSans-500";
 }
 
 @end

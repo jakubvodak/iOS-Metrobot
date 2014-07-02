@@ -29,7 +29,6 @@
 		CB9668B71960B0C700EEC868 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668B61960B0C700EEC868 /* MapKit.framework */; };
 		CB9668C01960C22400EEC868 /* StationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668BF1960C22400EEC868 /* StationEntity.m */; };
 		CB9668C31960C2C100EEC868 /* EntranceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668C21960C2C100EEC868 /* EntranceEntity.m */; };
-		CB9668C519616B6700EEC868 /* metroStations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9668C419616B6700EEC868 /* metroStations.plist */; };
 		CB9668CE1961CE9700EEC868 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668CD1961CE9700EEC868 /* BaseEntity.m */; };
 		CB9668D21962132700EEC868 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D11962132700EEC868 /* Mapbox.framework */; };
 		CB9668D41962135C00EEC868 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D31962135B00EEC868 /* CoreLocation.framework */; };
@@ -37,8 +36,13 @@
 		CB9668D81962137400EEC868 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D71962137400EEC868 /* libsqlite3.dylib */; };
 		CB9668DA1962137E00EEC868 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D91962137E00EEC868 /* libz.dylib */; };
 		CB9668DC1962140000EEC868 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB9668DB1962140000EEC868 /* Mapbox.bundle */; };
-		CB9668F21963340000EEC868 /* testLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB9668F11963340000EEC868 /* testLocation.gpx */; };
 		CB9668F519633D3B00EEC868 /* DirectionsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668F419633D3B00EEC868 /* DirectionsTableView.m */; };
+		CB9669071964A73600EEC868 /* metroStations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9669021964A73600EEC868 /* metroStations.plist */; };
+		CB9669081964A73600EEC868 /* testLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB9669031964A73600EEC868 /* testLocation.gpx */; };
+		CB96690C1964A7ED00EEC868 /* MuseoSans-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB96690B1964A7E200EEC868 /* MuseoSans-500.otf */; };
+		CB96690D1964A7EF00EEC868 /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB96690A1964A7E200EEC868 /* MuseoSans-300.otf */; };
+		CB96690E1964A7F200EEC868 /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB9669091964A7E200EEC868 /* MuseoSans-100.otf */; };
+		CB9669111964ACD800EEC868 /* DirectionsTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9669101964ACD800EEC868 /* DirectionsTableHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +92,6 @@
 		CB9668BF1960C22400EEC868 /* StationEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationEntity.m; path = Classes/StationEntity.m; sourceTree = "<group>"; };
 		CB9668C11960C2C100EEC868 /* EntranceEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EntranceEntity.h; path = Classes/EntranceEntity.h; sourceTree = "<group>"; };
 		CB9668C21960C2C100EEC868 /* EntranceEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EntranceEntity.m; path = Classes/EntranceEntity.m; sourceTree = "<group>"; };
-		CB9668C419616B6700EEC868 /* metroStations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = metroStations.plist; sourceTree = "<group>"; };
 		CB9668CC1961CE9700EEC868 /* BaseEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseEntity.h; path = Classes/BaseEntity.h; sourceTree = "<group>"; };
 		CB9668CD1961CE9700EEC868 /* BaseEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseEntity.m; path = Classes/BaseEntity.m; sourceTree = "<group>"; };
 		CB9668D11962132700EEC868 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
@@ -97,9 +100,15 @@
 		CB9668D71962137400EEC868 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		CB9668D91962137E00EEC868 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CB9668DB1962140000EEC868 /* Mapbox.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Mapbox.bundle; path = Mapbox.framework/Versions/A/Resources/Mapbox.bundle; sourceTree = SOURCE_ROOT; };
-		CB9668F11963340000EEC868 /* testLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = testLocation.gpx; sourceTree = "<group>"; };
 		CB9668F319633D3B00EEC868 /* DirectionsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsTableView.h; path = Classes/DirectionsTableView.h; sourceTree = "<group>"; };
 		CB9668F419633D3B00EEC868 /* DirectionsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsTableView.m; path = Classes/DirectionsTableView.m; sourceTree = "<group>"; };
+		CB9669021964A73600EEC868 /* metroStations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = metroStations.plist; path = Data/metroStations.plist; sourceTree = "<group>"; };
+		CB9669031964A73600EEC868 /* testLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = testLocation.gpx; path = Data/testLocation.gpx; sourceTree = "<group>"; };
+		CB9669091964A7E200EEC868 /* MuseoSans-100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-100.otf"; path = "Data/MuseoSans-100.otf"; sourceTree = "<group>"; };
+		CB96690A1964A7E200EEC868 /* MuseoSans-300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-300.otf"; path = "Data/MuseoSans-300.otf"; sourceTree = "<group>"; };
+		CB96690B1964A7E200EEC868 /* MuseoSans-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-500.otf"; path = "Data/MuseoSans-500.otf"; sourceTree = "<group>"; };
+		CB96690F1964ACD800EEC868 /* DirectionsTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsTableHeaderView.h; path = Classes/DirectionsTableHeaderView.h; sourceTree = "<group>"; };
+		CB9669101964ACD800EEC868 /* DirectionsTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsTableHeaderView.m; path = Classes/DirectionsTableHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,8 +204,11 @@
 		CB57BFD2196016440055978A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CB9668F11963340000EEC868 /* testLocation.gpx */,
-				CB9668C419616B6700EEC868 /* metroStations.plist */,
+				CB9669091964A7E200EEC868 /* MuseoSans-100.otf */,
+				CB96690A1964A7E200EEC868 /* MuseoSans-300.otf */,
+				CB96690B1964A7E200EEC868 /* MuseoSans-500.otf */,
+				CB9669021964A73600EEC868 /* metroStations.plist */,
+				CB9669031964A73600EEC868 /* testLocation.gpx */,
 				CB57BFD3196016440055978A /* Metrobot-Info.plist */,
 				CB57BFD4196016440055978A /* InfoPlist.strings */,
 				CB57BFD7196016440055978A /* main.m */,
@@ -269,6 +281,8 @@
 			children = (
 				CB9668F319633D3B00EEC868 /* DirectionsTableView.h */,
 				CB9668F419633D3B00EEC868 /* DirectionsTableView.m */,
+				CB96690F1964ACD800EEC868 /* DirectionsTableHeaderView.h */,
+				CB9669101964ACD800EEC868 /* DirectionsTableHeaderView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -364,11 +378,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9669071964A73600EEC868 /* metroStations.plist in Resources */,
 				CB9668DC1962140000EEC868 /* Mapbox.bundle in Resources */,
+				CB96690C1964A7ED00EEC868 /* MuseoSans-500.otf in Resources */,
 				CB57BFE4196016440055978A /* Images.xcassets in Resources */,
-				CB9668F21963340000EEC868 /* testLocation.gpx in Resources */,
-				CB9668C519616B6700EEC868 /* metroStations.plist in Resources */,
+				CB96690E1964A7F200EEC868 /* MuseoSans-100.otf in Resources */,
+				CB96690D1964A7EF00EEC868 /* MuseoSans-300.otf in Resources */,
 				CB57BFD6196016440055978A /* InfoPlist.strings in Resources */,
+				CB9669081964A73600EEC868 /* testLocation.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +456,7 @@
 				CB9668F519633D3B00EEC868 /* DirectionsTableView.m in Sources */,
 				CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */,
 				CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */,
+				CB9669111964ACD800EEC868 /* DirectionsTableHeaderView.m in Sources */,
 				CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */,
 				CB9668C31960C2C100EEC868 /* EntranceEntity.m in Sources */,
 				CB57C00B19601FA50055978A /* LogService.m in Sources */,

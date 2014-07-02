@@ -16,4 +16,8 @@
 
 + (UIColor *)darkBlueColor;
 
++ (NSString *)fontNameLight;
++ (NSString *)fontNameMedium;
++ (NSString *)fontNameStrong;
+
 @end
