@@ -43,6 +43,8 @@
 		CB96690D1964A7EF00EEC868 /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB96690A1964A7E200EEC868 /* MuseoSans-300.otf */; };
 		CB96690E1964A7F200EEC868 /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB9669091964A7E200EEC868 /* MuseoSans-100.otf */; };
 		CB9669111964ACD800EEC868 /* DirectionsTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9669101964ACD800EEC868 /* DirectionsTableHeaderView.m */; };
+		CB9669191967000C00EEC868 /* StationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9669181967000C00EEC868 /* StationTitleView.m */; };
+		CB96691F1967FDDD00EEC868 /* DirectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,10 @@
 		CB96690B1964A7E200EEC868 /* MuseoSans-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MuseoSans-500.otf"; path = "Data/MuseoSans-500.otf"; sourceTree = "<group>"; };
 		CB96690F1964ACD800EEC868 /* DirectionsTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionsTableHeaderView.h; path = Classes/DirectionsTableHeaderView.h; sourceTree = "<group>"; };
 		CB9669101964ACD800EEC868 /* DirectionsTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionsTableHeaderView.m; path = Classes/DirectionsTableHeaderView.m; sourceTree = "<group>"; };
+		CB9669171967000C00EEC868 /* StationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StationTitleView.h; path = Classes/StationTitleView.h; sourceTree = "<group>"; };
+		CB9669181967000C00EEC868 /* StationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationTitleView.m; path = Classes/StationTitleView.m; sourceTree = "<group>"; };
+		CB96691D1967FDDD00EEC868 /* DirectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionTableViewCell.h; path = Classes/DirectionTableViewCell.h; sourceTree = "<group>"; };
+		CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionTableViewCell.m; path = Classes/DirectionTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +289,10 @@
 				CB9668F419633D3B00EEC868 /* DirectionsTableView.m */,
 				CB96690F1964ACD800EEC868 /* DirectionsTableHeaderView.h */,
 				CB9669101964ACD800EEC868 /* DirectionsTableHeaderView.m */,
+				CB9669171967000C00EEC868 /* StationTitleView.h */,
+				CB9669181967000C00EEC868 /* StationTitleView.m */,
+				CB96691D1967FDDD00EEC868 /* DirectionTableViewCell.h */,
+				CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -456,10 +466,12 @@
 				CB9668F519633D3B00EEC868 /* DirectionsTableView.m in Sources */,
 				CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */,
 				CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */,
+				CB9669191967000C00EEC868 /* StationTitleView.m in Sources */,
 				CB9669111964ACD800EEC868 /* DirectionsTableHeaderView.m in Sources */,
 				CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */,
 				CB9668C31960C2C100EEC868 /* EntranceEntity.m in Sources */,
 				CB57C00B19601FA50055978A /* LogService.m in Sources */,
+				CB96691F1967FDDD00EEC868 /* DirectionTableViewCell.m in Sources */,
 				CB9668B21960A42100EEC868 /* TimeViewController.m in Sources */,
 				CB57BFDC196016440055978A /* MbAppDelegate.m in Sources */,
 			);

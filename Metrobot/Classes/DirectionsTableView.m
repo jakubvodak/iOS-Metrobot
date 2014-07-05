@@ -15,17 +15,19 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
+        [self applyAppearance];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
+- (void)applyAppearance
 {
-    // Drawing code
+    self.backgroundColor = [UIColor clearColor];
+    self.showsVerticalScrollIndicator = NO;
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self registerClass:[DirectionTableViewCell class] forCellReuseIdentifier:@"DirectionCell"];
 }
-*/
 
 @end

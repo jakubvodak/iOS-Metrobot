@@ -14,7 +14,8 @@
 
 - (void)applyAppearance;
 
-+ (UIColor *)darkBlueColor;
++ (UIColor *)MBBlueColor;
++ (UIColor *)MBDarkBlueColor;
 
 + (NSString *)fontNameLight;
 + (NSString *)fontNameMedium;

@@ -14,6 +14,9 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSNumber *lat;
 @property (nonatomic, strong) NSNumber *lng;
+
 @property (nonatomic, strong) CLLocation *location;
+@property (nonatomic) CLLocationDistance distance;
+@property (nonatomic) NSInteger trace;
 
 @end

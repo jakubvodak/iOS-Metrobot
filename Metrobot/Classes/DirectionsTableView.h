@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DirectionTableViewCell.h"
 
 @interface DirectionsTableView : UITableView
 

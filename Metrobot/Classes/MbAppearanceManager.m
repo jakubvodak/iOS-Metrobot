@@ -29,14 +29,20 @@
     navigationBarAppearance.backgroundColor = [UIColor clearColor];
     [navigationBarAppearance setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     navigationBarAppearance.shadowImage = [[UIImage alloc] init];
-    navigationBarAppearance.tintColor = [UIColor whiteColor];
+    navigationBarAppearance.tintColor = [MbAppearanceManager MBBlueColor];
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
                                 [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont fontWithName:[MbAppearanceManager fontNameLight] size:17], NSFontAttributeName,nil];
     [navigationBarAppearance setTitleTextAttributes:attributes];
+    
 }
 
-+ (UIColor *)darkBlueColor
++ (UIColor *)MBBlueColor
+{
+    return UIColorWithRGBValues(25, 221, 255);
+}
+
++ (UIColor *)MBDarkBlueColor
 {
     return UIColorWithRGBValues(21, 27, 31);
 }

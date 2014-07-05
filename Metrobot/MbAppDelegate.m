@@ -15,10 +15,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSLog(@"Did finish launching");
+    
     [Crashlytics startWithAPIKey:CrashlyticsApiKey];
     
-    [Flurry setCrashReportingEnabled:NO];
-    [Flurry startSession:FlurryAPIKey];
+    //[Flurry setCrashReportingEnabled:NO];
+    //[Flurry startSession:FlurryAPIKey];
     
     MbAppearanceManager* appearanceManager = [MbAppearanceManager new];
     [appearanceManager applyAppearance];

@@ -14,7 +14,10 @@
 #import "DirectionsTableView.h"
 #import "LogService.h"
 #import "DirectionsTableHeaderView.h"
+#import "StationTitleView.h"
 
+#define smallCellHeight 60
+#define bigCellHeight 120
 #define tableViewHeight 280
 
 @interface LocationViewController () <RMMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -23,13 +26,16 @@
 @property (nonatomic, strong) RMMapView *mapView;
 @property (nonatomic, strong) DirectionsTableView *tableView;
 @property (nonatomic, strong) UIView *overlayView;
+@property (nonatomic, strong) StationTitleView *titleView;
 
 @property (nonatomic, strong) StationEntity *currentStation;
+@property (nonatomic, strong) NSArray *directions;
 @property (nonatomic, strong) NSArray *stations;
 @property (nonatomic, strong) NSArray *entrances;
 
 @property (nonatomic, strong) UIView *navigationBarBackgound;
 @property (nonatomic, strong) UIBarButtonItem *closeMapButton;
+@property (nonatomic, strong) UIBarButtonItem *searchButton;
 
 @property (nonatomic) BOOL startAnimationPreccessed;
 
@@ -49,17 +55,19 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"Location view did load");
+    
     [super viewDidLoad];
     
     [self loadData];
     
     [self applyAppearance];
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    NSLog(@"Start updating loc");
+    
     [self startUpdatingLoc];
 }
 
@@ -91,7 +99,7 @@
 
 - (void)applyAppearance
 {
-    self.title = @"Station";
+    self.title = @"Stanice";
     
     UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Background"]];
     [self.view addSubview:backgroundImage];
@@ -100,8 +108,7 @@
     _locManager.delegate = self;
     _locManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    
-    RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:@"jakubvodak.ilbppm8e"];
+    RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:MapBoxID];
     
     _mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight) andTilesource:tileSource];
     _mapView.zoom = 15;
@@ -112,7 +119,7 @@
     [self.view addSubview:_mapView];
     
     _navigationBarBackgound = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 64)];
-    _navigationBarBackgound.backgroundColor = [MbAppearanceManager darkBlueColor];
+    _navigationBarBackgound.backgroundColor = [MbAppearanceManager MBDarkBlueColor];
     _navigationBarBackgound.alpha = 0;
     [_mapView addSubview:_navigationBarBackgound];
     
@@ -121,25 +128,25 @@
     _overlayView.backgroundColor = UIColorWithRGBAValues(0, 0, 0, 255);
     [_mapView addSubview:_overlayView];
     
-    UIImageView *test = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icn-Pin"]];
-    test.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.mapView addSubview:test];
-    [self.mapView addConstraint:[NSLayoutConstraint constraintWithItem:test attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.mapView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
-    [self.mapView addConstraint:[NSLayoutConstraint constraintWithItem:test attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.mapView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    
+    _titleView = [[StationTitleView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight)];
+    [_titleView.stationName addTarget:self action:@selector(hideTable) forControlEvents:UIControlEventTouchUpInside];
+    _titleView.alpha = 0;
+
+    [self.view addSubview:_titleView];
     
     _tableView = [[DirectionsTableView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, tableViewHeight)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.backgroundColor = [UIColor clearColor];
-    _tableView.showsVerticalScrollIndicator = NO;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     [self.view addSubview:_tableView];
     
     DirectionsTableHeaderView *tableHeaderView = [[DirectionsTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    [tableHeaderView.titleLabel addTarget:self action:@selector(directionsFlash) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableHeaderView = tableHeaderView;
     
-    _closeMapButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(closeMap)];
+    _closeMapButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Back"] style:UIBarButtonItemStylePlain target:self action:@selector(showTable)];
+    _searchButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchStation)];
+    
+    self.navigationItem.leftBarButtonItem = _searchButton;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Location"] style:UIBarButtonItemStylePlain target:self action:@selector(startUpdatingLoc)];
 }
 
@@ -152,21 +159,30 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return self.directions.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120;
+    if (self.directions.count == 4) {
+        return smallCellHeight;
+    }
+    else {
+        return bigCellHeight;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.text = @"Dejvická";
-    cell.textLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:17];
-    cell.backgroundColor = [UIColor clearColor];
+    DirectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DirectionCell" forIndexPath:indexPath];
+
+    StationEntity *station = [self.directions objectAtIndex:indexPath.row];
+    
+    cell.roundImageView.image = [UIImage imageNamed:[self roundImageNameForTrace:station.trace]];
+    [cell setLineFrameForIndex:indexPath.row andCellHeight:self.directions.count==2?bigCellHeight:smallCellHeight];
+    
+    cell.stationLabel.text = station.name;
+    cell.countLabel.text = [self formatRemainingStationsCount:[self findRemainingStationsCount:self.currentStation toStation:[self.directions objectAtIndex:indexPath.row]]];
     
     return cell;
 }
@@ -181,28 +197,17 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView.contentOffset.y > 0) {
+        
         scrollView.contentOffset = CGPointMake(0, 0);
     }
-
     if (_tableView.up) {
-        self.overlayView.alpha = (double)(100 - abs(scrollView.contentOffset.y))/100;
-        self.navigationBarBackgound.alpha = (double)abs(scrollView.contentOffset.y)/100;
-        self.mapView.frame = CGRectMake(0, 0, 320, 300+abs(scrollView.contentOffset.y));
-        self.overlayView.frame = CGRectMake(0, 0, 320, 300+abs(scrollView.contentOffset.y));
-    }
-    
-    if (scrollView.contentOffset.y < -80 && _tableView.up) {
+
+        [self updateLayoutForScrollViewY:scrollView.contentOffset.y];
         
-        _tableView.up = NO;
-        
-        [UIView animateWithDuration:0.2 animations:^{
-        
-            self.tableView.frame = CGRectMake(0, self.view.bounds.size.height, self.tableView.frame.size.width, self.tableView.frame.size.height);
-            self.overlayView.alpha = 0;
-            self.navigationBarBackgound.alpha = 1;
-        } completion:^(BOOL finished) {
-            self.navigationItem.leftBarButtonItem = _closeMapButton;
-        }];
+        if (scrollView.contentOffset.y < -80) {
+            
+            [self hideTable];
+        }
     }
 }
 
@@ -220,6 +225,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    NSLog(@"Did update to loc: %@", newLocation);
+    
     [self stopUpdatingLoc];
     
     [self findNearestStations:newLocation];
@@ -228,6 +235,25 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     [[LogService sharedInstance] logError:error];
+}
+
+- (void)findNearestStations: (CLLocation *)loc
+{
+    CLLocationDistance distance = 0;
+    StationEntity *nearestStation;
+    
+    for (StationEntity *station in self.stations) {
+        if ([station.location distanceFromLocation:loc] < distance || distance == 0) {
+            nearestStation = station;
+            distance = [station.location distanceFromLocation:loc];
+        }
+    }
+    
+    nearestStation.distance = distance;
+    
+    [self updateCurrentStation:nearestStation];
+    
+    NSLog(@"Nearest station: %@", nearestStation);
 }
 
 #pragma mark - map view
@@ -244,42 +270,109 @@
 
 #pragma mark - func
 
-- (void)findNearestStations: (CLLocation *)loc
+- (void)updateCurrentStation: (StationEntity *)newStation
 {
-    CLLocationDistance distance = 0;
-    StationEntity *nearestStation;
+    self.currentStation = newStation;
     
-    for (StationEntity *station in self.stations) {
-        if ([station.location distanceFromLocation:loc] < distance || distance == 0) {
-            nearestStation = station;
-            distance = [station.location distanceFromLocation:loc];
-        }
-    }
-    
-    self.currentStation = nearestStation;
+    self.directions = [self findDirectionsForStation:newStation];
     
     [self refreshScreen];
 }
 
-
 - (void)refreshScreen
 {
+    [self.titleView.stationName setTitle:self.currentStation.name forState:UIControlStateNormal];
+    self.titleView.distanceLabel.text = [self formatDistanceString:self.currentStation.distance];
+    
     [_mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentStation.lat.doubleValue, self.currentStation.lng.doubleValue)];
     
     if (!self.startAnimationPreccessed) {
         self.startAnimationPreccessed = YES;
-        [self showHideTable];
+        [self.tableView reloadData];
+        [self startAnimation];
+    }
+    else if (self.tableView.up) {
+        
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        self.titleView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+        [UIView beginAnimations:@"showView" context:nil];
+        //[UIView setAnimationDelegate:self];
+        self.titleView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+        self.titleView.alpha = 1;
+        [UIView commitAnimations];
     }
 }
 
-- (void)closeMap
+- (void)startAnimation
 {
-    [UIView animateWithDuration:0.2 animations:^{
+    self.titleView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+    [UIView beginAnimations:@"showView" context:nil];
+    //[UIView setAnimationDelegate:self];
+    self.titleView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+    self.titleView.alpha = 1;
+    [UIView commitAnimations];
+    
+    [self showHideTable];
+}
+
+- (void)updateLayoutForScrollViewY: (CGFloat)y
+{
+    self.overlayView.alpha = (double)(100 - abs(y))/100;
+    self.titleView.alpha = (double)(100 - abs(y))/100;
+    self.navigationBarBackgound.alpha = (double)abs(y)/100;
+    
+    self.mapView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 300+abs(y));
+    self.overlayView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 300+abs(y));
+    self.titleView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 300+(abs(y/1.5)));
+}
+
+- (void)showTable
+{
+    self.titleView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight);
+    self.titleView.transform = CGAffineTransformMakeScale(1.2, 1.2);
+    [UIView beginAnimations:@"showView" context:nil];
+    //[UIView setAnimationDelegate:self];
+    self.titleView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+    self.titleView.alpha = 1;
+    [UIView commitAnimations];
+    
+    self.navigationItem.leftBarButtonItem = _searchButton;
+    
+    [UIView animateWithDuration:0.4 animations:^{
         self.overlayView.alpha = 1;
         self.navigationBarBackgound.alpha = 0;
-        self.navigationItem.leftBarButtonItem = nil;
+        
     } completion:^(BOOL finished) {
-        [self showHideTable];
+        
+        [UIView animateWithDuration:0.6 animations:^{
+            self.mapView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight);
+            self.overlayView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight);
+        } completion:^(BOOL finished) {
+            self.tableView.backgroundView = nil;
+        }];
+    }];
+    
+    self.tableView.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Table-Background-Temp"]];
+    [self showHideTable];
+}
+
+- (void)hideTable
+{
+    _tableView.up = NO;
+    
+    [UIView animateWithDuration:0.4 animations:^{
+        
+        self.tableView.frame = CGRectMake(0, self.view.bounds.size.height, self.tableView.frame.size.width, self.tableView.frame.size.height);
+        self.mapView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        self.overlayView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        
+        self.overlayView.alpha = 0;
+        self.titleView.alpha = 0;
+        self.navigationBarBackgound.alpha = 1;
+        
+    } completion:^(BOOL finished) {
+        self.navigationItem.leftBarButtonItem = _closeMapButton;
     }];
 }
 
@@ -322,7 +415,6 @@
                                                                                             :0
                                                                                             :1];
     
-    
     CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     [animation2 setDuration:duration];
     
@@ -333,8 +425,146 @@
     
     self.tableView.layer.position = CGPointMake(destinationPoint.x, destinationPoint.y);
     self.tableView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+}
 
+- (void)directionsFlash
+{
+    DirectionTableViewCell *cell = (DirectionTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    DirectionTableViewCell *cell2 = (DirectionTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    
+    [cell setHighlighted:YES animated:YES];
+    [cell setHighlighted:NO animated:YES];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC/10), dispatch_get_main_queue(), ^{
+        [cell2 setHighlighted:YES animated:YES];
+        [cell2 setHighlighted:NO animated:YES];
+    });
+    
+    if (self.directions.count == 4) {
+        DirectionTableViewCell *cell3 = (DirectionTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+        DirectionTableViewCell *cell4 = (DirectionTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC/5), dispatch_get_main_queue(), ^{
+            [cell3 setHighlighted:YES animated:YES];
+            [cell3 setHighlighted:NO animated:YES];
+        });
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC/3), dispatch_get_main_queue(), ^{
+            [cell4 setHighlighted:YES animated:YES];
+            [cell4 setHighlighted:NO animated:YES];
+        });
+    }
+}
 
+#pragma mark - Other
+
+- (NSString *)formatDistanceString: (CLLocationDistance)distance
+{
+    if (distance < 1000) {
+        return [NSString stringWithFormat:@"%.0fm", distance];
+    }
+    else if (distance < 10000) {
+        return [NSString stringWithFormat:@"%.1fkm", distance/1000];
+    }
+    else {
+        return [NSString stringWithFormat:@"%.0fkm", distance/1000];
+    }
+}
+
+- (NSArray *)findDirectionsForStation: (StationEntity *)station
+{
+    NSMutableArray *arrTemp = [NSMutableArray new];
+
+    for (int i=0; i<3; i++) {
+        
+        NSArray *stations = [self getStationsForTrace:i];
+        
+        if ([stations containsObject:station.name]) {
+            
+            StationEntity *station = [StationEntity new];
+            station.name = stations.firstObject;
+            station.trace = i;
+
+            StationEntity *station2 = [StationEntity new];
+            station2.name = stations.lastObject;
+            station2.trace = i;
+            
+            [arrTemp addObject:station];
+            [arrTemp addObject:station2];
+        }
+    }
+    
+    return arrTemp;
+}
+
+- (NSInteger)findRemainingStationsCount: (StationEntity *)fromStation toStation: (StationEntity *)toStation
+{
+    for (int i=0; i<3; i++) {
+        
+        NSArray *stations = [self getStationsForTrace:i];
+        
+        if ([stations containsObject:fromStation.name] && [stations containsObject:toStation.name]) {
+            NSInteger index1 = [stations indexOfObject:fromStation.name];
+            NSInteger index2 = [stations indexOfObject:toStation.name];
+            
+            return index1>index2?index1-index2:index2-index1;
+        }
+    }
+    
+    return 0;
+}
+
+- (NSString *)formatRemainingStationsCount: (NSInteger)count
+{
+    if (count == 0 || count >= 5) {
+        return [NSString stringWithFormat:@"%d stanic", count];
+    }
+    else {
+        return [NSString stringWithFormat:@"%d stanice", count];
+    }
+}
+
+- (NSArray *)getStationsForTrace: (NSInteger)trace
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"metroStations" ofType:@"plist"];
+    NSDictionary *dictComplete = [[NSDictionary alloc] initWithContentsOfFile:path];
+    
+    switch (trace) {
+        case 0:
+            return [dictComplete valueForKey:@"TraceA"];
+            break;
+        case 1:
+            return [dictComplete valueForKey:@"TraceB"];
+            break;
+        case 2:
+            return [dictComplete valueForKey:@"TraceC"];
+            break;
+        default:
+            return nil;
+            break;
+    }
+}
+
+- (NSString *)roundImageNameForTrace: (NSInteger)trace
+{
+    switch (trace) {
+        case 0:
+            return @"Icn-Round-Green";
+            break;
+        case 1:
+            return @"Icn-Round-Yellow";
+            break;
+        case 2:
+            return @"Icn-Round-Red";
+            break;
+        default:
+            return nil;
+            break;
+    }
+}
+
+- (void)searchStation
+{
+    
 }
 
 @end

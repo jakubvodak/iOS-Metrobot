@@ -33,17 +33,17 @@
     arrowsImageView.translatesAutoresizingMaskIntoConstraints = NO;
     [centerView addSubview:arrowsImageView];
     
-    UILabel *titleLabel = [UILabel new];
-    titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:13];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.text = @"PICK DIRECTION";
-    [centerView addSubview:titleLabel];
+    _titleLabel = [UIButton new];
+    _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [_titleLabel setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _titleLabel.titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:13];
+    _titleLabel.backgroundColor = [UIColor clearColor];
+    [_titleLabel setTitle:@"VYBERTE SMĚR" forState:UIControlStateNormal];
+    [centerView addSubview:_titleLabel];
     
     [centerView addConstraint:[NSLayoutConstraint constraintWithItem:arrowsImageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:centerView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [centerView addConstraint:[NSLayoutConstraint constraintWithItem:titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:centerView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [centerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[arrowsImageView]-[titleLabel]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(arrowsImageView, titleLabel)]];
+    [centerView addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:centerView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    [centerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[arrowsImageView]-[_titleLabel]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(arrowsImageView, _titleLabel)]];
     
     [self addConstraint:[NSLayoutConstraint constraintWithItem:centerView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[centerView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(centerView)]];

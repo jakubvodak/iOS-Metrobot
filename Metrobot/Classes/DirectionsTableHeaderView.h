@@ -10,4 +10,6 @@
 
 @interface DirectionsTableHeaderView : UIView
 
+@property (nonatomic, strong) UIButton *titleLabel;
+
 @end
