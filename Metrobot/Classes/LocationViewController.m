@@ -15,6 +15,8 @@
 #import "LogService.h"
 #import "DirectionsTableHeaderView.h"
 #import "StationTitleView.h"
+#import "SearchTableViewController.h"
+#import "TimeViewController.h"
 
 #define smallCellHeight 60
 #define bigCellHeight 120
@@ -29,6 +31,7 @@
 @property (nonatomic, strong) StationTitleView *titleView;
 
 @property (nonatomic, strong) StationEntity *currentStation;
+@property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic, strong) NSArray *directions;
 @property (nonatomic, strong) NSArray *stations;
 @property (nonatomic, strong) NSArray *entrances;
@@ -62,13 +65,18 @@
     [self loadData];
     
     [self applyAppearance];
+    
+    [self startUpdatingLoc];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    NSLog(@"Start updating loc");
-    
-    [self startUpdatingLoc];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startUpdatingLoc) name:MetrobotDidBecomeActiveNotification object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,6 +103,7 @@
     }
     
     self.stations = arrTemp;
+    
 }
 
 - (void)applyAppearance
@@ -110,7 +119,10 @@
     
     RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:MapBoxID];
     
-    _mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight) andTilesource:tileSource];
+    DEFINE_VIEW_WIDTH;
+    DEFINE_VIEW_HEIGHT;
+    
+    _mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, 0, w, h-tableViewHeight) andTilesource:tileSource];
     _mapView.zoom = 15;
     _mapView.hideAttribution=YES;
     _mapView.delegate = self;
@@ -118,7 +130,7 @@
     _mapView.alpha = 0;
     [self.view addSubview:_mapView];
     
-    _navigationBarBackgound = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 64)];
+    _navigationBarBackgound = [[UIView alloc] initWithFrame:CGRectMake(0, 0, w, 64)];
     _navigationBarBackgound.backgroundColor = [MbAppearanceManager MBDarkBlueColor];
     _navigationBarBackgound.alpha = 0;
     [_mapView addSubview:_navigationBarBackgound];
@@ -128,18 +140,18 @@
     _overlayView.backgroundColor = UIColorWithRGBAValues(0, 0, 0, 255);
     [_mapView addSubview:_overlayView];
     
-    _titleView = [[StationTitleView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight)];
+    _titleView = [[StationTitleView alloc] initWithFrame:CGRectMake(0, 0, w, h-tableViewHeight)];
     [_titleView.stationName addTarget:self action:@selector(hideTable) forControlEvents:UIControlEventTouchUpInside];
     _titleView.alpha = 0;
 
     [self.view addSubview:_titleView];
     
-    _tableView = [[DirectionsTableView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height, self.view.bounds.size.width, tableViewHeight)];
+    _tableView = [[DirectionsTableView alloc] initWithFrame:CGRectMake(0, h, w, tableViewHeight)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
-    DirectionsTableHeaderView *tableHeaderView = [[DirectionsTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    DirectionsTableHeaderView *tableHeaderView = [[DirectionsTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, w, 44)];
     [tableHeaderView.titleLabel addTarget:self action:@selector(directionsFlash) forControlEvents:UIControlEventTouchUpInside];
     self.tableView.tableHeaderView = tableHeaderView;
     
@@ -148,6 +160,7 @@
     
     self.navigationItem.leftBarButtonItem = _searchButton;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Location"] style:UIBarButtonItemStylePlain target:self action:@selector(startUpdatingLoc)];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
 }
 
 #pragma mark - table view
@@ -178,7 +191,7 @@
 
     StationEntity *station = [self.directions objectAtIndex:indexPath.row];
     
-    cell.roundImageView.image = [UIImage imageNamed:[self roundImageNameForTrace:station.trace]];
+    cell.roundImageView.image = [UIImage imageNamed:[StationEntity roundImageNameForTrace:station.trace]];
     [cell setLineFrameForIndex:indexPath.row andCellHeight:self.directions.count==2?bigCellHeight:smallCellHeight];
     
     cell.stationLabel.text = station.name;
@@ -190,6 +203,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    TimeViewController *viewController = [TimeViewController new];
+    [self.navigationController pushViewController:viewController animated:YES];
+    
 }
 
 #pragma mark - scroll view
@@ -226,6 +243,8 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"Did update to loc: %@", newLocation);
+    
+    self.currentLocation = newLocation;
     
     [self stopUpdatingLoc];
     
@@ -322,14 +341,20 @@
     self.titleView.alpha = (double)(100 - abs(y))/100;
     self.navigationBarBackgound.alpha = (double)abs(y)/100;
     
-    self.mapView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 300+abs(y));
-    self.overlayView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 300+abs(y));
-    self.titleView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 300+(abs(y/1.5)));
+    DEFINE_VIEW_WIDTH;
+    DEFINE_VIEW_HEIGHT;
+    
+    self.mapView.frame = CGRectMake(0, 0, w, h-tableViewHeight+abs(y));
+    self.overlayView.frame = CGRectMake(0, 0, w, h-tableViewHeight+abs(y));
+    self.titleView.frame = CGRectMake(0, 0, w, h-tableViewHeight+(abs(y/1.5)));
 }
 
 - (void)showTable
 {
-    self.titleView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight);
+    DEFINE_VIEW_WIDTH;
+    DEFINE_VIEW_HEIGHT;
+    
+    self.titleView.frame = CGRectMake(0, 0, w, h-tableViewHeight);
     self.titleView.transform = CGAffineTransformMakeScale(1.2, 1.2);
     [UIView beginAnimations:@"showView" context:nil];
     //[UIView setAnimationDelegate:self];
@@ -346,8 +371,8 @@
     } completion:^(BOOL finished) {
         
         [UIView animateWithDuration:0.6 animations:^{
-            self.mapView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight);
-            self.overlayView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height-tableViewHeight);
+            self.mapView.frame = CGRectMake(0, 0, w, h-tableViewHeight);
+            self.overlayView.frame = CGRectMake(0, 0, w, h-tableViewHeight);
         } completion:^(BOOL finished) {
             self.tableView.backgroundView = nil;
         }];
@@ -359,13 +384,16 @@
 
 - (void)hideTable
 {
+    DEFINE_VIEW_WIDTH;
+    DEFINE_VIEW_HEIGHT;
+    
     _tableView.up = NO;
     
     [UIView animateWithDuration:0.4 animations:^{
         
-        self.tableView.frame = CGRectMake(0, self.view.bounds.size.height, self.tableView.frame.size.width, self.tableView.frame.size.height);
-        self.mapView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-        self.overlayView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+        self.tableView.frame = CGRectMake(0, h, self.tableView.frame.size.width, self.tableView.frame.size.height);
+        self.mapView.frame = CGRectMake(0, 0, w, h);
+        self.overlayView.frame = CGRectMake(0, 0, w, h);
         
         self.overlayView.alpha = 0;
         self.titleView.alpha = 0;
@@ -476,7 +504,7 @@
 
     for (int i=0; i<3; i++) {
         
-        NSArray *stations = [self getStationsForTrace:i];
+        NSArray *stations = [StationEntity getStationsForTrace:i];
         
         if ([stations containsObject:station.name]) {
             
@@ -500,7 +528,7 @@
 {
     for (int i=0; i<3; i++) {
         
-        NSArray *stations = [self getStationsForTrace:i];
+        NSArray *stations = [StationEntity getStationsForTrace:i];
         
         if ([stations containsObject:fromStation.name] && [stations containsObject:toStation.name]) {
             NSInteger index1 = [stations indexOfObject:fromStation.name];
@@ -516,55 +544,29 @@
 - (NSString *)formatRemainingStationsCount: (NSInteger)count
 {
     if (count == 0 || count >= 5) {
-        return [NSString stringWithFormat:@"%d stanic", count];
+        return [NSString stringWithFormat:@"%d stanic", (int)count];
     }
     else {
-        return [NSString stringWithFormat:@"%d stanice", count];
-    }
-}
-
-- (NSArray *)getStationsForTrace: (NSInteger)trace
-{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"metroStations" ofType:@"plist"];
-    NSDictionary *dictComplete = [[NSDictionary alloc] initWithContentsOfFile:path];
-    
-    switch (trace) {
-        case 0:
-            return [dictComplete valueForKey:@"TraceA"];
-            break;
-        case 1:
-            return [dictComplete valueForKey:@"TraceB"];
-            break;
-        case 2:
-            return [dictComplete valueForKey:@"TraceC"];
-            break;
-        default:
-            return nil;
-            break;
-    }
-}
-
-- (NSString *)roundImageNameForTrace: (NSInteger)trace
-{
-    switch (trace) {
-        case 0:
-            return @"Icn-Round-Green";
-            break;
-        case 1:
-            return @"Icn-Round-Yellow";
-            break;
-        case 2:
-            return @"Icn-Round-Red";
-            break;
-        default:
-            return nil;
-            break;
+        return [NSString stringWithFormat:@"%d stanice", (int)count];
     }
 }
 
 - (void)searchStation
 {
+    SearchTableViewController *searchController = [SearchTableViewController new];
     
+    searchController.finishBlock = ^(StationEntity *station){
+        
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+            station.distance = [station.location distanceFromLocation:self.currentLocation];
+            
+            [self updateCurrentStation:station];
+        }];
+    };
+
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:searchController];
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 @end

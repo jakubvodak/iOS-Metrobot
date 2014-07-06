@@ -41,11 +41,11 @@
     //self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icn-Disclosure"]];
     self.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageWithColor:[MbAppearanceManager MBBlueColor]]];
     
-    UIView *contenView = self.contentView;
+    UIView *contentView = self.contentView;
     
     UIView *traceView = [UIView new];
     traceView.translatesAutoresizingMaskIntoConstraints = NO;
-    [contenView addSubview:traceView];
+    [contentView addSubview:traceView];
     
     _roundImageView = [UIImageView new];
     _roundImageView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -63,31 +63,31 @@
     _stationLabel.textColor = [UIColor whiteColor];
     _stationLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:17];
     _stationLabel.backgroundColor = [UIColor clearColor];
-    [contenView addSubview:_stationLabel];
+    [contentView addSubview:_stationLabel];
     
     _countLabel = [UILabel new];
     _countLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _countLabel.textColor = [UIColor whiteColor];
     _countLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:13];
     _countLabel.backgroundColor = [UIColor clearColor];
-    [contenView addSubview:_countLabel];
+    [contentView addSubview:_countLabel];
     
     UIImageView *disclosureView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icn-Disclosure"]];
     disclosureView.translatesAutoresizingMaskIntoConstraints = NO;
-    [contenView addSubview:disclosureView];
+    [contentView addSubview:disclosureView];
     
     UIImageView *separatorView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Separator"]];
     separatorView.translatesAutoresizingMaskIntoConstraints = NO;
     separatorView.alpha = 0.2;
-    [contenView addSubview:separatorView];
+    [contentView addSubview:separatorView];
     
-    [contenView addConstraint:[NSLayoutConstraint constraintWithItem:_stationLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contenView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [contenView addConstraint:[NSLayoutConstraint constraintWithItem:_countLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contenView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [contenView addConstraint:[NSLayoutConstraint constraintWithItem:disclosureView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contenView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [contenView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-12-[traceView(9)]-12-[_stationLabel]-8-[_countLabel]-[disclosureView]-12-|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(traceView, _stationLabel, _countLabel, disclosureView)]];
-    [contenView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-35-[separatorView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(separatorView)]];
-    [contenView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[separatorView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(separatorView)]];
-    [contenView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[traceView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(traceView)]];
+    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:_stationLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:_countLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:disclosureView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-12-[traceView(9)]-12-[_stationLabel]-8-[_countLabel]-[disclosureView]-12-|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(traceView, _stationLabel, _countLabel, disclosureView)]];
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-35-[separatorView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(separatorView)]];
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[separatorView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(separatorView)]];
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[traceView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(traceView)]];
 }
 
 - (void)setLineFrameForIndex: (NSInteger)index andCellHeight: (CGFloat)height

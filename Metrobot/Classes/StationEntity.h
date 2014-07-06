@@ -19,4 +19,7 @@
 @property (nonatomic) CLLocationDistance distance;
 @property (nonatomic) NSInteger trace;
 
++ (NSArray *)getStationsForTrace: (NSInteger)trace;
++ (NSString *)roundImageNameForTrace: (NSInteger)trace;
+
 @end

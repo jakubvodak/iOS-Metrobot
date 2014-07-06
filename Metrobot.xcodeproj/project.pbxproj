@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8292BCB4639B4C68BAF57CC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D85F773F994A69BC6E0222 /* libPods.a */; };
+		CB3729F119698DB1006CCC4E /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */; };
+		CB3729F31969B4B5006CCC4E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3729F21969B4B5006CCC4E /* MessageUI.framework */; };
 		CB57BFCC196016440055978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCB196016440055978A /* Foundation.framework */; };
 		CB57BFCE196016440055978A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCD196016440055978A /* CoreGraphics.framework */; };
 		CB57BFD0196016440055978A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCF196016440055978A /* UIKit.framework */; };
@@ -45,6 +47,7 @@
 		CB9669111964ACD800EEC868 /* DirectionsTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9669101964ACD800EEC868 /* DirectionsTableHeaderView.m */; };
 		CB9669191967000C00EEC868 /* StationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9669181967000C00EEC868 /* StationTitleView.m */; };
 		CB96691F1967FDDD00EEC868 /* DirectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */; };
+		CBAC88B41969418E0099B47D /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC88B31969418E0099B47D /* SearchTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 /* Begin PBXFileReference section */
 		1E7D974A849B4C42BA570F4B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A1D85F773F994A69BC6E0222 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB3729EF19698DB1006CCC4E /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTableViewCell.h; path = Classes/SearchTableViewCell.h; sourceTree = "<group>"; };
+		CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewCell.m; path = Classes/SearchTableViewCell.m; sourceTree = "<group>"; };
+		CB3729F21969B4B5006CCC4E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CB57BFC8196016440055978A /* Metrobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB57BFCB196016440055978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB57BFCD196016440055978A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +121,8 @@
 		CB9669181967000C00EEC868 /* StationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StationTitleView.m; path = Classes/StationTitleView.m; sourceTree = "<group>"; };
 		CB96691D1967FDDD00EEC868 /* DirectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionTableViewCell.h; path = Classes/DirectionTableViewCell.h; sourceTree = "<group>"; };
 		CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionTableViewCell.m; path = Classes/DirectionTableViewCell.m; sourceTree = "<group>"; };
+		CBAC88B21969418E0099B47D /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTableViewController.h; path = Classes/SearchTableViewController.h; sourceTree = "<group>"; };
+		CBAC88B31969418E0099B47D /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewController.m; path = Classes/SearchTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3729F31969B4B5006CCC4E /* MessageUI.framework in Frameworks */,
 				CB9668DA1962137E00EEC868 /* libz.dylib in Frameworks */,
 				CB9668D81962137400EEC868 /* libsqlite3.dylib in Frameworks */,
 				CB9668D61962136500EEC868 /* QuartzCore.framework in Frameworks */,
@@ -172,6 +181,7 @@
 		CB57BFCA196016440055978A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB3729F21969B4B5006CCC4E /* MessageUI.framework */,
 				CB9668D91962137E00EEC868 /* libz.dylib */,
 				CB9668D71962137400EEC868 /* libsqlite3.dylib */,
 				CB9668D51962136500EEC868 /* QuartzCore.framework */,
@@ -293,6 +303,8 @@
 				CB9669181967000C00EEC868 /* StationTitleView.m */,
 				CB96691D1967FDDD00EEC868 /* DirectionTableViewCell.h */,
 				CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */,
+				CB3729EF19698DB1006CCC4E /* SearchTableViewCell.h */,
+				CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -304,6 +316,8 @@
 				CB9668AE1960A40F00EEC868 /* LocationViewController.m */,
 				CB9668B01960A42100EEC868 /* TimeViewController.h */,
 				CB9668B11960A42100EEC868 /* TimeViewController.m */,
+				CBAC88B21969418E0099B47D /* SearchTableViewController.h */,
+				CBAC88B31969418E0099B47D /* SearchTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -359,6 +373,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = uLikeIT;
 				TargetAttributes = {
+					CB57BFC7196016440055978A = {
+						DevelopmentTeam = D6532TRNCE;
+					};
 					CB57BFE8196016440055978A = {
 						TestTargetID = CB57BFC7196016440055978A;
 					};
@@ -463,11 +480,13 @@
 				CB57BFD8196016440055978A /* main.m in Sources */,
 				CB9668CE1961CE9700EEC868 /* BaseEntity.m in Sources */,
 				CB9668C01960C22400EEC868 /* StationEntity.m in Sources */,
+				CBAC88B41969418E0099B47D /* SearchTableViewController.m in Sources */,
 				CB9668F519633D3B00EEC868 /* DirectionsTableView.m in Sources */,
 				CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */,
 				CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */,
 				CB9669191967000C00EEC868 /* StationTitleView.m in Sources */,
 				CB9669111964ACD800EEC868 /* DirectionsTableHeaderView.m in Sources */,
+				CB3729F119698DB1006CCC4E /* SearchTableViewCell.m in Sources */,
 				CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */,
 				CB9668C31960C2C100EEC868 /* EntranceEntity.m in Sources */,
 				CB57C00B19601FA50055978A /* LogService.m in Sources */,
@@ -591,6 +610,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -599,6 +620,7 @@
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "77242103-A606-40CF-AF2A-F422D1BBAED1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -609,6 +631,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -617,6 +641,7 @@
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "77242103-A606-40CF-AF2A-F422D1BBAED1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

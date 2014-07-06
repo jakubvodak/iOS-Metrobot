@@ -23,3 +23,7 @@
 // BlockSelf
 
 #define DEFINE_WEAK_SELF       __weak __typeof__(self) weakSelf = self
+#define DEFINE_VIEW_WIDTH      CGFloat w = self.view.bounds.size.width;
+#define DEFINE_VIEW_HEIGHT      CGFloat h = self.view.bounds.size.height;
+
+#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
