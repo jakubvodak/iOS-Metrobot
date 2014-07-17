@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8292BCB4639B4C68BAF57CC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D85F773F994A69BC6E0222 /* libPods.a */; };
+		CB2769AB19771CC4002FB0E6 /* BigCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2769AA19771CC4002FB0E6 /* BigCircleView.m */; };
 		CB3729F119698DB1006CCC4E /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */; };
 		CB3729F31969B4B5006CCC4E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3729F21969B4B5006CCC4E /* MessageUI.framework */; };
 		CB57BFCC196016440055978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCB196016440055978A /* Foundation.framework */; };
@@ -63,6 +64,8 @@
 /* Begin PBXFileReference section */
 		1E7D974A849B4C42BA570F4B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A1D85F773F994A69BC6E0222 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB2769A919771CC4002FB0E6 /* BigCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BigCircleView.h; path = Classes/BigCircleView.h; sourceTree = "<group>"; };
+		CB2769AA19771CC4002FB0E6 /* BigCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BigCircleView.m; path = Classes/BigCircleView.m; sourceTree = "<group>"; };
 		CB3729EF19698DB1006CCC4E /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTableViewCell.h; path = Classes/SearchTableViewCell.h; sourceTree = "<group>"; };
 		CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewCell.m; path = Classes/SearchTableViewCell.m; sourceTree = "<group>"; };
 		CB3729F21969B4B5006CCC4E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -305,6 +308,8 @@
 				CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */,
 				CB3729EF19698DB1006CCC4E /* SearchTableViewCell.h */,
 				CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */,
+				CB2769A919771CC4002FB0E6 /* BigCircleView.h */,
+				CB2769AA19771CC4002FB0E6 /* BigCircleView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				CB9669191967000C00EEC868 /* StationTitleView.m in Sources */,
 				CB9669111964ACD800EEC868 /* DirectionsTableHeaderView.m in Sources */,
 				CB3729F119698DB1006CCC4E /* SearchTableViewCell.m in Sources */,
+				CB2769AB19771CC4002FB0E6 /* BigCircleView.m in Sources */,
 				CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */,
 				CB9668C31960C2C100EEC868 /* EntranceEntity.m in Sources */,
 				CB57C00B19601FA50055978A /* LogService.m in Sources */,

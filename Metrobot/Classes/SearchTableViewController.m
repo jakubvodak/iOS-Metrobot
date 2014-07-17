@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UITextField *searchField;
 @property (nonatomic, strong) NSArray *allStations;
 @property (nonatomic, strong) NSArray *searchStations;
+@property (nonatomic, strong) UIView *navigationBarBackgound;
 
 @end
 
@@ -82,6 +83,9 @@
     searchBarContainer.bounds = CGRectOffset(searchBarContainer.frame, 12, 0);
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:searchBarContainer];
     
+    _navigationBarBackgound = [[UIView alloc] initWithFrame:CGRectMake(0, -64, self.view.bounds.size.width, 64)];
+    _navigationBarBackgound.backgroundColor = [MbAppearanceManager MBDarkBlueColor];
+    [self.view addSubview:_navigationBarBackgound];
 }
 
 - (void)loadData
@@ -143,6 +147,13 @@
     StationEntity *station = [self.searchStations objectAtIndex:indexPath.row];
     
     self.finishBlock(station);
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGRect fixedFrame = self.navigationBarBackgound.frame;
+    fixedFrame.origin.y = scrollView.contentOffset.y;
+    self.navigationBarBackgound.frame = fixedFrame;
 }
 
 #pragma mark - searchBar

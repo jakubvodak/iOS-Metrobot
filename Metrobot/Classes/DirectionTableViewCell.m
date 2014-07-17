@@ -10,6 +10,12 @@
 #import "UIImage+ImageEffects.h"
 #import <math.h>
 
+@interface DirectionTableViewCell ()
+
+@property (nonatomic, strong) UIImageView *disclosureView;
+
+@end
+
 @implementation DirectionTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -54,8 +60,7 @@
     [traceView addConstraint:[NSLayoutConstraint constraintWithItem:_roundImageView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:traceView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     [traceView addConstraint:[NSLayoutConstraint constraintWithItem:_roundImageView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:traceView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     
-    _lineView = [UIView new];
-    _lineView.backgroundColor = UIColorWithRGBValues(53, 61, 63);
+    _lineView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-LineView"]];
     [traceView addSubview:_lineView];
     
     _stationLabel = [UILabel new];
@@ -72,9 +77,9 @@
     _countLabel.backgroundColor = [UIColor clearColor];
     [contentView addSubview:_countLabel];
     
-    UIImageView *disclosureView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icn-Disclosure"]];
-    disclosureView.translatesAutoresizingMaskIntoConstraints = NO;
-    [contentView addSubview:disclosureView];
+    _disclosureView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Icn-Disclosure"]];
+    _disclosureView.translatesAutoresizingMaskIntoConstraints = NO;
+    [contentView addSubview:_disclosureView];
     
     UIImageView *separatorView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Separator"]];
     separatorView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -83,8 +88,8 @@
     
     [contentView addConstraint:[NSLayoutConstraint constraintWithItem:_stationLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     [contentView addConstraint:[NSLayoutConstraint constraintWithItem:_countLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:disclosureView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-12-[traceView(9)]-12-[_stationLabel]-8-[_countLabel]-[disclosureView]-12-|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(traceView, _stationLabel, _countLabel, disclosureView)]];
+    [contentView addConstraint:[NSLayoutConstraint constraintWithItem:_disclosureView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:contentView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-12-[traceView(9)]-12-[_stationLabel]-8-[_countLabel]-[_disclosureView]-12-|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(traceView, _stationLabel, _countLabel, _disclosureView)]];
     [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-35-[separatorView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(separatorView)]];
     [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[separatorView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(separatorView)]];
     [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[traceView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(traceView)]];
@@ -93,6 +98,24 @@
 - (void)setLineFrameForIndex: (NSInteger)index andCellHeight: (CGFloat)height
 {
     self.lineView.frame = CGRectMake(4, fmod(index, 2)?0:height/2+4, 1, height/2-4);
+}
+
+- (void)setCellDisabled
+{
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.countLabel.hidden = YES;
+    self.disclosureView.hidden = YES;
+    
+    _stationLabel.textColor = UIColorWithRGBAValues(255, 255, 255, 100);
+}
+
+- (void)setCellEnabled
+{
+    self.selectionStyle = UITableViewCellSelectionStyleDefault;
+    self.countLabel.hidden = NO;
+    self.disclosureView.hidden = NO;
+    
+    _stationLabel.textColor = [UIColor whiteColor];
 }
 
 @end

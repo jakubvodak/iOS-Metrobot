@@ -9,8 +9,11 @@
 #import "TimeViewController.h"
 #import "UIImage+ImageEffects.h"
 #import <MessageUI/MFMessageComposeViewController.h>
+#import "BigCircleView.h"
 
 @interface TimeViewController () <UIAlertViewDelegate, MFMessageComposeViewControllerDelegate>
+
+@property (nonatomic, strong) BigCircleView *departureView;
 
 @end
 
@@ -38,6 +41,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC*2), dispatch_get_main_queue(), ^{
+        [_departureView showTime];
+    });
+}
 
 - (void)applyAppearance
 {
@@ -58,7 +67,7 @@
     ticketButton.translatesAutoresizingMaskIntoConstraints = NO;
     ticketButton.titleLabel.textColor = [UIColor whiteColor];
     [ticketButton setTitleColor:[MbAppearanceManager MBBlueColor] forState:UIControlStateHighlighted];
-    ticketButton.titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:17];
+    ticketButton.titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:16];
     [ticketButton setTitle:@"Koupit jízdenku" forState:UIControlStateNormal];
     [ticketButton addTarget:self action:@selector(showTicketOptions) forControlEvents:UIControlEventTouchUpInside];
     [ticketButton setBackgroundImage:[UIImage imageWithColor:UIColorWithRGBAValues(185, 223, 237, 20)] forState:UIControlStateNormal];
@@ -69,14 +78,16 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[ticketButton]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(ticketButton)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[topView(330)][bottomView][ticketButton(54)]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(topView, bottomView, ticketButton)]];
     
-    UIImageView *bigCircleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Round-Big"]];
-    bigCircleView.translatesAutoresizingMaskIntoConstraints = NO;
-    bigCircleView.alpha = 0.2;
-    [topView addSubview:bigCircleView];
+    _departureView = [BigCircleView new];
+    _departureView.translatesAutoresizingMaskIntoConstraints = NO;
+    _departureView.routeLabel.text = [NSString stringWithFormat:@"%@ > %@", [self.currentStation.name uppercaseString], [self.destinationStation.name uppercaseString]];
+    [topView addSubview:_departureView];
     
-    [topView addConstraint:[NSLayoutConstraint constraintWithItem:bigCircleView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:topView attribute:NSLayoutAttributeCenterY multiplier:1.2 constant:0]];
-    [topView addConstraint:[NSLayoutConstraint constraintWithItem:bigCircleView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:topView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [topView addConstraint:[NSLayoutConstraint constraintWithItem:_departureView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:topView attribute:NSLayoutAttributeCenterY multiplier:1.2 constant:0]];
+    [topView addConstraint:[NSLayoutConstraint constraintWithItem:_departureView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:topView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     
+
+   /*
     
     UIView *bottomCenterView = [UIView new];
     bottomCenterView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -140,6 +151,7 @@
     
     [bottomView addConstraint:[NSLayoutConstraint constraintWithItem:bottomCenterView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:bottomView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     [bottomView addConstraint:[NSLayoutConstraint constraintWithItem:bottomCenterView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:bottomView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+     */
 }
 
 

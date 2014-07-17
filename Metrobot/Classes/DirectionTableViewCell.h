@@ -11,10 +11,12 @@
 @interface DirectionTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView *roundImageView;
-@property (nonatomic, strong) UIView *lineView;
+@property (nonatomic, strong) UIImageView *lineView;
 @property (nonatomic, strong) UILabel *stationLabel;
 @property (nonatomic, strong) UILabel *countLabel;
 
 - (void)setLineFrameForIndex: (NSInteger)index andCellHeight: (CGFloat)height;
+- (void)setCellDisabled;
+- (void)setCellEnabled;
 
 @end

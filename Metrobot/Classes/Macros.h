@@ -27,3 +27,11 @@
 #define DEFINE_VIEW_HEIGHT      CGFloat h = self.view.bounds.size.height;
 
 #define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height-480)?NO:YES)
+
+
+#if __has_feature(objc_arc)
+#define MDLog(format, ...) CFShow((__bridge CFStringRef)[NSString stringWithFormat:format, ## __VA_ARGS__]);
+#else
+#define MDLog(format, ...) CFShow([NSString stringWithFormat:format, ## __VA_ARGS__]);
+#endif
+

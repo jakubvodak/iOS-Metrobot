@@ -13,4 +13,6 @@
 @property (nonatomic, strong) UIButton *stationName;
 @property (nonatomic, strong) UILabel *distanceLabel;
 
+- (void)checkTitleSize;
+
 @end

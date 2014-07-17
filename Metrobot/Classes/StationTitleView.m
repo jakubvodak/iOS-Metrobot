@@ -8,6 +8,8 @@
 
 #import "StationTitleView.h"
 
+#define defaultTitleFont [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:39]
+
 @implementation StationTitleView
 
 - (id)initWithFrame:(CGRect)frame
@@ -46,7 +48,7 @@
     _stationName.translatesAutoresizingMaskIntoConstraints = NO;
     _stationName.titleLabel.textColor = [UIColor whiteColor];
     [_stationName setTitleColor:[MbAppearanceManager MBBlueColor] forState:UIControlStateHighlighted];
-    _stationName.titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:39];
+    _stationName.titleLabel.font = defaultTitleFont;
     _stationName.backgroundColor = [UIColor clearColor];
     [topView addSubview:_stationName];
     
@@ -75,6 +77,21 @@
     [bottomCenterView addConstraint:[NSLayoutConstraint constraintWithItem:_distanceLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:bottomCenterView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     [bottomCenterView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[pinView]-8-[_distanceLabel]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(pinView, _distanceLabel)]];
     
+}
+
+- (void)checkTitleSize
+{
+    CGSize textSize = [_stationName.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:defaultTitleFont}];
+    
+    if (textSize.width > 320) {
+        _stationName.titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:30];
+    }
+    else if (textSize.width > 300) {
+        _stationName.titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:32];
+    }
+    else {
+        _stationName.titleLabel.font = defaultTitleFont;
+    }
 }
 
 @end

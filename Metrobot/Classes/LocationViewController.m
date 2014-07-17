@@ -87,12 +87,10 @@
 
 - (void)loadData
 {
+    NSLog(@"start");
     NSString *path = [[NSBundle mainBundle] pathForResource:@"metroStations" ofType:@"plist"];
-    
     NSDictionary *dictComplete = [[NSDictionary alloc] initWithContentsOfFile:path];
-    
     NSArray *stationsDetails = [dictComplete valueForKey:@"StationsDetails"];
-    
     NSMutableArray *arrTemp = [NSMutableArray new];
     
     for (NSDictionary *dictStation in stationsDetails) {
@@ -104,6 +102,22 @@
     
     self.stations = arrTemp;
     
+    
+    path = [[NSBundle mainBundle] pathForResource:@"metroStations" ofType:@"plist"];
+    dictComplete = [[NSDictionary alloc] initWithContentsOfFile:path];
+    stationsDetails = [dictComplete valueForKey:@"Entrances"];
+    arrTemp = [NSMutableArray new];
+    
+    for (NSDictionary *dictEntrance in stationsDetails) {
+        
+        EntranceEntity *entrance = [[EntranceEntity alloc] initWithDictionary:dictEntrance];
+        entrance.location = [[CLLocation alloc] initWithLatitude:entrance.lat.doubleValue longitude:entrance.lng.doubleValue];
+        [arrTemp addObject:entrance];
+    }
+    
+    self.entrances = arrTemp;
+    
+    NSLog(@"finish");
 }
 
 - (void)applyAppearance
@@ -140,6 +154,9 @@
     _overlayView.backgroundColor = UIColorWithRGBAValues(0, 0, 0, 255);
     [_mapView addSubview:_overlayView];
     
+    UITapGestureRecognizer *bgTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideTable)];
+    [_overlayView addGestureRecognizer:bgTap];
+    
     _titleView = [[StationTitleView alloc] initWithFrame:CGRectMake(0, 0, w, h-tableViewHeight)];
     [_titleView.stationName addTarget:self action:@selector(hideTable) forControlEvents:UIControlEventTouchUpInside];
     _titleView.alpha = 0;
@@ -161,6 +178,10 @@
     self.navigationItem.leftBarButtonItem = _searchButton;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Location"] style:UIBarButtonItemStylePlain target:self action:@selector(startUpdatingLoc)];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    
+    
+    
+
 }
 
 #pragma mark - table view
@@ -191,6 +212,13 @@
 
     StationEntity *station = [self.directions objectAtIndex:indexPath.row];
     
+    if ([station.name isEqualToString:self.currentStation.name]) {
+        [cell setCellDisabled];
+    }
+    else {
+        [cell setCellEnabled];
+    }
+    
     cell.roundImageView.image = [UIImage imageNamed:[StationEntity roundImageNameForTrace:station.trace]];
     [cell setLineFrameForIndex:indexPath.row andCellHeight:self.directions.count==2?bigCellHeight:smallCellHeight];
     
@@ -204,9 +232,14 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    TimeViewController *viewController = [TimeViewController new];
-    [self.navigationController pushViewController:viewController animated:YES];
+    StationEntity *station = [self.directions objectAtIndex:indexPath.row];
     
+    if (![station.name isEqualToString:self.currentStation.name]) {
+        TimeViewController *viewController = [TimeViewController new];
+        viewController.currentStation = self.currentStation;
+        viewController.destinationStation = station;
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 
 #pragma mark - scroll view
@@ -287,6 +320,25 @@
     }
 }
 
+- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+{
+    if (annotation.isUserLocationAnnotation)
+        return nil;
+    
+    RMMarker *marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"Icn-Map-Pin"]];
+    marker.canShowCallout = YES;
+    
+    marker.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return marker;
+}
+
+- (void)tapOnCalloutAccessoryControl:(UIControl *)control forAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map
+{
+    NSLog(@"You tapped the callout button!");
+}
+
+
 #pragma mark - func
 
 - (void)updateCurrentStation: (StationEntity *)newStation
@@ -301,6 +353,7 @@
 - (void)refreshScreen
 {
     [self.titleView.stationName setTitle:self.currentStation.name forState:UIControlStateNormal];
+    [self.titleView checkTitleSize];
     self.titleView.distanceLabel.text = [self formatDistanceString:self.currentStation.distance];
     
     [_mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentStation.lat.doubleValue, self.currentStation.lng.doubleValue)];
@@ -368,6 +421,8 @@
         self.overlayView.alpha = 1;
         self.navigationBarBackgound.alpha = 0;
         
+        [self.mapView removeAllAnnotations];
+        
     } completion:^(BOOL finished) {
         
         [UIView animateWithDuration:0.6 animations:^{
@@ -388,6 +443,8 @@
     DEFINE_VIEW_HEIGHT;
     
     _tableView.up = NO;
+    
+    [self loadAnnotationsForStation:self.currentStation];
     
     [UIView animateWithDuration:0.4 animations:^{
         
@@ -567,6 +624,25 @@
 
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:searchController];
     [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void)loadAnnotationsForStation: (StationEntity *)station
+{
+    [_mapView removeAllAnnotations];
+    
+    NSMutableArray *tempArr = [NSMutableArray new];
+    
+    for (EntranceEntity *entrance in self.entrances) {
+        
+        if ([entrance.name isEqualToString:self.currentStation.name]) {
+            RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:_mapView
+                                                                  coordinate:CLLocationCoordinate2DMake(entrance.location.coordinate.latitude, entrance.location.coordinate.longitude)
+                                                                    andTitle:entrance.description];
+            [tempArr addObject:annotation];
+        }
+    }
+    
+    [_mapView addAnnotations:tempArr];
 }
 
 @end

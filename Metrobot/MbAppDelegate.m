@@ -19,8 +19,8 @@
     
     [Crashlytics startWithAPIKey:CrashlyticsApiKey];
     
-    //[Flurry setCrashReportingEnabled:NO];
-    //[Flurry startSession:FlurryAPIKey];
+    [Flurry setCrashReportingEnabled:NO];
+    [Flurry startSession:FlurryAPIKey];
     
     MbAppearanceManager* appearanceManager = [MbAppearanceManager new];
     [appearanceManager applyAppearance];

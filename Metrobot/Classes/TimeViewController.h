@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StationEntity.h"
 
 @interface TimeViewController : UIViewController
+
+@property (nonatomic, strong) StationEntity *currentStation;
+@property (nonatomic, strong) StationEntity *destinationStation;
 
 @end
