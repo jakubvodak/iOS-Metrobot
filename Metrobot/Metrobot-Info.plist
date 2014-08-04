@@ -26,6 +26,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>MyriadPro-Regular.otf</string>
 		<string>MuseoSans-100.otf</string>
 		<string>MuseoSans-300.otf</string>
 		<string>MuseoSans-500.otf</string>

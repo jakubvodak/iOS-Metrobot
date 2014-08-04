@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8292BCB4639B4C68BAF57CC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D85F773F994A69BC6E0222 /* libPods.a */; };
 		CB2769AB19771CC4002FB0E6 /* BigCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2769AA19771CC4002FB0E6 /* BigCircleView.m */; };
+		CB2769BA197A4214002FB0E6 /* TimeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2769B9197A4214002FB0E6 /* TimeEntity.m */; };
 		CB3729F119698DB1006CCC4E /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */; };
 		CB3729F31969B4B5006CCC4E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3729F21969B4B5006CCC4E /* MessageUI.framework */; };
 		CB57BFCC196016440055978A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCB196016440055978A /* Foundation.framework */; };
@@ -26,6 +27,9 @@
 		CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00719601F840055978A /* MbAppearanceManager.m */; };
 		CB57C00B19601FA50055978A /* LogService.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00A19601FA50055978A /* LogService.m */; };
 		CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00E19601FEA0055978A /* UIImage+ImageEffects.m */; };
+		CB7DD46B198E92EB006B6058 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB7DD46A198E92EB006B6058 /* MyriadPro-Regular.otf */; };
+		CB7DD471198EC68B006B6058 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7DD470198EC68B006B6058 /* InfoViewController.m */; };
+		CB7DD474198ED82C006B6058 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7DD473198ED82C006B6058 /* PersonTableViewCell.m */; };
 		CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668AE1960A40F00EEC868 /* LocationViewController.m */; };
 		CB9668B21960A42100EEC868 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668B11960A42100EEC868 /* TimeViewController.m */; };
 		CB9668B51960A66300EEC868 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668B41960A66200EEC868 /* Crashlytics.framework */; };
@@ -49,6 +53,9 @@
 		CB9669191967000C00EEC868 /* StationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9669181967000C00EEC868 /* StationTitleView.m */; };
 		CB96691F1967FDDD00EEC868 /* DirectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */; };
 		CBAC88B41969418E0099B47D /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC88B31969418E0099B47D /* SearchTableViewController.m */; };
+		CBB62CD0198E308E009B7BF5 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CCF198E308E009B7BF5 /* DACircularProgressView.m */; };
+		CBB62CD4198E6CFC009B7BF5 /* NextDeparturesView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CD3198E6CFC009B7BF5 /* NextDeparturesView.m */; };
+		CBB62CD7198E757C009B7BF5 /* SmallCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +73,8 @@
 		A1D85F773F994A69BC6E0222 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2769A919771CC4002FB0E6 /* BigCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BigCircleView.h; path = Classes/BigCircleView.h; sourceTree = "<group>"; };
 		CB2769AA19771CC4002FB0E6 /* BigCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BigCircleView.m; path = Classes/BigCircleView.m; sourceTree = "<group>"; };
+		CB2769B8197A4214002FB0E6 /* TimeEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeEntity.h; path = Classes/TimeEntity.h; sourceTree = "<group>"; };
+		CB2769B9197A4214002FB0E6 /* TimeEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeEntity.m; path = Classes/TimeEntity.m; sourceTree = "<group>"; };
 		CB3729EF19698DB1006CCC4E /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTableViewCell.h; path = Classes/SearchTableViewCell.h; sourceTree = "<group>"; };
 		CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewCell.m; path = Classes/SearchTableViewCell.m; sourceTree = "<group>"; };
 		CB3729F21969B4B5006CCC4E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -93,6 +102,11 @@
 		CB57C00E19601FEA0055978A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Classes/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		CB57C0101960200A0055978A /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = Classes/Macros.h; sourceTree = "<group>"; };
 		CB57C0111960201C0055978A /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Classes/Constants.h; sourceTree = "<group>"; };
+		CB7DD46A198E92EB006B6058 /* MyriadPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MyriadPro-Regular.otf"; path = "Data/MyriadPro-Regular.otf"; sourceTree = "<group>"; };
+		CB7DD46F198EC68B006B6058 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoViewController.h; path = Classes/InfoViewController.h; sourceTree = "<group>"; };
+		CB7DD470198EC68B006B6058 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoViewController.m; path = Classes/InfoViewController.m; sourceTree = "<group>"; };
+		CB7DD472198ED82C006B6058 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PersonTableViewCell.h; path = Classes/PersonTableViewCell.h; sourceTree = "<group>"; };
+		CB7DD473198ED82C006B6058 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PersonTableViewCell.m; path = Classes/PersonTableViewCell.m; sourceTree = "<group>"; };
 		CB9668AD1960A40F00EEC868 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = Classes/LocationViewController.h; sourceTree = "<group>"; };
 		CB9668AE1960A40F00EEC868 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = Classes/LocationViewController.m; sourceTree = "<group>"; };
 		CB9668B01960A42100EEC868 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeViewController.h; path = Classes/TimeViewController.h; sourceTree = "<group>"; };
@@ -126,6 +140,12 @@
 		CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DirectionTableViewCell.m; path = Classes/DirectionTableViewCell.m; sourceTree = "<group>"; };
 		CBAC88B21969418E0099B47D /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTableViewController.h; path = Classes/SearchTableViewController.h; sourceTree = "<group>"; };
 		CBAC88B31969418E0099B47D /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewController.m; path = Classes/SearchTableViewController.m; sourceTree = "<group>"; };
+		CBB62CCE198E308E009B7BF5 /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DACircularProgressView.h; path = Classes/DACircularProgressView.h; sourceTree = "<group>"; };
+		CBB62CCF198E308E009B7BF5 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DACircularProgressView.m; path = Classes/DACircularProgressView.m; sourceTree = "<group>"; };
+		CBB62CD2198E6CFC009B7BF5 /* NextDeparturesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NextDeparturesView.h; path = Classes/NextDeparturesView.h; sourceTree = "<group>"; };
+		CBB62CD3198E6CFC009B7BF5 /* NextDeparturesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NextDeparturesView.m; path = Classes/NextDeparturesView.m; sourceTree = "<group>"; };
+		CBB62CD5198E757C009B7BF5 /* SmallCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallCircleView.h; path = Classes/SmallCircleView.h; sourceTree = "<group>"; };
+		CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallCircleView.m; path = Classes/SmallCircleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +224,7 @@
 		CB57BFD1196016440055978A /* Metrobot */ = {
 			isa = PBXGroup;
 			children = (
+				CBB62CD1198E309C009B7BF5 /* Vendor */,
 				CB57C00019601E560055978A /* Service */,
 				CB57C00119601E660055978A /* Category */,
 				CB57C00219601E6F0055978A /* Common */,
@@ -226,6 +247,7 @@
 				CB9669091964A7E200EEC868 /* MuseoSans-100.otf */,
 				CB96690A1964A7E200EEC868 /* MuseoSans-300.otf */,
 				CB96690B1964A7E200EEC868 /* MuseoSans-500.otf */,
+				CB7DD46A198E92EB006B6058 /* MyriadPro-Regular.otf */,
 				CB9669021964A73600EEC868 /* metroStations.plist */,
 				CB9669031964A73600EEC868 /* testLocation.gpx */,
 				CB57BFD3196016440055978A /* Metrobot-Info.plist */,
@@ -291,6 +313,8 @@
 				CB9668BF1960C22400EEC868 /* StationEntity.m */,
 				CB9668C11960C2C100EEC868 /* EntranceEntity.h */,
 				CB9668C21960C2C100EEC868 /* EntranceEntity.m */,
+				CB2769B8197A4214002FB0E6 /* TimeEntity.h */,
+				CB2769B9197A4214002FB0E6 /* TimeEntity.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -310,6 +334,12 @@
 				CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */,
 				CB2769A919771CC4002FB0E6 /* BigCircleView.h */,
 				CB2769AA19771CC4002FB0E6 /* BigCircleView.m */,
+				CBB62CD2198E6CFC009B7BF5 /* NextDeparturesView.h */,
+				CBB62CD3198E6CFC009B7BF5 /* NextDeparturesView.m */,
+				CBB62CD5198E757C009B7BF5 /* SmallCircleView.h */,
+				CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */,
+				CB7DD472198ED82C006B6058 /* PersonTableViewCell.h */,
+				CB7DD473198ED82C006B6058 /* PersonTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -323,8 +353,19 @@
 				CB9668B11960A42100EEC868 /* TimeViewController.m */,
 				CBAC88B21969418E0099B47D /* SearchTableViewController.h */,
 				CBAC88B31969418E0099B47D /* SearchTableViewController.m */,
+				CB7DD46F198EC68B006B6058 /* InfoViewController.h */,
+				CB7DD470198EC68B006B6058 /* InfoViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		CBB62CD1198E309C009B7BF5 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CBB62CCE198E308E009B7BF5 /* DACircularProgressView.h */,
+				CBB62CCF198E308E009B7BF5 /* DACircularProgressView.m */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +457,7 @@
 				CB57BFE4196016440055978A /* Images.xcassets in Resources */,
 				CB96690E1964A7F200EEC868 /* MuseoSans-100.otf in Resources */,
 				CB96690D1964A7EF00EEC868 /* MuseoSans-300.otf in Resources */,
+				CB7DD46B198E92EB006B6058 /* MyriadPro-Regular.otf in Resources */,
 				CB57BFD6196016440055978A /* InfoPlist.strings in Resources */,
 				CB9669081964A73600EEC868 /* testLocation.gpx in Resources */,
 			);
@@ -483,14 +525,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB57BFD8196016440055978A /* main.m in Sources */,
+				CB2769BA197A4214002FB0E6 /* TimeEntity.m in Sources */,
 				CB9668CE1961CE9700EEC868 /* BaseEntity.m in Sources */,
 				CB9668C01960C22400EEC868 /* StationEntity.m in Sources */,
+				CBB62CD4198E6CFC009B7BF5 /* NextDeparturesView.m in Sources */,
+				CBB62CD0198E308E009B7BF5 /* DACircularProgressView.m in Sources */,
 				CBAC88B41969418E0099B47D /* SearchTableViewController.m in Sources */,
+				CBB62CD7198E757C009B7BF5 /* SmallCircleView.m in Sources */,
 				CB9668F519633D3B00EEC868 /* DirectionsTableView.m in Sources */,
 				CB9668AF1960A40F00EEC868 /* LocationViewController.m in Sources */,
 				CB57C00F19601FEA0055978A /* UIImage+ImageEffects.m in Sources */,
+				CB7DD471198EC68B006B6058 /* InfoViewController.m in Sources */,
 				CB9669191967000C00EEC868 /* StationTitleView.m in Sources */,
 				CB9669111964ACD800EEC868 /* DirectionsTableHeaderView.m in Sources */,
+				CB7DD474198ED82C006B6058 /* PersonTableViewCell.m in Sources */,
 				CB3729F119698DB1006CCC4E /* SearchTableViewCell.m in Sources */,
 				CB2769AB19771CC4002FB0E6 /* BigCircleView.m in Sources */,
 				CB57C00819601F840055978A /* MbAppearanceManager.m in Sources */,

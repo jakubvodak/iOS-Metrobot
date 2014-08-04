@@ -21,6 +21,7 @@
 #define smallCellHeight 60
 #define bigCellHeight 120
 #define tableViewHeight 280
+#define locErrorText @"Hledání nejbližší stanice selhalo."
 
 @interface LocationViewController () <RMMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -29,6 +30,7 @@
 @property (nonatomic, strong) DirectionsTableView *tableView;
 @property (nonatomic, strong) UIView *overlayView;
 @property (nonatomic, strong) StationTitleView *titleView;
+@property (nonatomic, strong) UILabel *locErrorLabel;
 
 @property (nonatomic, strong) StationEntity *currentStation;
 @property (nonatomic, strong) CLLocation *currentLocation;
@@ -101,7 +103,6 @@
     }
     
     self.stations = arrTemp;
-    
     
     path = [[NSBundle mainBundle] pathForResource:@"metroStations" ofType:@"plist"];
     dictComplete = [[NSDictionary alloc] initWithContentsOfFile:path];
@@ -179,9 +180,19 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Location"] style:UIBarButtonItemStylePlain target:self action:@selector(startUpdatingLoc)];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:nil action:nil];
     
+    _locErrorLabel = [UILabel new];
+    _locErrorLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _locErrorLabel.textColor = [MbAppearanceManager MBBlueColor];
+    _locErrorLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:14];
+    _locErrorLabel.backgroundColor = [UIColor clearColor];
+    _locErrorLabel.textAlignment = NSTextAlignmentCenter;
+    _locErrorLabel.numberOfLines = 2;
+    _locErrorLabel.alpha = 0;
+    _locErrorLabel.text = locErrorText;
+    [self.view addSubview:_locErrorLabel];
     
-    
-
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_locErrorLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_locErrorLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
 }
 
 #pragma mark - table view
@@ -286,7 +297,16 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    [[LogService sharedInstance] logError:error];
+    [self stopUpdatingLoc];
+    
+    if (_currentStation) {
+        [[[UIAlertView alloc] initWithTitle:@"Chyba" message:locErrorText delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+    }
+    else {
+        [UIView animateWithDuration:0.3 animations:^{
+            _locErrorLabel.alpha = 1;
+        }];
+    }
 }
 
 - (void)findNearestStations: (CLLocation *)loc
@@ -327,17 +347,10 @@
     
     RMMarker *marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"Icn-Map-Pin"]];
     marker.canShowCallout = YES;
-    
-    marker.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    //marker.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
     return marker;
 }
-
-- (void)tapOnCalloutAccessoryControl:(UIControl *)control forAnnotation:(RMAnnotation *)annotation onMap:(RMMapView *)map
-{
-    NSLog(@"You tapped the callout button!");
-}
-
 
 #pragma mark - func
 
@@ -352,9 +365,16 @@
 
 - (void)refreshScreen
 {
+    _locErrorLabel.alpha = 0;
     [self.titleView.stationName setTitle:self.currentStation.name forState:UIControlStateNormal];
     [self.titleView checkTitleSize];
-    self.titleView.distanceLabel.text = [self formatDistanceString:self.currentStation.distance];
+    
+    if (self.currentStation.distance>=0) {
+        self.titleView.distanceLabel.text = [self formatDistanceString:self.currentStation.distance];
+    }
+    else {
+        self.titleView.distanceLabel.text = @"";
+    }
     
     [_mapView setCenterCoordinate:CLLocationCoordinate2DMake(self.currentStation.lat.doubleValue, self.currentStation.lng.doubleValue)];
     

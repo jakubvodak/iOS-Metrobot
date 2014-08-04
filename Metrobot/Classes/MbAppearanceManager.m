@@ -32,7 +32,7 @@
     navigationBarAppearance.tintColor = [MbAppearanceManager MBBlueColor];
     
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
-                                [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont fontWithName:[MbAppearanceManager fontNameLight] size:17], NSFontAttributeName,nil];
+                                [UIColor whiteColor], NSForegroundColorAttributeName, [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:17], NSFontAttributeName,nil];
     [navigationBarAppearance setTitleTextAttributes:attributes];
     
 }
@@ -60,6 +60,11 @@
 + (NSString *)fontNameStrong
 {
     return @"MuseoSans-500";
+}
+
++ (NSString *)fontNameTime
+{
+    return @"MyriadPro-Regular";
 }
 
 @end

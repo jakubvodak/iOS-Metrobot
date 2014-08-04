@@ -12,7 +12,7 @@
 
 @interface BigCircleView ()
 
-@property (nonatomic, strong) UIView *loader;
+@property (nonatomic) BOOL timeShowed;
 
 @end
 
@@ -33,29 +33,46 @@
 {
     UIImageView *circle = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Round-Big"]];
     circle.translatesAutoresizingMaskIntoConstraints = NO;
-    circle.alpha = 0.2;
     [self addSubview:circle];
     
     [self addConstraint:[NSLayoutConstraint constraintWithItem:circle attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:circle attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     
+    _timeShowed = true;
+    
     _titleLabel = [UILabel new];
     _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _titleLabel.textColor = [UIColor whiteColor];
-    _titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:70];
+    _titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameTime] size:80];
     _titleLabel.backgroundColor = [UIColor clearColor];
-    _titleLabel.text = @"3:21";
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
     _titleLabel.alpha = 0;
     [self addSubview:_titleLabel];
    
+    _inStationLabel = [UILabel new];
+    _inStationLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _inStationLabel.textColor = [UIColor whiteColor];
+    _inStationLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameTime] size:35];
+    _inStationLabel.backgroundColor = [UIColor clearColor];
+    _inStationLabel.textAlignment = NSTextAlignmentCenter;
+    _inStationLabel.alpha = 0;
+    _inStationLabel.text = @"Vlak ve stanici";
+    [self addSubview:_inStationLabel];
+    
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_inStationLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_inStationLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     
     _routeLabel = [UILabel new];
     _routeLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _routeLabel.textColor = [MbAppearanceManager MBBlueColor];
-    _routeLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:14];
+    _routeLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:12];
     _routeLabel.backgroundColor = [UIColor clearColor];
+    _routeLabel.textAlignment = NSTextAlignmentCenter;
+    _routeLabel.numberOfLines = 2;
+    [_routeLabel setPreferredMaxLayoutWidth:200];
     [self addSubview:_routeLabel];
     
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_routeLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
@@ -79,6 +96,16 @@
     pathAnimation.path = [path CGPath];
     
     [_loader.layer addAnimation:pathAnimation forKey:@"curveAnimation"];
+    
+    _progressView = [DACircularProgressView new];
+    _progressView.translatesAutoresizingMaskIntoConstraints = NO;
+    _progressView.roundedCorners = YES;
+    _progressView.trackTintColor = [UIColor clearColor];
+    _progressView.alpha = 0;
+    [circle addSubview:_progressView];
+    
+    [circle addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-1-[_progressView]-1-|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(_progressView)]];
+    [circle addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-1-[_progressView]-1-|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(_progressView)]];
 }
 
 - (CGPoint)pointAroundCircumferenceFromCenter:(CGPoint)center withRadius:(CGFloat)radius andAngle:(CGFloat)theta
@@ -90,30 +117,74 @@
     return point;
 }
 
-- (void)showTime
+- (void)timeFormatted:(NSInteger)totalSeconds
 {
-    //self.titleLabel.transform = CGAffineTransformMakeScale(0, 0);
+    NSInteger seconds;
+    NSInteger minutes;
+    NSInteger hours;
     
-    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [self showUpLabel:totalSeconds];
     
-        //self.titleLabel.transform = CGAffineTransformMakeScale(1.0, 1.0);
-        self.titleLabel.alpha = 1;
-        
-        
-        self.routeLabel.frame = CGRectMake(self.routeLabel.frame.origin.x,
-                                           self.routeLabel.frame.origin.y+50,
-                                           self.routeLabel.frame.size.width,
-                                           self.routeLabel.frame.size.height);
-        self.loader.alpha = 0;
-        
-    } completion:^(BOOL finished){
-        [_loader.layer removeAllAnimations];
-    }];
+    if (totalSeconds>0) {
+        seconds = totalSeconds % 60;
+        minutes = (totalSeconds / 60) % 60;
+        hours = (totalSeconds / 3600);
+    }
+    else {
+        seconds = 0;
+        minutes = 0;
+        hours = 0;
+    }
     
+    NSString *secondString;
     
+    if (seconds < 10) {
+        secondString = [NSString stringWithFormat:@"0%ld", (long)seconds];
+    }
+    else {
+        secondString = [NSString stringWithFormat:@"%ld", (long)seconds];
+    }
     
+    NSString *minutesString;
+    
+    if (minutes < 10 && hours > 0) {
+        minutesString = [NSString stringWithFormat:@"0%ld", (long)minutes];
+    }
+    else {
+        minutesString = [NSString stringWithFormat:@"%ld", (long)minutes];
+    }
+    
+    if (hours > 0) {
+        _titleLabel.text = [NSString stringWithFormat:@"%d:%@:%@", hours, minutesString, secondString];
+    }
+    else {
+        _titleLabel.text = [NSString stringWithFormat:@"%@:%@", minutesString, secondString];
+    }
+    
+    if (totalSeconds<300) {
+        [_progressView setProgress:_progressView.progress+0.000333 animated:YES];
+    }
 }
 
+- (void)showUpLabel:(NSInteger)totalSeconds
+{
+    if (self.loader.alpha == 0) {
+    if (totalSeconds <= 0 && _timeShowed) {
+        _timeShowed = false;
+        [UIView animateWithDuration:0.3 animations:^{
+            _titleLabel.alpha = 0;
+            _inStationLabel.alpha = 1;
+        }];
+    }
+    else if (totalSeconds > 0 && !_timeShowed) {
+        _timeShowed = true;
+        [UIView animateWithDuration:0.3 animations:^{
+            _titleLabel.alpha = 1;
+            _inStationLabel.alpha = 0;
+        }];
+    }
+    }
+}
 
 
 @end

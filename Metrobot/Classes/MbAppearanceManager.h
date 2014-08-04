@@ -20,5 +20,6 @@
 + (NSString *)fontNameLight;
 + (NSString *)fontNameMedium;
 + (NSString *)fontNameStrong;
++ (NSString *)fontNameTime;
 
 @end

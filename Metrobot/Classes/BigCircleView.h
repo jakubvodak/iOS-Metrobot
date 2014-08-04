@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DACircularProgressView.h"
 
 @interface BigCircleView : UIView
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *inStationLabel;
 @property (nonatomic, strong) UILabel *routeLabel;
+@property (nonatomic, strong) DACircularProgressView *progressView;
+@property (nonatomic, strong) UIView *loader;
 
-- (void)showTime;
+- (void)timeFormatted:(NSInteger)totalSeconds;
 
 @end

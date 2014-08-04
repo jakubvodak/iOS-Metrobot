@@ -21,5 +21,6 @@
 
 + (NSArray *)getStationsForTrace: (NSInteger)trace;
 + (NSString *)roundImageNameForTrace: (NSInteger)trace;
++ (NSURL *)prepareURLFrom:(StationEntity *)from To:(StationEntity *)to onTime:(NSString *) time;
 
 @end

@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) StationEntity *currentStation;
 @property (nonatomic, strong) StationEntity *destinationStation;
+@property (nonatomic, strong) UIView *loader;
 
 @end
