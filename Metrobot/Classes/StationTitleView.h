@@ -10,7 +10,7 @@
 
 @interface StationTitleView : UIView
 
-@property (nonatomic, strong) UIButton *stationName;
+@property (nonatomic, strong) UILabel *stationName;
 @property (nonatomic, strong) UILabel *distanceLabel;
 
 - (void)checkTitleSize;

@@ -155,13 +155,13 @@
     _overlayView.backgroundColor = UIColorWithRGBAValues(0, 0, 0, 255);
     [_mapView addSubview:_overlayView];
     
-    UITapGestureRecognizer *bgTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideTable)];
-    [_overlayView addGestureRecognizer:bgTap];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideTable)];
     
     _titleView = [[StationTitleView alloc] initWithFrame:CGRectMake(0, 0, w, h-tableViewHeight)];
-    [_titleView.stationName addTarget:self action:@selector(hideTable) forControlEvents:UIControlEventTouchUpInside];
+    //[_titleView.stationName addTarget:self action:@selector(hideTable) forControlEvents:UIControlEventTouchUpInside];
     _titleView.alpha = 0;
-
+    [_titleView addGestureRecognizer:tap];
+    
     [self.view addSubview:_titleView];
     
     _tableView = [[DirectionsTableView alloc] initWithFrame:CGRectMake(0, h, w, tableViewHeight)];
@@ -300,7 +300,7 @@
     [self stopUpdatingLoc];
     
     if (_currentStation) {
-        [[[UIAlertView alloc] initWithTitle:@"Chyba" message:locErrorText delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+        //[[[UIAlertView alloc] initWithTitle:@"Chyba" message:locErrorText delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
     }
     else {
         [UIView animateWithDuration:0.3 animations:^{
@@ -366,7 +366,7 @@
 - (void)refreshScreen
 {
     _locErrorLabel.alpha = 0;
-    [self.titleView.stationName setTitle:self.currentStation.name forState:UIControlStateNormal];
+    self.titleView.stationName.text = self.currentStation.name;
     [self.titleView checkTitleSize];
     
     if (self.currentStation.distance>=0) {

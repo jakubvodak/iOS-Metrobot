@@ -133,7 +133,6 @@
         [circularProgressViewAppearance setThicknessRatio:0.02f];
         [circularProgressViewAppearance setRoundedCorners:NO];
         [circularProgressViewAppearance setClockwiseProgress:YES];
-        
         [circularProgressViewAppearance setIndeterminateDuration:2.0f];
         [circularProgressViewAppearance setIndeterminate:NO];
     }

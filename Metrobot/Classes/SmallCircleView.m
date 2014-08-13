@@ -35,6 +35,8 @@
     _titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:18];
     _titleLabel.backgroundColor = [UIColor clearColor];
     _titleLabel.alpha = 0;
+    _titleLabel.numberOfLines = 2;
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:_titleLabel];
     
     _nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -54,7 +56,7 @@
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:_nextButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_nextButton attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1.03 constant:0]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_nextButton attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
     
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_loader attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
@@ -69,7 +71,7 @@
     
     if (totalSeconds>3600) {
         time = (totalSeconds/3600.0);
-        timeString = [NSString stringWithFormat:@"%dhod", time];
+        timeString = [NSString stringWithFormat:@"%d\nhod", time];
         range = [timeString rangeOfString: @"hod"];
     }
     else {
@@ -80,7 +82,7 @@
             time = 0;
         }
         
-        timeString = [NSString stringWithFormat:@"%dmin", time];
+        timeString = [NSString stringWithFormat:@"%d\nmin", time];
         range = [timeString rangeOfString: @"min"];
     }
     

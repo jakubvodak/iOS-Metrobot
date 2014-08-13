@@ -108,7 +108,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,6 +127,7 @@
             cell.nameLabel.text = @"Pavel Zeifart";
             break;
         case 2:
+            cell.photo.image = [UIImage imageNamed:@"Img-Adam"];
             cell.aboutLabel.text = @"Nápad";
             cell.nameLabel.text = @"Adam Vajdák";
             break;

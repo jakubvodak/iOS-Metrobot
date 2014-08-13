@@ -52,11 +52,12 @@
     _inStationLabel = [UILabel new];
     _inStationLabel.translatesAutoresizingMaskIntoConstraints = NO;
     _inStationLabel.textColor = [UIColor whiteColor];
-    _inStationLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameTime] size:35];
+    _inStationLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameTime] size:40];
     _inStationLabel.backgroundColor = [UIColor clearColor];
     _inStationLabel.textAlignment = NSTextAlignmentCenter;
     _inStationLabel.alpha = 0;
-    _inStationLabel.text = @"Vlak ve stanici";
+    _inStationLabel.numberOfLines = 2;
+    _inStationLabel.text = @"Vlak ve\nstanici";
     [self addSubview:_inStationLabel];
     
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_titleLabel attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
@@ -100,7 +101,7 @@
     _progressView = [DACircularProgressView new];
     _progressView.translatesAutoresizingMaskIntoConstraints = NO;
     _progressView.roundedCorners = YES;
-    _progressView.trackTintColor = [UIColor clearColor];
+    _progressView.trackTintColor = UIColorWithRGBValues(38, 74, 83);
     _progressView.alpha = 0;
     [circle addSubview:_progressView];
     
@@ -155,21 +156,26 @@
     }
     
     if (hours > 0) {
-        _titleLabel.text = [NSString stringWithFormat:@"%d:%@:%@", hours, minutesString, secondString];
+        _titleLabel.text = [NSString stringWithFormat:@"%ld:%@:%@", (long)hours, minutesString, secondString];
+        _titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameTime] size:60];
     }
     else {
         _titleLabel.text = [NSString stringWithFormat:@"%@:%@", minutesString, secondString];
+        _titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameTime] size:80];
     }
     
-    if (totalSeconds<300) {
-        [_progressView setProgress:_progressView.progress+0.000333 animated:YES];
+    if (totalSeconds<=300 && totalSeconds>=0) {
+        [_progressView setProgress:_progressView.progress-0.000333 animated:YES];
+    }
+    if (totalSeconds < 0) {
+        _progressView.alpha = 0;
     }
 }
 
 - (void)showUpLabel:(NSInteger)totalSeconds
 {
-    if (self.loader.alpha == 0) {
-    if (totalSeconds <= 0 && _timeShowed) {
+    if (_titleLabel.alpha == 1 || _inStationLabel.alpha == 1) {
+    if (totalSeconds < 0 && _timeShowed) {
         _timeShowed = false;
         [UIView animateWithDuration:0.3 animations:^{
             _titleLabel.alpha = 0;

@@ -1,9 +1,12 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "pin.png"
+      "filename" : "Icn-Map-Pin.png"
     },
     {
       "idiom" : "universal",

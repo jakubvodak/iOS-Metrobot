@@ -44,11 +44,10 @@
     [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[topView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(topView)]];
     [contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[bottomView]|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(bottomView)]];
     
-    _stationName = [UIButton new];
+    _stationName = [UILabel new];
     _stationName.translatesAutoresizingMaskIntoConstraints = NO;
-    _stationName.titleLabel.textColor = [UIColor whiteColor];
-    [_stationName setTitleColor:[MbAppearanceManager MBBlueColor] forState:UIControlStateHighlighted];
-    _stationName.titleLabel.font = defaultTitleFont;
+    _stationName.textColor = [UIColor whiteColor];
+    _stationName.font = defaultTitleFont;
     _stationName.backgroundColor = [UIColor clearColor];
     [topView addSubview:_stationName];
     
@@ -81,16 +80,16 @@
 
 - (void)checkTitleSize
 {
-    CGSize textSize = [_stationName.titleLabel.text sizeWithAttributes:@{NSFontAttributeName:defaultTitleFont}];
+    CGSize textSize = [_stationName.text sizeWithAttributes:@{NSFontAttributeName:defaultTitleFont}];
     
     if (textSize.width > 320) {
-        _stationName.titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:30];
+        _stationName.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:30];
     }
     else if (textSize.width > 300) {
-        _stationName.titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:32];
+        _stationName.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:32];
     }
     else {
-        _stationName.titleLabel.font = defaultTitleFont;
+        _stationName.font = defaultTitleFont;
     }
 }
 

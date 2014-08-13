@@ -1,13 +1,16 @@
 {
   "images" : [
     {
+      "idiom" : "universal"
+    },
+    {
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Img-Round-Small@2x.png"
+      "filename" : "Icn-Odpocet-SmallCircle@2x.png"
     }
   ],
   "info" : {

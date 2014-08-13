@@ -53,7 +53,6 @@
 {
     NSString *urlPath;
     NSString *searchTarget = [self findSecondStationAfter:from onDirection:to];
-    NSLog(@"from: %@, to: %@", from.name, searchTarget);
     
     urlPath = @"http://jizdnirady.idnes.cz/praha/spojeni/?f=";
     urlPath = [urlPath stringByAppendingString:from.name];

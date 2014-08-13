@@ -73,6 +73,7 @@
     self.title = @"Nejbližší odjezdy";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Button-Info"] style:UIBarButtonItemStylePlain target:self action:@selector(showInfo)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Back"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     
     UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Background"]];
     [self.view addSubview:backgroundImage];
@@ -107,7 +108,9 @@
     _departureView.routeLabel.text = [NSString stringWithFormat:@"%@ > %@", [self.currentStation.name uppercaseString], [self.destinationStation.name uppercaseString]];
     [topView addSubview:_departureView];
     
-    [topView addConstraint:[NSLayoutConstraint constraintWithItem:_departureView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:topView attribute:NSLayoutAttributeCenterY multiplier:1.2 constant:0]];
+    CGFloat displayHeight = [UIScreen mainScreen].bounds.size.height;
+    
+    [topView addConstraint:[NSLayoutConstraint constraintWithItem:_departureView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:topView attribute:NSLayoutAttributeCenterY multiplier:displayHeight<=480?1.2:1.3 constant:0]];
     [topView addConstraint:[NSLayoutConstraint constraintWithItem:_departureView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:topView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
 }
 
@@ -210,7 +213,11 @@
 
 - (void) connection: (NSURLConnection *) connection didFailWithError:(NSError *)error
 {
-    [[LogService sharedInstance] logError:error];
+    NSInteger time1 = [[self getRemainingTimeForTime:0] integerValue];
+    
+    if (time1 <= 0) {
+        [[LogService sharedInstance] logError:error];
+    }
 }
 
 - (void) connectionDidFinishLoading: (NSURLConnection *) connection
@@ -218,10 +225,6 @@
     NSString *htmlString = [[NSString alloc] initWithData:_responseData encoding:NSASCIIStringEncoding];
     
     [_timeObject parseHtml:htmlString];
-    
-    [_departureView timeFormatted: [[self getRemainingTimeForTime:0] integerValue]];
-    
-    [self showViewForTime:[[self getRemainingTimeForTime:0] integerValue]];
     
     [self updateCounter];
 }
@@ -231,16 +234,12 @@
     if (_departureView.loader.alpha == 1) {
         
         UILabel *targetLabel;
-        if (time>0) {
-            targetLabel = _departureView.titleLabel;
-        }
-        else {
-            targetLabel = _departureView.inStationLabel;
-        }
+
+        targetLabel = time>0?_departureView.titleLabel:_departureView.inStationLabel;
         
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
-            _departureView.routeLabel.center = CGPointMake(_departureView.routeLabel.center.x, _departureView.routeLabel.center.y+50);
+            _departureView.routeLabel.center = CGPointMake(_departureView.routeLabel.center.x, _departureView.routeLabel.center.y+100);
             _departureView.loader.alpha = 0;
             self.bottomView.circle3.nextButton.alpha = 1;
             
@@ -255,7 +254,7 @@
             [UIView commitAnimations];
         }];
         
-        [UIView animateWithDuration:1.0 delay:0.4 options:0 animations:^{
+        [UIView animateWithDuration:1.0 delay:0.1 options:0 animations:^{
             _departureView.progressView.alpha = 1;
             _bottomView.alpha = 1;
             _bottomView.circle1.titleLabel.alpha = 1;
@@ -268,6 +267,11 @@
             self.bottomView.circle3.nextButton.alpha = 1;
             [self.bottomView.circle3.loader stopAnimating];
         }];
+    }
+    else {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.departureView.progressView.alpha = 1;
+        } completion:nil];
     }
 }
 
@@ -285,8 +289,13 @@
 {
     [_timer invalidate];
     
-    CGFloat progress = (300 - [[self getRemainingTimeForTime:0] floatValue])/300.0;
-    [_departureView.progressView setProgress:progress animated:YES];
+    CGFloat progress = ([[self getRemainingTimeForTime:0] floatValue])/300.0;
+    
+    [_departureView.progressView setProgress:progress animated:NO];
+    
+    [_departureView timeFormatted: [[self getRemainingTimeForTime:0] integerValue]];
+    
+    [self showViewForTime:[[self getRemainingTimeForTime:0] integerValue]];
     
     _timer = [NSTimer scheduledTimerWithTimeInterval:0.1
                                                target:self
@@ -305,14 +314,19 @@
     
     if (time1 < -30) {
         [_timer invalidate];
+        
+        [_timeObject.regularDepartures removeObjectAtIndex:0];
+        [_timeObject.regularDepartures insertObject:[_timeObject.regularDepartures objectAtIndex:0] atIndex:0];
+        
+        [self updateCounter];
+        
         [self loadData:[StationEntity prepareURLFrom:_currentStation To:_destinationStation onTime:[TimeEntity getNextDepartureTime:0]]];
     }
     else if (time3 < -30) {
         [_timer invalidate];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self goBack];
     }
     else {
-        
         [_departureView timeFormatted:time1];
         [_bottomView.circle1 timeFormatted:time2];
         [_bottomView.circle2 timeFormatted:time3];
@@ -359,6 +373,13 @@
     infoController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:infoController];
     [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void)goBack
+{
+    [_dataRequest cancel];
+    _dataRequest = nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
