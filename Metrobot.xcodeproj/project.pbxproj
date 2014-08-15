@@ -381,6 +381,7 @@
 				CB57BFC6196016440055978A /* Resources */,
 				2A3C14BBABB446988FEA4872 /* Copy Pods Resources */,
 				CB9668B31960A64100EEC868 /* ShellScript */,
+				CBD2C3F3199CECD300158262 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -420,7 +421,7 @@
 				ORGANIZATIONNAME = uLikeIT;
 				TargetAttributes = {
 					CB57BFC7196016440055978A = {
-						DevelopmentTeam = D6532TRNCE;
+						DevelopmentTeam = 9E7QF645NB;
 					};
 					CB57BFE8196016440055978A = {
 						TestTargetID = CB57BFC7196016440055978A;
@@ -516,6 +517,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 6a2c06aa6bfac2826abdd4be36988a3124a1f00b faea1823b0440003f02cbf4e39d99737d513e42558a4bbb8eb234cae9af85966";
+		};
+		CBD2C3F3199CECD300158262 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -674,7 +689,7 @@
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77242103-A606-40CF-AF2A-F422D1BBAED1";
+				PROVISIONING_PROFILE = "117e8700-7eaf-41dd-8bdd-34913df4552c";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -695,7 +710,7 @@
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "77242103-A606-40CF-AF2A-F422D1BBAED1";
+				PROVISIONING_PROFILE = "117e8700-7eaf-41dd-8bdd-34913df4552c";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

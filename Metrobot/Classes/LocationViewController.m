@@ -246,6 +246,7 @@
     StationEntity *station = [self.directions objectAtIndex:indexPath.row];
     
     if (![station.name isEqualToString:self.currentStation.name]) {
+        [Flurry logEvent:@"Departure" withParameters:@{@"from": self.currentStation.name, @"to":station.name}];
         TimeViewController *viewController = [TimeViewController new];
         viewController.currentStation = self.currentStation;
         viewController.destinationStation = station;
@@ -462,6 +463,8 @@
     DEFINE_VIEW_WIDTH;
     DEFINE_VIEW_HEIGHT;
     
+    [Flurry logEvent:@"Map"];
+    
     _tableView.up = NO;
     
     [self loadAnnotationsForStation:self.currentStation];
@@ -637,6 +640,8 @@
         [self dismissViewControllerAnimated:YES completion:^{
             
             station.distance = [station.location distanceFromLocation:self.currentLocation];
+            
+            [Flurry logEvent:@"Search" withParameters:@{@"station": station.name}];
             
             [self updateCurrentStation:station];
         }];

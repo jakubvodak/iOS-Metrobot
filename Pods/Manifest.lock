@@ -2,14 +2,14 @@ PODS:
   - FlurrySDK (5.0.0):
     - FlurrySDK/FlurrySDK
   - FlurrySDK/FlurrySDK (5.0.0)
-  - SSKeychain (1.2.2)
+  - HockeySDK (3.5.6)
 
 DEPENDENCIES:
   - FlurrySDK
-  - SSKeychain (~> 1.0)
+  - HockeySDK (~> 3.5.6)
 
 SPEC CHECKSUMS:
   FlurrySDK: 1fa28436e86e533e51ab1164c43d8f3b5f8ff99f
-  SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
+  HockeySDK: 27d8b411208f9d3f70c8f6695a8defa2a3465721
 
 COCOAPODS: 0.32.1

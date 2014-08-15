@@ -4,12 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>HockeySDKResources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-FlurrySDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-SSKeychain.xcscheme</key>
+		<key>Pods-HockeySDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>270EC8700F2E4F278F8948D4</key>
+		<key>2545A275F458426EA77E4F76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52952B6416E64F92B6932379</key>
+		<key>27FC3FD0F72346A7822AA77F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5636D230A94F4915A21600E7</key>
+		<key>E8D72AD78CFD4534AA7BB70E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8E77A51FD064D43AF8131A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -178,14 +178,18 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    /*
-     if (result == MessageComposeResultCancelled)
-     NSLog(@"Message cancelled");
-     else if (result == MessageComposeResultSent)
-     NSLog(@"Message sent");
-     else
-     NSLog(@"Message failed");
-     */
+    if (result == MessageComposeResultCancelled) {
+        NSLog(@"Message cancelled");
+        [Flurry logEvent:@"sms" withParameters:@{@"status": @"cancelled"}];
+    }
+    else if (result == MessageComposeResultSent) {
+        NSLog(@"Message sent");
+        [Flurry logEvent:@"sms" withParameters:@{@"status": @"sent"}];
+    }
+    else {
+        [Flurry logEvent:@"sms" withParameters:@{@"status": @"failed"}];
+        NSLog(@"Message failed");
+    }
 }
 
 #pragma mark - data load
@@ -239,7 +243,7 @@
         
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
-            _departureView.routeLabel.center = CGPointMake(_departureView.routeLabel.center.x, _departureView.routeLabel.center.y+100);
+            _departureView.routeLabel.center = CGPointMake(_departureView.routeLabel.center.x, _departureView.routeLabel.center.y+50);
             _departureView.loader.alpha = 0;
             self.bottomView.circle3.nextButton.alpha = 1;
             
@@ -347,6 +351,7 @@
 
 - (void)loadNextTime
 {
+    [Flurry logEvent:@"Next"];
     NSInteger additionalTime = [[self getRemainingTimeForTime:0] integerValue]+200;
     
     if (additionalTime > 3000) {
@@ -365,6 +370,7 @@
 
 - (void)showInfo
 {
+    [Flurry logEvent:@"Info"];
     InfoViewController *infoController = [InfoViewController new];
     infoController.reloadBlock = ^{
         [self updateCounter];

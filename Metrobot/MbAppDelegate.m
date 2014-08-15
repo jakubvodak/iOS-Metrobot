@@ -8,8 +8,8 @@
 
 #import "MbAppDelegate.h"
 #import <Crashlytics/Crashlytics.h>
-#import <Flurry.h>
 #import "LocationViewController.h"
+#import "HockeySDK.h"
 
 @implementation MbAppDelegate
 
@@ -21,6 +21,12 @@
     
     [Flurry setCrashReportingEnabled:NO];
     [Flurry startSession:FlurryAPIKey];
+    
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:HockeyAppIdentifier];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator
+     authenticateInstallation];
+    [[BITHockeyManager sharedHockeyManager] testIdentifier];
     
     MbAppearanceManager* appearanceManager = [MbAppearanceManager new];
     [appearanceManager applyAppearance];
