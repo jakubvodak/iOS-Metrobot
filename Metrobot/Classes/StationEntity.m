@@ -57,12 +57,10 @@
     urlPath = @"http://jizdnirady.idnes.cz/praha/spojeni/?f=";
     urlPath = [urlPath stringByAppendingString:from.name];
     urlPath = [urlPath stringByAppendingString:@"&t="];
-    //urlPath = [urlPath stringByAppendingString:[self findSecondStationAfter:departure onDirection:destination]];
     urlPath = [urlPath stringByAppendingString:searchTarget];
     urlPath = [urlPath stringByAppendingString:@"&time="];
     urlPath = [urlPath stringByAppendingString:time];
     urlPath = [urlPath stringByAppendingString:@"&fc=301003&tc=301003&trt=302&direct=false&byarr=false&submit=true&af=true&lng=C"];
-    
     urlPath = [[NSString alloc] initWithData:[urlPath dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES] encoding:NSASCIIStringEncoding];
     urlPath = [urlPath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     

@@ -7,7 +7,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Národní Třída</string>
 			<key>lat</key>
 			<string>50.0830603</string>
@@ -17,7 +17,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Národní Třída</string>
 			<key>lat</key>
 			<string>50.0828725</string>
@@ -27,7 +27,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Jungmanovo nám.</string>
 			<key>lat</key>
 			<string>50.0829603</string>
@@ -37,7 +37,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>28. října</string>
 			<key>lat</key>
 			<string>50.0838594</string>
@@ -47,7 +47,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>28. října</string>
 			<key>lat</key>
 			<string>50.0832978</string>
@@ -57,7 +57,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>28. října</string>
 			<key>lat</key>
 			<string>50.0841197</string>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Můstku</string>
 			<key>lat</key>
 			<string>50.0845411</string>
@@ -77,7 +77,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Příkopě</string>
 			<key>lat</key>
 			<string>50.0844803</string>
@@ -87,7 +87,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Příkopě</string>
 			<key>lat</key>
 			<string>50.0843092</string>
@@ -97,7 +97,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0838075</string>
@@ -107,7 +107,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Jindřišská</string>
 			<key>lat</key>
 			<string>50.0827486</string>
@@ -117,7 +117,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Jindřišská</string>
 			<key>lat</key>
 			<string>50.0826219</string>
@@ -127,7 +127,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0823967</string>
@@ -137,7 +137,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0821444</string>
@@ -147,7 +147,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0819903</string>
@@ -157,7 +157,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0823897</string>
@@ -167,7 +167,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vodičkova</string>
 			<key>lat</key>
 			<string>50.0821358</string>
@@ -177,7 +177,7 @@
 		<dict>
 			<key>name</key>
 			<string>Můstek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vodičkova</string>
 			<key>lat</key>
 			<string>50.0818806</string>
@@ -187,7 +187,7 @@
 		<dict>
 			<key>name</key>
 			<string>Muzeum</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0798375</string>
@@ -197,7 +197,7 @@
 		<dict>
 			<key>name</key>
 			<string>Muzeum</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0797422</string>
@@ -207,7 +207,7 @@
 		<dict>
 			<key>name</key>
 			<string>Muzeum</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0795778</string>
@@ -217,7 +217,7 @@
 		<dict>
 			<key>name</key>
 			<string>Muzeum</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Václavské nám.</string>
 			<key>lat</key>
 			<string>50.0794342</string>
@@ -227,7 +227,7 @@
 		<dict>
 			<key>name</key>
 			<string>Muzeum</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Mezizbranská</string>
 			<key>lat</key>
 			<string>50.0787061</string>
@@ -237,7 +237,7 @@
 		<dict>
 			<key>name</key>
 			<string>Muzeum</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vinohradská</string>
 			<key>lat</key>
 			<string>50.0794275</string>
@@ -247,7 +247,7 @@
 		<dict>
 			<key>name</key>
 			<string>Muzeum</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vinohradská</string>
 			<key>lat</key>
 			<string>50.0798300</string>
@@ -257,7 +257,7 @@
 		<dict>
 			<key>name</key>
 			<string>Florenc</string>
-			<key>description</key>
+			<key>street</key>
 			<string>BUS Terminal Florenc</string>
 			<key>lat</key>
 			<string>50.0896681</string>
@@ -267,7 +267,7 @@
 		<dict>
 			<key>name</key>
 			<string>Florenc</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Křižíkova</string>
 			<key>lat</key>
 			<string>50.0898533</string>
@@ -277,7 +277,7 @@
 		<dict>
 			<key>name</key>
 			<string>Florenc</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Křižíkova</string>
 			<key>lat</key>
 			<string>50.0901372</string>
@@ -287,7 +287,7 @@
 		<dict>
 			<key>name</key>
 			<string>Florenc</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Ke Štvanici</string>
 			<key>lat</key>
 			<string>50.0902239</string>
@@ -297,7 +297,7 @@
 		<dict>
 			<key>name</key>
 			<string>Florenc</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Sokolovská</string>
 			<key>lat</key>
 			<string>50.0910131</string>
@@ -307,7 +307,7 @@
 		<dict>
 			<key>name</key>
 			<string>Florenc</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Florenci</string>
 			<key>lat</key>
 			<string>50.0896419</string>
@@ -317,7 +317,7 @@
 		<dict>
 			<key>name</key>
 			<string>Dejvická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vítězné nám.</string>
 			<key>lat</key>
 			<string>50.1002747</string>
@@ -327,7 +327,7 @@
 		<dict>
 			<key>name</key>
 			<string>Dejvická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vítězné nám.</string>
 			<key>lat</key>
 			<string>50.1007533</string>
@@ -337,7 +337,7 @@
 		<dict>
 			<key>name</key>
 			<string>Dejvická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Evropská</string>
 			<key>lat</key>
 			<string>50.1006619</string>
@@ -347,7 +347,7 @@
 		<dict>
 			<key>name</key>
 			<string>Dejvická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Šolínova</string>
 			<key>lat</key>
 			<string>50.1006408</string>
@@ -357,7 +357,7 @@
 		<dict>
 			<key>name</key>
 			<string>Dejvická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Evropská TRAM</string>
 			<key>lat</key>
 			<string>50.1003781</string>
@@ -367,7 +367,7 @@
 		<dict>
 			<key>name</key>
 			<string>Dejvická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Evropská</string>
 			<key>lat</key>
 			<string>50.1002258</string>
@@ -377,7 +377,7 @@
 		<dict>
 			<key>name</key>
 			<string>Hradčanská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0977961</string>
@@ -387,7 +387,7 @@
 		<dict>
 			<key>name</key>
 			<string>Hradčanská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0974711</string>
@@ -397,7 +397,7 @@
 		<dict>
 			<key>name</key>
 			<string>Hradčanská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0970017</string>
@@ -407,7 +407,7 @@
 		<dict>
 			<key>name</key>
 			<string>Malostranská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0909506</string>
@@ -417,7 +417,7 @@
 		<dict>
 			<key>name</key>
 			<string>Staroměstská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0885569</string>
@@ -427,7 +427,7 @@
 		<dict>
 			<key>name</key>
 			<string>Staroměstská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0883397</string>
@@ -437,7 +437,7 @@
 		<dict>
 			<key>name</key>
 			<string>Staroměstská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0881717</string>
@@ -447,7 +447,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Míru</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Náměstí Míru</string>
 			<key>lat</key>
 			<string>50.0751156</string>
@@ -457,7 +457,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Míru</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Francouzská</string>
 			<key>lat</key>
 			<string>50.0749997</string>
@@ -467,7 +467,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Míru</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Korunní</string>
 			<key>lat</key>
 			<string>50.0751806</string>
@@ -477,7 +477,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Míru</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Nár. dům</string>
 			<key>lat</key>
 			<string>50.0754369</string>
@@ -487,7 +487,7 @@
 		<dict>
 			<key>name</key>
 			<string>Jiřího z Poděbrad</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Sady sv. Čecha</string>
 			<key>lat</key>
 			<string>50.0770097</string>
@@ -497,7 +497,7 @@
 		<dict>
 			<key>name</key>
 			<string>Jiřího z Poděbrad</string>
-			<key>description</key>
+			<key>street</key>
 			<string>U Vodárny</string>
 			<key>lat</key>
 			<string>50.0769781</string>
@@ -507,7 +507,7 @@
 		<dict>
 			<key>name</key>
 			<string>Jiřího z Poděbrad</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vinohradská</string>
 			<key>lat</key>
 			<string>50.0772778</string>
@@ -517,7 +517,7 @@
 		<dict>
 			<key>name</key>
 			<string>Jiřího z Poděbrad</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Slavíkova</string>
 			<key>lat</key>
 			<string>50.0776039</string>
@@ -527,7 +527,7 @@
 		<dict>
 			<key>name</key>
 			<string>Jiřího z Poděbrad</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vinohradská</string>
 			<key>lat</key>
 			<string>50.0772639</string>
@@ -537,7 +537,7 @@
 		<dict>
 			<key>name</key>
 			<string>Flora</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0780119</string>
@@ -547,7 +547,7 @@
 		<dict>
 			<key>name</key>
 			<string>Flora</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0778697</string>
@@ -557,7 +557,7 @@
 		<dict>
 			<key>name</key>
 			<string>Flora</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0776569</string>
@@ -567,7 +567,7 @@
 		<dict>
 			<key>name</key>
 			<string>Želivského</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0787222</string>
@@ -577,7 +577,7 @@
 		<dict>
 			<key>name</key>
 			<string>Želivského</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0786136</string>
@@ -587,7 +587,7 @@
 		<dict>
 			<key>name</key>
 			<string>Želivského</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0783547</string>
@@ -597,7 +597,7 @@
 		<dict>
 			<key>name</key>
 			<string>Želivského</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0782150</string>
@@ -607,7 +607,7 @@
 		<dict>
 			<key>name</key>
 			<string>Strašnická</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0727911</string>
@@ -617,7 +617,7 @@
 		<dict>
 			<key>name</key>
 			<string>Skalka</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0680539</string>
@@ -627,7 +627,7 @@
 		<dict>
 			<key>name</key>
 			<string>Depo Hostivař</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0756064</string>
@@ -637,7 +637,7 @@
 		<dict>
 			<key>name</key>
 			<string>Zličín</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0537975</string>
@@ -647,7 +647,7 @@
 		<dict>
 			<key>name</key>
 			<string>Stodůlky</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0470094</string>
@@ -657,7 +657,7 @@
 		<dict>
 			<key>name</key>
 			<string>Stodůlky</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0466747</string>
@@ -667,7 +667,7 @@
 		<dict>
 			<key>name</key>
 			<string>Stodůlky</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0466156</string>
@@ -677,7 +677,7 @@
 		<dict>
 			<key>name</key>
 			<string>Luka</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0453353</string>
@@ -687,7 +687,7 @@
 		<dict>
 			<key>name</key>
 			<string>Lužiny</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0445758</string>
@@ -697,7 +697,7 @@
 		<dict>
 			<key>name</key>
 			<string>Hůrka</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0499061</string>
@@ -707,7 +707,7 @@
 		<dict>
 			<key>name</key>
 			<string>Nové Butovice</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0509008</string>
@@ -717,7 +717,7 @@
 		<dict>
 			<key>name</key>
 			<string>Nové Butovice</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0507178</string>
@@ -727,7 +727,7 @@
 		<dict>
 			<key>name</key>
 			<string>Jinonice</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0544522</string>
@@ -737,7 +737,7 @@
 		<dict>
 			<key>name</key>
 			<string>Radlická</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0580606</string>
@@ -747,7 +747,7 @@
 		<dict>
 			<key>name</key>
 			<string>Smíchovské nádraží</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Nádražní BUS</string>
 			<key>lat</key>
 			<string>50.0601758</string>
@@ -757,7 +757,7 @@
 		<dict>
 			<key>name</key>
 			<string>Smíchovské nádraží</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Nádražní TRAM</string>
 			<key>lat</key>
 			<string>50.0608633</string>
@@ -767,7 +767,7 @@
 		<dict>
 			<key>name</key>
 			<string>Smíchovské nádraží</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Nádražní TRAM</string>
 			<key>lat</key>
 			<string>50.0614286</string>
@@ -777,7 +777,7 @@
 		<dict>
 			<key>name</key>
 			<string>Smíchovské nádraží</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Nádražní</string>
 			<key>lat</key>
 			<string>50.0616858</string>
@@ -787,7 +787,7 @@
 		<dict>
 			<key>name</key>
 			<string>Smíchovské nádraží</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Smíchovské nádraží</string>
 			<key>lat</key>
 			<string>50.0615572</string>
@@ -797,7 +797,7 @@
 		<dict>
 			<key>name</key>
 			<string>Anděl</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Ženské domovy</string>
 			<key>lat</key>
 			<string>50.0682289</string>
@@ -807,7 +807,7 @@
 		<dict>
 			<key>name</key>
 			<string>Anděl</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Ostrovského</string>
 			<key>lat</key>
 			<string>50.0687350</string>
@@ -817,7 +817,7 @@
 		<dict>
 			<key>name</key>
 			<string>Anděl</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Knížecí BUS</string>
 			<key>lat</key>
 			<string>50.0686350</string>
@@ -827,7 +827,7 @@
 		<dict>
 			<key>name</key>
 			<string>Anděl</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Knížecí BUS</string>
 			<key>lat</key>
 			<string>50.0685272</string>
@@ -837,7 +837,7 @@
 		<dict>
 			<key>name</key>
 			<string>Anděl</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Knížecí BUS</string>
 			<key>lat</key>
 			<string>50.0683431</string>
@@ -847,7 +847,7 @@
 		<dict>
 			<key>name</key>
 			<string>Anděl</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Zlatý Anděl</string>
 			<key>lat</key>
 			<string>50.0709147</string>
@@ -857,7 +857,7 @@
 		<dict>
 			<key>name</key>
 			<string>Karlovo náměstí</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Palackého nám.</string>
 			<key>lat</key>
 			<string>50.0731661</string>
@@ -867,7 +867,7 @@
 		<dict>
 			<key>name</key>
 			<string>Karlovo náměstí</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Rašínovo nábř.</string>
 			<key>lat</key>
 			<string>50.0733344</string>
@@ -877,7 +877,7 @@
 		<dict>
 			<key>name</key>
 			<string>Karlovo náměstí</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Zítkovy sady</string>
 			<key>lat</key>
 			<string>50.0727075</string>
@@ -887,7 +887,7 @@
 		<dict>
 			<key>name</key>
 			<string>Karlovo náměstí</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Gorazdova</string>
 			<key>lat</key>
 			<string>50.0734928</string>
@@ -897,7 +897,7 @@
 		<dict>
 			<key>name</key>
 			<string>Karlovo náměstí</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Resslova</string>
 			<key>lat</key>
 			<string>50.0757111</string>
@@ -907,7 +907,7 @@
 		<dict>
 			<key>name</key>
 			<string>Karlovo náměstí</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Karlovo nám.</string>
 			<key>lat</key>
 			<string>50.0755769</string>
@@ -917,7 +917,7 @@
 		<dict>
 			<key>name</key>
 			<string>Karlovo náměstí</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Karlovo nám.</string>
 			<key>lat</key>
 			<string>50.0760108</string>
@@ -927,7 +927,7 @@
 		<dict>
 			<key>name</key>
 			<string>Karlovo náměstí</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Resslova</string>
 			<key>lat</key>
 			<string>50.0761214</string>
@@ -937,7 +937,7 @@
 		<dict>
 			<key>name</key>
 			<string>Národní třída</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0815617</string>
@@ -947,7 +947,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Republiky</string>
-			<key>description</key>
+			<key>street</key>
 			<string>OC Palladium</string>
 			<key>lat</key>
 			<string>50.0888417</string>
@@ -957,7 +957,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Republiky</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Nám. Republiky</string>
 			<key>lat</key>
 			<string>50.0884675</string>
@@ -967,7 +967,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Republiky</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Obecní dům</string>
 			<key>lat</key>
 			<string>50.0881389</string>
@@ -977,7 +977,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Republiky</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Hybernská</string>
 			<key>lat</key>
 			<string>50.0880811</string>
@@ -987,7 +987,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Republiky</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Poříčí</string>
 			<key>lat</key>
 			<string>50.0887094</string>
@@ -997,7 +997,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Republiky</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Divadlo Archa</string>
 			<key>lat</key>
 			<string>50.0886542</string>
@@ -1007,7 +1007,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Republiky</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Havlíčkova</string>
 			<key>lat</key>
 			<string>50.0881464</string>
@@ -1017,7 +1017,7 @@
 		<dict>
 			<key>name</key>
 			<string>Náměstí Republiky</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Florenci</string>
 			<key>lat</key>
 			<string>50.0882903</string>
@@ -1027,7 +1027,7 @@
 		<dict>
 			<key>name</key>
 			<string>Křižíkova</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0936594</string>
@@ -1037,7 +1037,7 @@
 		<dict>
 			<key>name</key>
 			<string>Invalidovna</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0973928</string>
@@ -1047,7 +1047,7 @@
 		<dict>
 			<key>name</key>
 			<string>Palmovka</string>
-			<key>description</key>
+			<key>street</key>
 			<string>BUS</string>
 			<key>lat</key>
 			<string>50.1048269</string>
@@ -1057,7 +1057,7 @@
 		<dict>
 			<key>name</key>
 			<string>Palmovka</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Žertvách</string>
 			<key>lat</key>
 			<string>50.1043958</string>
@@ -1067,7 +1067,7 @@
 		<dict>
 			<key>name</key>
 			<string>Palmovka</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Zenklova</string>
 			<key>lat</key>
 			<string>50.1031961</string>
@@ -1077,7 +1077,7 @@
 		<dict>
 			<key>name</key>
 			<string>Palmovka</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Zenklova</string>
 			<key>lat</key>
 			<string>50.1037842</string>
@@ -1087,7 +1087,7 @@
 		<dict>
 			<key>name</key>
 			<string>Palmovka</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Na Žertvách</string>
 			<key>lat</key>
 			<string>50.1034458</string>
@@ -1097,7 +1097,7 @@
 		<dict>
 			<key>name</key>
 			<string>Palmovka</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Zenklova</string>
 			<key>lat</key>
 			<string>50.1036053</string>
@@ -1107,7 +1107,7 @@
 		<dict>
 			<key>name</key>
 			<string>Českomoravská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1064042</string>
@@ -1117,7 +1117,7 @@
 		<dict>
 			<key>name</key>
 			<string>Vysočanská</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Sokolovská</string>
 			<key>lat</key>
 			<string>50.1100189</string>
@@ -1127,7 +1127,7 @@
 		<dict>
 			<key>name</key>
 			<string>Vysočanská</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Freyova</string>
 			<key>lat</key>
 			<string>50.1104347</string>
@@ -1137,7 +1137,7 @@
 		<dict>
 			<key>name</key>
 			<string>Vysočanská</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Freyova</string>
 			<key>lat</key>
 			<string>50.1104122</string>
@@ -1147,7 +1147,7 @@
 		<dict>
 			<key>name</key>
 			<string>Kolbenova</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1103764</string>
@@ -1157,7 +1157,7 @@
 		<dict>
 			<key>name</key>
 			<string>Hloubětín</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1063242</string>
@@ -1167,7 +1167,7 @@
 		<dict>
 			<key>name</key>
 			<string>Rajská zahrada</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1068511</string>
@@ -1177,7 +1177,7 @@
 		<dict>
 			<key>name</key>
 			<string>Rajská zahrada</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1066725</string>
@@ -1187,7 +1187,7 @@
 		<dict>
 			<key>name</key>
 			<string>Černý most</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1090644</string>
@@ -1197,7 +1197,7 @@
 		<dict>
 			<key>name</key>
 			<string>Černý most</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1088569</string>
@@ -1207,7 +1207,7 @@
 		<dict>
 			<key>name</key>
 			<string>Letňany</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1256189</string>
@@ -1217,7 +1217,7 @@
 		<dict>
 			<key>name</key>
 			<string>Letňany</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1252750</string>
@@ -1227,7 +1227,7 @@
 		<dict>
 			<key>name</key>
 			<string>Letňany</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1252186</string>
@@ -1237,7 +1237,7 @@
 		<dict>
 			<key>name</key>
 			<string>Letňany</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1249475</string>
@@ -1247,7 +1247,7 @@
 		<dict>
 			<key>name</key>
 			<string>Letňany</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1248883</string>
@@ -1257,7 +1257,7 @@
 		<dict>
 			<key>name</key>
 			<string>Letňany</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1248431</string>
@@ -1267,7 +1267,7 @@
 		<dict>
 			<key>name</key>
 			<string>Prosek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vysočanská</string>
 			<key>lat</key>
 			<string>50.1189028</string>
@@ -1277,7 +1277,7 @@
 		<dict>
 			<key>name</key>
 			<string>Prosek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Vysočanská</string>
 			<key>lat</key>
 			<string>50.1190908</string>
@@ -1287,7 +1287,7 @@
 		<dict>
 			<key>name</key>
 			<string>Prosek</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Prosek Point</string>
 			<key>lat</key>
 			<string>50.1185061</string>
@@ -1297,7 +1297,7 @@
 		<dict>
 			<key>name</key>
 			<string>Střížkov</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1260725</string>
@@ -1307,7 +1307,7 @@
 		<dict>
 			<key>name</key>
 			<string>Střížkov</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1263867</string>
@@ -1317,7 +1317,7 @@
 		<dict>
 			<key>name</key>
 			<string>Ládví</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1266508</string>
@@ -1327,7 +1327,7 @@
 		<dict>
 			<key>name</key>
 			<string>Kobylisy</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Čimická</string>
 			<key>lat</key>
 			<string>50.1241217</string>
@@ -1337,7 +1337,7 @@
 		<dict>
 			<key>name</key>
 			<string>Kobylisy</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Nad Šutkou</string>
 			<key>lat</key>
 			<string>50.1232978</string>
@@ -1347,7 +1347,7 @@
 		<dict>
 			<key>name</key>
 			<string>Kobylisy</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Nad Šutkou</string>
 			<key>lat</key>
 			<string>50.1235611</string>
@@ -1357,7 +1357,7 @@
 		<dict>
 			<key>name</key>
 			<string>Kobylisy</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Pod Sídlištěm</string>
 			<key>lat</key>
 			<string>50.1241194</string>
@@ -1367,7 +1367,7 @@
 		<dict>
 			<key>name</key>
 			<string>Kobylisy</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Pod Sídlištěm</string>
 			<key>lat</key>
 			<string>50.1250231</string>
@@ -1377,7 +1377,7 @@
 		<dict>
 			<key>name</key>
 			<string>Kobylisy</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Klapkova</string>
 			<key>lat</key>
 			<string>50.1246506</string>
@@ -1387,7 +1387,7 @@
 		<dict>
 			<key>name</key>
 			<string>Nádraží Holešovice</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.1084761</string>
@@ -1397,7 +1397,7 @@
 		<dict>
 			<key>name</key>
 			<string>Vltavská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0993239</string>
@@ -1407,7 +1407,7 @@
 		<dict>
 			<key>name</key>
 			<string>Vltavská</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0990153</string>
@@ -1417,7 +1417,7 @@
 		<dict>
 			<key>name</key>
 			<string>Hlavní nádraží</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0834903</string>
@@ -1427,7 +1427,7 @@
 		<dict>
 			<key>name</key>
 			<string>I.P. Pavlova</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0753625</string>
@@ -1437,7 +1437,7 @@
 		<dict>
 			<key>name</key>
 			<string>I.P. Pavlova</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0753747</string>
@@ -1447,7 +1447,7 @@
 		<dict>
 			<key>name</key>
 			<string>I.P. Pavlova</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0756644</string>
@@ -1457,7 +1457,7 @@
 		<dict>
 			<key>name</key>
 			<string>Vyšehrad</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0630808</string>
@@ -1467,7 +1467,7 @@
 		<dict>
 			<key>name</key>
 			<string>Vyšehrad</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0630978</string>
@@ -1477,7 +1477,7 @@
 		<dict>
 			<key>name</key>
 			<string>Pražského povstání</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0561214</string>
@@ -1487,7 +1487,7 @@
 		<dict>
 			<key>name</key>
 			<string>Pražského povstání</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0565197</string>
@@ -1497,7 +1497,7 @@
 		<dict>
 			<key>name</key>
 			<string>Pankrác</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0513706</string>
@@ -1507,7 +1507,7 @@
 		<dict>
 			<key>name</key>
 			<string>Pankrác</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0510344</string>
@@ -1517,7 +1517,7 @@
 		<dict>
 			<key>name</key>
 			<string>Budějovická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Budějovická</string>
 			<key>lat</key>
 			<string>50.0435808</string>
@@ -1527,7 +1527,7 @@
 		<dict>
 			<key>name</key>
 			<string>Budějovická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Antala Staška</string>
 			<key>lat</key>
 			<string>50.0431983</string>
@@ -1537,7 +1537,7 @@
 		<dict>
 			<key>name</key>
 			<string>Budějovická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Antala Staška</string>
 			<key>lat</key>
 			<string>50.0434125</string>
@@ -1547,7 +1547,7 @@
 		<dict>
 			<key>name</key>
 			<string>Budějovická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Olbrachtova</string>
 			<key>lat</key>
 			<string>50.0449778</string>
@@ -1557,7 +1557,7 @@
 		<dict>
 			<key>name</key>
 			<string>Budějovická</string>
-			<key>description</key>
+			<key>street</key>
 			<string>Olbrachtova</string>
 			<key>lat</key>
 			<string>50.0446889</string>
@@ -1567,7 +1567,7 @@
 		<dict>
 			<key>name</key>
 			<string>Kačerov</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0418883</string>
@@ -1577,7 +1577,7 @@
 		<dict>
 			<key>name</key>
 			<string>Roztyly</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0373358</string>
@@ -1587,7 +1587,7 @@
 		<dict>
 			<key>name</key>
 			<string>Chodov</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0308747</string>
@@ -1597,7 +1597,7 @@
 		<dict>
 			<key>name</key>
 			<string>Chodov</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0310839</string>
@@ -1607,7 +1607,7 @@
 		<dict>
 			<key>name</key>
 			<string>Opatov</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0275544</string>
@@ -1617,7 +1617,7 @@
 		<dict>
 			<key>name</key>
 			<string>Opatov</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0276703</string>
@@ -1627,7 +1627,7 @@
 		<dict>
 			<key>name</key>
 			<string>Háje</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0304972</string>
@@ -1637,7 +1637,7 @@
 		<dict>
 			<key>name</key>
 			<string>Háje</string>
-			<key>description</key>
+			<key>street</key>
 			<string></string>
 			<key>lat</key>
 			<string>50.0309769</string>

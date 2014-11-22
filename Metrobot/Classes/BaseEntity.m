@@ -68,6 +68,7 @@ EntityToDictionaryKeyAdjusterBlock entityToDictionaryKeyAdjusterBlock;
     for (int i = 0; i < count; i++) {
         
         NSString *key = [NSString stringWithUTF8String:property_getName(properties[i])];
+        
         id value = [self valueForKey:key];
         
         if (value) {

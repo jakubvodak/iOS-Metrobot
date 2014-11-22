@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "StationEntity.h"
 #import "EntranceEntity.h"
+#import <CoreLocation/CoreLocation.h>
 #import <Mapbox/Mapbox.h>
 #import "DirectionsTableView.h"
 #import "LogService.h"
@@ -22,6 +23,8 @@
 #define bigCellHeight 120
 #define tableViewHeight 280
 #define locErrorText @"Hledání nejbližší stanice selhalo."
+
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 @interface LocationViewController () <RMMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -131,6 +134,10 @@
     _locManager = [CLLocationManager new];
     _locManager.delegate = self;
     _locManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [_locManager setDistanceFilter:kCLDistanceFilterNone];
+    if(IS_OS_8_OR_LATER) {
+        [_locManager requestWhenInUseAuthorization];
+    }
     
     RMMapboxSource *tileSource = [[RMMapboxSource alloc] initWithMapID:MapBoxID];
     
@@ -143,6 +150,7 @@
     _mapView.delegate = self;
     _mapView.showsUserLocation=YES;
     _mapView.alpha = 0;
+    _mapView.showLogoBug = NO;
     [self.view addSubview:_mapView];
     
     _navigationBarBackgound = [[UIView alloc] initWithFrame:CGRectMake(0, 0, w, 64)];
@@ -277,12 +285,12 @@
 
 - (void)startUpdatingLoc
 {
-    [self.locManager startUpdatingLocation];
+    [_locManager startUpdatingLocation];
 }
 
 - (void)stopUpdatingLoc
 {
-    [self.locManager stopUpdatingLocation];
+    [_locManager stopUpdatingLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
@@ -298,6 +306,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    NSLog(@"Loc failed: %@", error.localizedDescription);
+    
     [self stopUpdatingLoc];
     
     if (_currentStation) {
@@ -658,12 +668,13 @@
     NSMutableArray *tempArr = [NSMutableArray new];
     
     for (EntranceEntity *entrance in self.entrances) {
-        
+        NSLog(@"%@", entrance);
         if ([entrance.name isEqualToString:self.currentStation.name]) {
             RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:_mapView
                                                                   coordinate:CLLocationCoordinate2DMake(entrance.location.coordinate.latitude, entrance.location.coordinate.longitude)
-                                                                    andTitle:entrance.description];
+                                                                    andTitle:entrance.street.length>0?entrance.street:@"Vchod"];
             [tempArr addObject:annotation];
+                    NSLog(@"%@", entrance);
         }
     }
     

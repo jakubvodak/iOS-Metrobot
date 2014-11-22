@@ -52,33 +52,26 @@
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Icn-Back"] style:UIBarButtonItemStylePlain target:self action:@selector(closeInfo)];
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 310)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 220)];
     self.tableView.tableHeaderView = headerView;
     
-    UIImageView *striveLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Img-Strive-Logo"]];
-    striveLogo.translatesAutoresizingMaskIntoConstraints = NO;
-    [headerView addSubview:striveLogo];
-    
-    UILabel *titleLabel = [UILabel new];
-    titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameStrong] size:24];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.text = @"Strive";
-    [headerView addSubview:titleLabel];
+    UIButton *strvLogo = [UIButton buttonWithType:UIButtonTypeCustom];
+    strvLogo.translatesAutoresizingMaskIntoConstraints = NO;
+    [strvLogo setImage:[UIImage imageNamed:@"Img-Company-Logo"] forState:UIControlStateNormal];
+    [strvLogo addTarget:self action:@selector(openWebBrowser) forControlEvents:UIControlEventTouchUpInside];
+    [headerView addSubview:strvLogo];
     
     UILabel *subTitleLabel = [UILabel new];
     subTitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     subTitleLabel.textColor = [UIColor whiteColor];
     subTitleLabel.font = [UIFont fontWithName:[MbAppearanceManager fontNameMedium] size:16];
     subTitleLabel.backgroundColor = [UIColor clearColor];
-    subTitleLabel.text = @"Vytvořeno společností Strive.";
+    subTitleLabel.text = @"Vytvořeno společností STRV.";
     [headerView addSubview:subTitleLabel];
     
-    [headerView addConstraint:[NSLayoutConstraint constraintWithItem:striveLogo attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
-    [headerView addConstraint:[NSLayoutConstraint constraintWithItem:titleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+    [headerView addConstraint:[NSLayoutConstraint constraintWithItem:strvLogo attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     [headerView addConstraint:[NSLayoutConstraint constraintWithItem:subTitleLabel attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:headerView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
-    [headerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-110-[striveLogo]-25-[titleLabel]-[subTitleLabel]->=0-|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(striveLogo, titleLabel, subTitleLabel)]];
+    [headerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[strvLogo]-25-[subTitleLabel]->=0-|" options:0 metrics:Nil views:NSDictionaryOfVariableBindings(strvLogo, subTitleLabel)]];
     
     UIView *separator = [UIView new];
     separator.translatesAutoresizingMaskIntoConstraints = NO;
@@ -146,6 +139,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     return [UIView new];
+}
+
+- (void)openWebBrowser
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.strv.com"]];
 }
 
 @end

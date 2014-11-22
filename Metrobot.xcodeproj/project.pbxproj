@@ -56,6 +56,50 @@
 		CBB62CD0198E308E009B7BF5 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CCF198E308E009B7BF5 /* DACircularProgressView.m */; };
 		CBB62CD4198E6CFC009B7BF5 /* NextDeparturesView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CD3198E6CFC009B7BF5 /* NextDeparturesView.m */; };
 		CBB62CD7198E757C009B7BF5 /* SmallCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */; };
+		CBEA546E19A12687000DAB33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57BFD7196016440055978A /* main.m */; };
+		CBEA546F19A12687000DAB33 /* TimeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2769B9197A4214002FB0E6 /* TimeEntity.m */; };
+		CBEA547019A12687000DAB33 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668CD1961CE9700EEC868 /* BaseEntity.m */; };
+		CBEA547119A12687000DAB33 /* StationEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668BF1960C22400EEC868 /* StationEntity.m */; };
+		CBEA547219A12687000DAB33 /* NextDeparturesView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CD3198E6CFC009B7BF5 /* NextDeparturesView.m */; };
+		CBEA547319A12687000DAB33 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CCF198E308E009B7BF5 /* DACircularProgressView.m */; };
+		CBEA547419A12687000DAB33 /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC88B31969418E0099B47D /* SearchTableViewController.m */; };
+		CBEA547519A12687000DAB33 /* SmallCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */; };
+		CBEA547619A12687000DAB33 /* DirectionsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668F419633D3B00EEC868 /* DirectionsTableView.m */; };
+		CBEA547719A12687000DAB33 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668AE1960A40F00EEC868 /* LocationViewController.m */; };
+		CBEA547819A12687000DAB33 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00E19601FEA0055978A /* UIImage+ImageEffects.m */; };
+		CBEA547919A12687000DAB33 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7DD470198EC68B006B6058 /* InfoViewController.m */; };
+		CBEA547A19A12687000DAB33 /* StationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9669181967000C00EEC868 /* StationTitleView.m */; };
+		CBEA547B19A12687000DAB33 /* DirectionsTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9669101964ACD800EEC868 /* DirectionsTableHeaderView.m */; };
+		CBEA547C19A12687000DAB33 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7DD473198ED82C006B6058 /* PersonTableViewCell.m */; };
+		CBEA547D19A12687000DAB33 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */; };
+		CBEA547E19A12687000DAB33 /* BigCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2769AA19771CC4002FB0E6 /* BigCircleView.m */; };
+		CBEA547F19A12687000DAB33 /* MbAppearanceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00719601F840055978A /* MbAppearanceManager.m */; };
+		CBEA548019A12687000DAB33 /* EntranceEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668C21960C2C100EEC868 /* EntranceEntity.m */; };
+		CBEA548119A12687000DAB33 /* LogService.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57C00A19601FA50055978A /* LogService.m */; };
+		CBEA548219A12687000DAB33 /* DirectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB96691E1967FDDD00EEC868 /* DirectionTableViewCell.m */; };
+		CBEA548319A12687000DAB33 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668B11960A42100EEC868 /* TimeViewController.m */; };
+		CBEA548419A12687000DAB33 /* MbAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57BFDB196016440055978A /* MbAppDelegate.m */; };
+		CBEA548619A12687000DAB33 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3729F21969B4B5006CCC4E /* MessageUI.framework */; };
+		CBEA548719A12687000DAB33 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D91962137E00EEC868 /* libz.dylib */; };
+		CBEA548819A12687000DAB33 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D71962137400EEC868 /* libsqlite3.dylib */; };
+		CBEA548919A12687000DAB33 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D51962136500EEC868 /* QuartzCore.framework */; };
+		CBEA548A19A12687000DAB33 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D31962135B00EEC868 /* CoreLocation.framework */; };
+		CBEA548B19A12687000DAB33 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668D11962132700EEC868 /* Mapbox.framework */; };
+		CBEA548C19A12687000DAB33 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668B61960B0C700EEC868 /* MapKit.framework */; };
+		CBEA548D19A12687000DAB33 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCD196016440055978A /* CoreGraphics.framework */; };
+		CBEA548E19A12687000DAB33 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9668B41960A66200EEC868 /* Crashlytics.framework */; };
+		CBEA548F19A12687000DAB33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCF196016440055978A /* UIKit.framework */; };
+		CBEA549019A12687000DAB33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB57BFCB196016440055978A /* Foundation.framework */; };
+		CBEA549119A12687000DAB33 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D85F773F994A69BC6E0222 /* libPods.a */; };
+		CBEA549319A12687000DAB33 /* metroStations.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB9669021964A73600EEC868 /* metroStations.plist */; };
+		CBEA549419A12687000DAB33 /* Mapbox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB9668DB1962140000EEC868 /* Mapbox.bundle */; };
+		CBEA549519A12687000DAB33 /* MuseoSans-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB96690B1964A7E200EEC868 /* MuseoSans-500.otf */; };
+		CBEA549619A12687000DAB33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB57BFE3196016440055978A /* Images.xcassets */; };
+		CBEA549719A12687000DAB33 /* MuseoSans-100.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB9669091964A7E200EEC868 /* MuseoSans-100.otf */; };
+		CBEA549819A12687000DAB33 /* MuseoSans-300.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB96690A1964A7E200EEC868 /* MuseoSans-300.otf */; };
+		CBEA549919A12687000DAB33 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB7DD46A198E92EB006B6058 /* MyriadPro-Regular.otf */; };
+		CBEA549A19A12687000DAB33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB57BFD4196016440055978A /* InfoPlist.strings */; };
+		CBEA549B19A12687000DAB33 /* testLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB9669031964A73600EEC868 /* testLocation.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +122,7 @@
 		CB3729EF19698DB1006CCC4E /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTableViewCell.h; path = Classes/SearchTableViewCell.h; sourceTree = "<group>"; };
 		CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewCell.m; path = Classes/SearchTableViewCell.m; sourceTree = "<group>"; };
 		CB3729F21969B4B5006CCC4E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		CB57BFC8196016440055978A /* Metrobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB57BFC8196016440055978A /* Metrobot Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metrobot Production.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB57BFCB196016440055978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB57BFCD196016440055978A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CB57BFCF196016440055978A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -146,6 +190,8 @@
 		CBB62CD3198E6CFC009B7BF5 /* NextDeparturesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NextDeparturesView.m; path = Classes/NextDeparturesView.m; sourceTree = "<group>"; };
 		CBB62CD5198E757C009B7BF5 /* SmallCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallCircleView.h; path = Classes/SmallCircleView.h; sourceTree = "<group>"; };
 		CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallCircleView.m; path = Classes/SmallCircleView.m; sourceTree = "<group>"; };
+		CBEA54A219A12687000DAB33 /* Metrobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEA54A319A12687000DAB33 /* Metrobot copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Metrobot copy-Info.plist"; path = "/Users/jakubvodak/Documents/Projects/Metrobot/v2/Metrobot copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +224,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBEA548519A12687000DAB33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBEA548619A12687000DAB33 /* MessageUI.framework in Frameworks */,
+				CBEA548719A12687000DAB33 /* libz.dylib in Frameworks */,
+				CBEA548819A12687000DAB33 /* libsqlite3.dylib in Frameworks */,
+				CBEA548919A12687000DAB33 /* QuartzCore.framework in Frameworks */,
+				CBEA548A19A12687000DAB33 /* CoreLocation.framework in Frameworks */,
+				CBEA548B19A12687000DAB33 /* Mapbox.framework in Frameworks */,
+				CBEA548C19A12687000DAB33 /* MapKit.framework in Frameworks */,
+				CBEA548D19A12687000DAB33 /* CoreGraphics.framework in Frameworks */,
+				CBEA548E19A12687000DAB33 /* Crashlytics.framework in Frameworks */,
+				CBEA548F19A12687000DAB33 /* UIKit.framework in Frameworks */,
+				CBEA549019A12687000DAB33 /* Foundation.framework in Frameworks */,
+				CBEA549119A12687000DAB33 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -195,8 +260,9 @@
 		CB57BFC9196016440055978A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB57BFC8196016440055978A /* Metrobot.app */,
+				CB57BFC8196016440055978A /* Metrobot Production.app */,
 				CB57BFE9196016440055978A /* MetrobotTests.xctest */,
+				CBEA54A219A12687000DAB33 /* Metrobot.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,6 +318,7 @@
 				CB9669031964A73600EEC868 /* testLocation.gpx */,
 				CB57BFD3196016440055978A /* Metrobot-Info.plist */,
 				CB57BFD4196016440055978A /* InfoPlist.strings */,
+				CBEA54A319A12687000DAB33 /* Metrobot copy-Info.plist */,
 				CB57BFD7196016440055978A /* main.m */,
 				CB57BFD9196016440055978A /* Metrobot-Prefix.pch */,
 				CB9668DB1962140000EEC868 /* Mapbox.bundle */,
@@ -371,9 +438,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB57BFC7196016440055978A /* Metrobot */ = {
+		CB57BFC7196016440055978A /* Metrobot Production */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB57BFFA196016440055978A /* Build configuration list for PBXNativeTarget "Metrobot" */;
+			buildConfigurationList = CB57BFFA196016440055978A /* Build configuration list for PBXNativeTarget "Metrobot Production" */;
 			buildPhases = (
 				47315725AF7B4C77B46AE97B /* Check Pods Manifest.lock */,
 				CB57BFC4196016440055978A /* Sources */,
@@ -387,9 +454,9 @@
 			);
 			dependencies = (
 			);
-			name = Metrobot;
+			name = "Metrobot Production";
 			productName = Metrobot;
-			productReference = CB57BFC8196016440055978A /* Metrobot.app */;
+			productReference = CB57BFC8196016440055978A /* Metrobot Production.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CB57BFE8196016440055978A /* MetrobotTests */ = {
@@ -410,6 +477,27 @@
 			productReference = CB57BFE9196016440055978A /* MetrobotTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CBEA546B19A12687000DAB33 /* Metrobot Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBEA549F19A12687000DAB33 /* Build configuration list for PBXNativeTarget "Metrobot Dev" */;
+			buildPhases = (
+				CBEA546C19A12687000DAB33 /* Check Pods Manifest.lock */,
+				CBEA546D19A12687000DAB33 /* Sources */,
+				CBEA548519A12687000DAB33 /* Frameworks */,
+				CBEA549219A12687000DAB33 /* Resources */,
+				CBEA549C19A12687000DAB33 /* Copy Pods Resources */,
+				CBEA549D19A12687000DAB33 /* ShellScript */,
+				CBEA549E19A12687000DAB33 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Metrobot Dev";
+			productName = Metrobot;
+			productReference = CBEA54A219A12687000DAB33 /* Metrobot.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -426,6 +514,9 @@
 					CB57BFE8196016440055978A = {
 						TestTargetID = CB57BFC7196016440055978A;
 					};
+					CBEA546B19A12687000DAB33 = {
+						DevelopmentTeam = D6532TRNCE;
+					};
 				};
 			};
 			buildConfigurationList = CB57BFC3196016440055978A /* Build configuration list for PBXProject "Metrobot" */;
@@ -441,7 +532,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB57BFC7196016440055978A /* Metrobot */,
+				CB57BFC7196016440055978A /* Metrobot Production */,
+				CBEA546B19A12687000DAB33 /* Metrobot Dev */,
 				CB57BFE8196016440055978A /* MetrobotTests */,
 			);
 		};
@@ -469,6 +561,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB57BFF5196016440055978A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBEA549219A12687000DAB33 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBEA549319A12687000DAB33 /* metroStations.plist in Resources */,
+				CBEA549419A12687000DAB33 /* Mapbox.bundle in Resources */,
+				CBEA549519A12687000DAB33 /* MuseoSans-500.otf in Resources */,
+				CBEA549619A12687000DAB33 /* Images.xcassets in Resources */,
+				CBEA549719A12687000DAB33 /* MuseoSans-100.otf in Resources */,
+				CBEA549819A12687000DAB33 /* MuseoSans-300.otf in Resources */,
+				CBEA549919A12687000DAB33 /* MyriadPro-Regular.otf in Resources */,
+				CBEA549A19A12687000DAB33 /* InfoPlist.strings in Resources */,
+				CBEA549B19A12687000DAB33 /* testLocation.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +640,63 @@
 			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 			showEnvVarsInLog = 0;
 		};
+		CBEA546C19A12687000DAB33 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CBEA549C19A12687000DAB33 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBEA549D19A12687000DAB33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 6a2c06aa6bfac2826abdd4be36988a3124a1f00b faea1823b0440003f02cbf4e39d99737d513e42558a4bbb8eb234cae9af85966";
+		};
+		CBEA549E19A12687000DAB33 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -573,12 +738,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CBEA546D19A12687000DAB33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBEA546E19A12687000DAB33 /* main.m in Sources */,
+				CBEA546F19A12687000DAB33 /* TimeEntity.m in Sources */,
+				CBEA547019A12687000DAB33 /* BaseEntity.m in Sources */,
+				CBEA547119A12687000DAB33 /* StationEntity.m in Sources */,
+				CBEA547219A12687000DAB33 /* NextDeparturesView.m in Sources */,
+				CBEA547319A12687000DAB33 /* DACircularProgressView.m in Sources */,
+				CBEA547419A12687000DAB33 /* SearchTableViewController.m in Sources */,
+				CBEA547519A12687000DAB33 /* SmallCircleView.m in Sources */,
+				CBEA547619A12687000DAB33 /* DirectionsTableView.m in Sources */,
+				CBEA547719A12687000DAB33 /* LocationViewController.m in Sources */,
+				CBEA547819A12687000DAB33 /* UIImage+ImageEffects.m in Sources */,
+				CBEA547919A12687000DAB33 /* InfoViewController.m in Sources */,
+				CBEA547A19A12687000DAB33 /* StationTitleView.m in Sources */,
+				CBEA547B19A12687000DAB33 /* DirectionsTableHeaderView.m in Sources */,
+				CBEA547C19A12687000DAB33 /* PersonTableViewCell.m in Sources */,
+				CBEA547D19A12687000DAB33 /* SearchTableViewCell.m in Sources */,
+				CBEA547E19A12687000DAB33 /* BigCircleView.m in Sources */,
+				CBEA547F19A12687000DAB33 /* MbAppearanceManager.m in Sources */,
+				CBEA548019A12687000DAB33 /* EntranceEntity.m in Sources */,
+				CBEA548119A12687000DAB33 /* LogService.m in Sources */,
+				CBEA548219A12687000DAB33 /* DirectionTableViewCell.m in Sources */,
+				CBEA548319A12687000DAB33 /* TimeViewController.m in Sources */,
+				CBEA548419A12687000DAB33 /* MbAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		CB57BFEF196016440055978A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB57BFC7196016440055978A /* Metrobot */;
+			target = CB57BFC7196016440055978A /* Metrobot Production */;
 			targetProxy = CB57BFEE196016440055978A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -689,7 +884,7 @@
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "117e8700-7eaf-41dd-8bdd-34913df4552c";
+				PROVISIONING_PROFILE = "10b880e0-8d58-4deb-81c3-d9cf3cdc4e9a";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -710,7 +905,7 @@
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "117e8700-7eaf-41dd-8bdd-34913df4552c";
+				PROVISIONING_PROFILE = "10b880e0-8d58-4deb-81c3-d9cf3cdc4e9a";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -755,6 +950,48 @@
 			};
 			name = Release;
 		};
+		CBEA54A019A12687000DAB33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E7D974A849B4C42BA570F4B /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
+				INFOPLIST_FILE = "Metrobot copy-Info.plist";
+				PRODUCT_NAME = Metrobot;
+				PROVISIONING_PROFILE = "233bed4c-a41b-4c48-a475-2884f149e113";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CBEA54A119A12687000DAB33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E7D974A849B4C42BA570F4B /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
+				INFOPLIST_FILE = "Metrobot copy-Info.plist";
+				PRODUCT_NAME = Metrobot;
+				PROVISIONING_PROFILE = "233bed4c-a41b-4c48-a475-2884f149e113";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -767,7 +1004,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB57BFFA196016440055978A /* Build configuration list for PBXNativeTarget "Metrobot" */ = {
+		CB57BFFA196016440055978A /* Build configuration list for PBXNativeTarget "Metrobot Production" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB57BFFB196016440055978A /* Debug */,
@@ -781,6 +1018,15 @@
 			buildConfigurations = (
 				CB57BFFE196016440055978A /* Debug */,
 				CB57BFFF196016440055978A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBEA549F19A12687000DAB33 /* Build configuration list for PBXNativeTarget "Metrobot Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBEA54A019A12687000DAB33 /* Debug */,
+				CBEA54A119A12687000DAB33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

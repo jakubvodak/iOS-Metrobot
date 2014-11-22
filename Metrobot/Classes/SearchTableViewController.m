@@ -144,6 +144,8 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    [_searchField resignFirstResponder];
+    
     StationEntity *station = [self.searchStations objectAtIndex:indexPath.row];
     
     self.finishBlock(station);

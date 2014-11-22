@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Metrobot.xcscheme</key>
+		<key>Metrobot Dev.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Metrobot Production.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>CB57BFE8196016440055978A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CBEA546B19A12687000DAB33</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -11,6 +11,6 @@
 
 @interface EntranceEntity : StationEntity
 
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *street;
 
 @end

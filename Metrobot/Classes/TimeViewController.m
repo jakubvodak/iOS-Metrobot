@@ -176,7 +176,10 @@
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+    
+        [self updateCounter];
+    }];
     
     if (result == MessageComposeResultCancelled) {
         NSLog(@"Message cancelled");
@@ -240,17 +243,16 @@
         UILabel *targetLabel;
 
         targetLabel = time>0?_departureView.titleLabel:_departureView.inStationLabel;
-        
+
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             
-            _departureView.routeLabel.center = CGPointMake(_departureView.routeLabel.center.x, _departureView.routeLabel.center.y+50);
+            _departureView.routeLabel.transform = CGAffineTransformMakeTranslation(_departureView.routeLabel.center.x, _departureView.frame.size.height/2+50);
             _departureView.loader.alpha = 0;
             self.bottomView.circle3.nextButton.alpha = 1;
             
         } completion:^(BOOL finished){
             [_loader.layer removeAllAnimations];
             
-            _departureView.routeLabel.transform = CGAffineTransformMakeTranslation(_departureView.routeLabel.center.x, _departureView.routeLabel.center.y+100);
             targetLabel.transform = CGAffineTransformMakeScale(1.2, 1.2);
             [UIView beginAnimations:@"showView" context:nil];
             targetLabel.transform = CGAffineTransformMakeScale(1.0, 1.0);
