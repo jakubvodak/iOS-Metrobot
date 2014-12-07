@@ -122,7 +122,7 @@
 		CB3729EF19698DB1006CCC4E /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchTableViewCell.h; path = Classes/SearchTableViewCell.h; sourceTree = "<group>"; };
 		CB3729F019698DB1006CCC4E /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchTableViewCell.m; path = Classes/SearchTableViewCell.m; sourceTree = "<group>"; };
 		CB3729F21969B4B5006CCC4E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		CB57BFC8196016440055978A /* Metrobot Production.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metrobot Production.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB57BFC8196016440055978A /* Metrobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB57BFCB196016440055978A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CB57BFCD196016440055978A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CB57BFCF196016440055978A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -190,7 +190,7 @@
 		CBB62CD3198E6CFC009B7BF5 /* NextDeparturesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NextDeparturesView.m; path = Classes/NextDeparturesView.m; sourceTree = "<group>"; };
 		CBB62CD5198E757C009B7BF5 /* SmallCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallCircleView.h; path = Classes/SmallCircleView.h; sourceTree = "<group>"; };
 		CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallCircleView.m; path = Classes/SmallCircleView.m; sourceTree = "<group>"; };
-		CBEA54A219A12687000DAB33 /* Metrobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBEA54A219A12687000DAB33 /* Metrobot dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metrobot dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEA54A319A12687000DAB33 /* Metrobot copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Metrobot copy-Info.plist"; path = "/Users/jakubvodak/Documents/Projects/Metrobot/v2/Metrobot copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -260,9 +260,9 @@
 		CB57BFC9196016440055978A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB57BFC8196016440055978A /* Metrobot Production.app */,
+				CB57BFC8196016440055978A /* Metrobot.app */,
 				CB57BFE9196016440055978A /* MetrobotTests.xctest */,
-				CBEA54A219A12687000DAB33 /* Metrobot.app */,
+				CBEA54A219A12687000DAB33 /* Metrobot dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -456,7 +456,7 @@
 			);
 			name = "Metrobot Production";
 			productName = Metrobot;
-			productReference = CB57BFC8196016440055978A /* Metrobot Production.app */;
+			productReference = CB57BFC8196016440055978A /* Metrobot.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CB57BFE8196016440055978A /* MetrobotTests */ = {
@@ -495,7 +495,7 @@
 			);
 			name = "Metrobot Dev";
 			productName = Metrobot;
-			productReference = CBEA54A219A12687000DAB33 /* Metrobot.app */;
+			productReference = CBEA54A219A12687000DAB33 /* Metrobot dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -883,7 +883,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Metrobot;
 				PROVISIONING_PROFILE = "10b880e0-8d58-4deb-81c3-d9cf3cdc4e9a";
 				WRAPPER_EXTENSION = app;
 			};
@@ -904,7 +904,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot/Metrobot-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Metrobot;
 				PROVISIONING_PROFILE = "10b880e0-8d58-4deb-81c3-d9cf3cdc4e9a";
 				WRAPPER_EXTENSION = app;
 			};
@@ -965,7 +965,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot copy-Info.plist";
-				PRODUCT_NAME = Metrobot;
+				PRODUCT_NAME = "Metrobot dev";
 				PROVISIONING_PROFILE = "233bed4c-a41b-4c48-a475-2884f149e113";
 				WRAPPER_EXTENSION = app;
 			};
@@ -986,7 +986,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot copy-Info.plist";
-				PRODUCT_NAME = Metrobot;
+				PRODUCT_NAME = "Metrobot dev";
 				PROVISIONING_PROFILE = "233bed4c-a41b-4c48-a475-2884f149e113";
 				WRAPPER_EXTENSION = app;
 			};
