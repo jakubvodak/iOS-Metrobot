@@ -233,7 +233,14 @@
     
     [_timeObject parseHtml:htmlString];
     
-    [self updateCounter];
+    if (_timeObject.regularDepartures.count > 0) {
+    
+        [self updateCounter];
+    }
+    else {
+        
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Time is not available." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }
 }
 
 - (void)showViewForTime: (NSInteger)time

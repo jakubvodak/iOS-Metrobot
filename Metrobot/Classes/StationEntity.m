@@ -63,7 +63,7 @@
     urlPath = [urlPath stringByAppendingString:@"&fc=301003&tc=301003&trt=302&direct=false&byarr=false&submit=true&af=true&lng=C"];
     urlPath = [[NSString alloc] initWithData:[urlPath dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES] encoding:NSASCIIStringEncoding];
     urlPath = [urlPath stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
+    NSLog(@"%@", urlPath);
     return [[NSURL alloc] initWithString:urlPath];
 }
 

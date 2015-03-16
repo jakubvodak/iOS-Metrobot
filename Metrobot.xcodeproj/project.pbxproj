@@ -100,6 +100,8 @@
 		CBEA549919A12687000DAB33 /* MyriadPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CB7DD46A198E92EB006B6058 /* MyriadPro-Regular.otf */; };
 		CBEA549A19A12687000DAB33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB57BFD4196016440055978A /* InfoPlist.strings */; };
 		CBEA549B19A12687000DAB33 /* testLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CB9669031964A73600EEC868 /* testLocation.gpx */; };
+		CBEB6D271AB5C2760041E665 /* Metrobot-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBEB6D261AB5C2760041E665 /* Metrobot-Dev-Info.plist */; };
+		CBEB6D281AB5C2760041E665 /* Metrobot-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBEB6D261AB5C2760041E665 /* Metrobot-Dev-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,7 +193,7 @@
 		CBB62CD5198E757C009B7BF5 /* SmallCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallCircleView.h; path = Classes/SmallCircleView.h; sourceTree = "<group>"; };
 		CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallCircleView.m; path = Classes/SmallCircleView.m; sourceTree = "<group>"; };
 		CBEA54A219A12687000DAB33 /* Metrobot dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metrobot dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBEA54A319A12687000DAB33 /* Metrobot copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Metrobot copy-Info.plist"; path = "/Users/jakubvodak/Documents/Projects/Metrobot/v2/Metrobot copy-Info.plist"; sourceTree = "<absolute>"; };
+		CBEB6D261AB5C2760041E665 /* Metrobot-Dev-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Metrobot-Dev-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,9 +318,9 @@
 				CB7DD46A198E92EB006B6058 /* MyriadPro-Regular.otf */,
 				CB9669021964A73600EEC868 /* metroStations.plist */,
 				CB9669031964A73600EEC868 /* testLocation.gpx */,
+				CBEB6D261AB5C2760041E665 /* Metrobot-Dev-Info.plist */,
 				CB57BFD3196016440055978A /* Metrobot-Info.plist */,
 				CB57BFD4196016440055978A /* InfoPlist.strings */,
-				CBEA54A319A12687000DAB33 /* Metrobot copy-Info.plist */,
 				CB57BFD7196016440055978A /* main.m */,
 				CB57BFD9196016440055978A /* Metrobot-Prefix.pch */,
 				CB9668DB1962140000EEC868 /* Mapbox.bundle */,
@@ -546,6 +548,7 @@
 			files = (
 				CB9669071964A73600EEC868 /* metroStations.plist in Resources */,
 				CB9668DC1962140000EEC868 /* Mapbox.bundle in Resources */,
+				CBEB6D271AB5C2760041E665 /* Metrobot-Dev-Info.plist in Resources */,
 				CB96690C1964A7ED00EEC868 /* MuseoSans-500.otf in Resources */,
 				CB57BFE4196016440055978A /* Images.xcassets in Resources */,
 				CB96690E1964A7F200EEC868 /* MuseoSans-100.otf in Resources */,
@@ -570,6 +573,7 @@
 			files = (
 				CBEA549319A12687000DAB33 /* metroStations.plist in Resources */,
 				CBEA549419A12687000DAB33 /* Mapbox.bundle in Resources */,
+				CBEB6D281AB5C2760041E665 /* Metrobot-Dev-Info.plist in Resources */,
 				CBEA549519A12687000DAB33 /* MuseoSans-500.otf in Resources */,
 				CBEA549619A12687000DAB33 /* Images.xcassets in Resources */,
 				CBEA549719A12687000DAB33 /* MuseoSans-100.otf in Resources */,
@@ -964,7 +968,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
-				INFOPLIST_FILE = "Metrobot copy-Info.plist";
+				INFOPLIST_FILE = "Metrobot-Dev-Info.plist";
 				PRODUCT_NAME = "Metrobot dev";
 				PROVISIONING_PROFILE = "233bed4c-a41b-4c48-a475-2884f149e113";
 				WRAPPER_EXTENSION = app;
@@ -985,7 +989,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
-				INFOPLIST_FILE = "Metrobot copy-Info.plist";
+				INFOPLIST_FILE = "Metrobot-Dev-Info.plist";
 				PRODUCT_NAME = "Metrobot dev";
 				PROVISIONING_PROFILE = "233bed4c-a41b-4c48-a475-2884f149e113";
 				WRAPPER_EXTENSION = app;

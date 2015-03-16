@@ -316,6 +316,46 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Nemocnice Motol</string>
+			<key>street</key>
+			<string>Kukulova</string>
+			<key>lat</key>
+			<string>50.0749836</string>
+			<key>lng</key>
+			<string>14.3406217</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Petřiny</string>
+			<key>street</key>
+			<string>Na Petřinách</string>
+			<key>lat</key>
+			<string>50.0882389</string>
+			<key>lng</key>
+			<string>14.3450108</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nádraží Veleslavín</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.0959983</string>
+			<key>lng</key>
+			<string>14.3478203</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.0986133</string>
+			<key>lng</key>
+			<string>14.3644167</string>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Dejvická</string>
 			<key>street</key>
 			<string>Vítězné nám.</string>
@@ -1647,6 +1687,10 @@
 	</array>
 	<key>TraceA</key>
 	<array>
+		<string>Nemocnice Motol</string>
+		<string>Petřiny</string>
+		<string>Nádraží Veleslavín</string>
+		<string>Bořislavka</string>
 		<string>Dejvická</string>
 		<string>Hradčanská</string>
 		<string>Malostranská</string>
@@ -1736,6 +1780,38 @@
 			<string>50.0907572</string>
 			<key>lng</key>
 			<string>14.4395367</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nemocnice Motol</string>
+			<key>lat</key>
+			<string>50.0750892</string>
+			<key>lng</key>
+			<string>14.3405678</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Petřiny</string>
+			<key>lat</key>
+			<string>50.0882389</string>
+			<key>lng</key>
+			<string>14.3450108</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nádraží Veleslavín</string>
+			<key>lat</key>
+			<string>50.0959133</string>
+			<key>lng</key>
+			<string>14.3470875</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>lat</key>
+			<string>50.0985881</string>
+			<key>lng</key>
+			<string>14.3639067</string>
 		</dict>
 		<dict>
 			<key>name</key>

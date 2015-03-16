@@ -26,6 +26,10 @@
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
+#define annotationEntrance @"annotationEntrance"
+#define annotationStation @"annotationStation"
+#define annotationLine @"annotationLine"
+
 @interface LocationViewController () <RMMapViewDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locManager;
@@ -353,14 +357,63 @@
 
 - (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
 {
-    if (annotation.isUserLocationAnnotation)
+    if (annotation.isUserLocationAnnotation) {
+        
         return nil;
-    
-    RMMarker *marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"Icn-Map-Pin"]];
-    marker.canShowCallout = YES;
-    //marker.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    return marker;
+    }
+    else if ([annotation.annotationType isEqualToString:annotationEntrance]) {
+
+        RMMarker *marker = [[RMMarker alloc] initWithUIImage:[UIImage imageNamed:@"Icn-Map-Pin"]];
+        
+        marker.canShowCallout = YES;
+        //marker.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        
+        return marker;
+    }
+    else if ([annotation.annotationType isEqualToString:annotationStation]) {
+        
+        RMCircle *circle = [[RMCircle alloc] initWithView:mapView radiusInMeters:50];
+        NSLog(@"A");
+        if ([annotation.title isEqualToString:@"Florenc"]) {
+            
+            circle.lineColor = [UIColor redColor];
+            circle.fillColor = [UIColor yellowColor];
+        }
+        else if ([annotation.title isEqualToString:@"Muzeum"]) {
+            
+            circle.lineColor = [UIColor greenColor];
+            circle.fillColor = [UIColor redColor];
+        }
+        else if ([annotation.title isEqualToString:@"Můstek"]) {
+            
+            circle.lineColor = [UIColor greenColor];
+            circle.fillColor = [UIColor yellowColor];
+        }
+        else {
+            
+            circle.lineColor = [UIColor greenColor];
+            circle.fillColor = [UIColor greenColor];
+        }
+        
+        circle.lineWidthInPixels = 5.0;
+        circle.canShowCallout = YES;
+        
+        return circle;
+    }
+    else {
+        NSLog(@"B");
+        RMShape *shape = [[RMShape alloc] initWithView:mapView];
+        
+        shape.lineColor = [UIColor greenColor];
+        shape.lineWidth = 3.0;
+        
+        for (CLLocation *location in (NSArray *)annotation.userInfo) {
+         
+            [shape addLineToCoordinate:location.coordinate];
+        }
+        
+        return shape;
+    }
 }
 
 #pragma mark - func
@@ -665,20 +718,77 @@
 {
     [_mapView removeAllAnnotations];
     
-    NSMutableArray *tempArr = [NSMutableArray new];
+    
+    /* Entrances */
+    
+    NSMutableArray *entrancesArr = [NSMutableArray new];
     
     for (EntranceEntity *entrance in self.entrances) {
-        NSLog(@"%@", entrance);
+
         if ([entrance.name isEqualToString:self.currentStation.name]) {
             RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:_mapView
                                                                   coordinate:CLLocationCoordinate2DMake(entrance.location.coordinate.latitude, entrance.location.coordinate.longitude)
                                                                     andTitle:entrance.street.length>0?entrance.street:@"Vchod"];
-            [tempArr addObject:annotation];
-                    NSLog(@"%@", entrance);
+            [entrancesArr addObject:annotation];
+            
+            annotation.annotationType = annotationEntrance;
         }
     }
     
-    [_mapView addAnnotations:tempArr];
+    [_mapView addAnnotations:entrancesArr];
+    
+    
+    /* Stations
+    
+    NSMutableArray *stationsArr = [NSMutableArray new];
+    
+    for (StationEntity *station in self.stations) {
+        
+        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:_mapView
+                                                              coordinate:CLLocationCoordinate2DMake(station.location.coordinate.latitude, station.location.coordinate.longitude)
+                                                                andTitle:station.name];
+        [stationsArr addObject:annotation];
+        
+        annotation.annotationType = annotationStation;
+    }
+    
+    [_mapView addAnnotations:stationsArr];
+    */
+    
+    /* Lines
+    
+    NSMutableArray *lineArr = [NSMutableArray new];
+    
+    for (int i=0; i<3; i++) {
+        
+        NSArray *traces = [StationEntity getStationsForTrace:i];
+        
+        for (NSString *stationName in traces) {
+            
+            for (StationEntity *station in self.stations) {
+                
+                if ([stationName isEqualToString:station.name]) {
+                    
+                    [lineArr addObject:station.location];
+                }
+            }
+        }
+        
+        RMAnnotation *annotation = [[RMAnnotation alloc] initWithMapView:_mapView
+                                                              coordinate:((CLLocation *)[lineArr objectAtIndex:0]).coordinate
+                                                                andTitle:@""];
+        
+        annotation.userInfo = lineArr;
+        
+        [annotation setBoundingBoxFromLocations:lineArr];
+        
+        annotation.annotationType = annotationLine;
+        
+        [_mapView addAnnotation:annotation];
+        
+        [lineArr removeAllObjects];
+    }
+     */
 }
 
 @end

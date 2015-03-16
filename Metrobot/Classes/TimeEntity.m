@@ -101,8 +101,6 @@
         }
         else
         {
-            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Time is not available." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
-            
             break;
         }
         

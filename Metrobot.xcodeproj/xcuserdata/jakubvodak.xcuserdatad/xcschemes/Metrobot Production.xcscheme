@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CB57BFC7196016440055978A"
-               BuildableName = "Metrobot Production.app"
+               BuildableName = "Metrobot.app"
                BlueprintName = "Metrobot Production"
                ReferencedContainer = "container:Metrobot.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB57BFC7196016440055978A"
-            BuildableName = "Metrobot Production.app"
+            BuildableName = "Metrobot.app"
             BlueprintName = "Metrobot Production"
             ReferencedContainer = "container:Metrobot.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB57BFC7196016440055978A"
-            BuildableName = "Metrobot Production.app"
+            BuildableName = "Metrobot.app"
             BlueprintName = "Metrobot Production"
             ReferencedContainer = "container:Metrobot.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CB57BFC7196016440055978A"
-            BuildableName = "Metrobot Production.app"
+            BuildableName = "Metrobot.app"
             BlueprintName = "Metrobot Production"
             ReferencedContainer = "container:Metrobot.xcodeproj">
          </BuildableReference>
