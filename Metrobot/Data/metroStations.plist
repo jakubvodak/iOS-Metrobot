@@ -320,9 +320,59 @@
 			<key>street</key>
 			<string>Kukulova</string>
 			<key>lat</key>
-			<string>50.0749836</string>
+			<string>50.075134</string>
 			<key>lng</key>
-			<string>14.3406217</string>
+			<string>14.340801</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nemocnice Motol</string>
+			<key>street</key>
+			<string>Kukulova</string>
+			<key>lat</key>
+			<string>50.074986</string>
+			<key>lng</key>
+			<string>14.340704</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nemocnice Motol</string>
+			<key>street</key>
+			<string>Kukulova</string>
+			<key>lat</key>
+			<string>50.074783</string>
+			<key>lng</key>
+			<string>14.340827</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nemocnice Motol</string>
+			<key>street</key>
+			<string>Kukulova</string>
+			<key>lat</key>
+			<string>50.074594</string>
+			<key>lng</key>
+			<string>14.340624</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nemocnice Motol</string>
+			<key>street</key>
+			<string>Kukulova</string>
+			<key>lat</key>
+			<string>50.074549</string>
+			<key>lng</key>
+			<string>14.340307</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nemocnice Motol</string>
+			<key>street</key>
+			<string>Kukulova</string>
+			<key>lat</key>
+			<string>50.074769</string>
+			<key>lng</key>
+			<string>14.340152</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -330,9 +380,29 @@
 			<key>street</key>
 			<string>Na Petřinách</string>
 			<key>lat</key>
-			<string>50.0882389</string>
+			<string>50.087854</string>
 			<key>lng</key>
-			<string>14.3450108</string>
+			<string>14.344352</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Petřiny</string>
+			<key>street</key>
+			<string>Brunclíkova</string>
+			<key>lat</key>
+			<string>50.086549</string>
+			<key>lng</key>
+			<string>14.34514</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Petřiny</string>
+			<key>street</key>
+			<string>Brunclíkova</string>
+			<key>lat</key>
+			<string>50.086432</string>
+			<key>lng</key>
+			<string>14.345205</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -340,9 +410,69 @@
 			<key>street</key>
 			<string>Evropská</string>
 			<key>lat</key>
-			<string>50.0959983</string>
+			<string>50.096089</string>
 			<key>lng</key>
-			<string>14.3478203</string>
+			<string>14.346959</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nádraží Veleslavín</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.095948</string>
+			<key>lng</key>
+			<string>14.346621</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nádraží Veleslavín</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.095828</string>
+			<key>lng</key>
+			<string>14.346669</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nádraží Veleslavín</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.095614</string>
+			<key>lng</key>
+			<string>14.346777</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nádraží Veleslavín</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.095632</string>
+			<key>lng</key>
+			<string>14.347453</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nádraží Veleslavín</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.095301</string>
+			<key>lng</key>
+			<string>14.346911</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Nádraží Veleslavín</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.095618</string>
+			<key>lng</key>
+			<string>14.347613</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -350,9 +480,89 @@
 			<key>street</key>
 			<string>Evropská</string>
 			<key>lat</key>
-			<string>50.0986133</string>
+			<string>50.098533</string>
 			<key>lng</key>
-			<string>14.3644167</string>
+			<string>14.361888</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.098553</string>
+			<key>lng</key>
+			<string>14.362087</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.098206</string>
+			<key>lng</key>
+			<string>14.362162</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.098808</string>
+			<key>lng</key>
+			<string>14.364613</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.098749</string>
+			<key>lng</key>
+			<string>14.364458</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.098639</string>
+			<key>lng</key>
+			<string>14.364479</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.098539</string>
+			<key>lng</key>
+			<string>14.364383</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.098391</string>
+			<key>lng</key>
+			<string>14.364522</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bořislavka</string>
+			<key>street</key>
+			<string>Evropská</string>
+			<key>lat</key>
+			<string>50.098206</string>
+			<key>lng</key>
+			<string>14.364742</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -1785,33 +1995,33 @@
 			<key>name</key>
 			<string>Nemocnice Motol</string>
 			<key>lat</key>
-			<string>50.0750892</string>
+			<string>50.075317</string>
 			<key>lng</key>
-			<string>14.3405678</string>
+			<string>14.341112</string>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>Petřiny</string>
 			<key>lat</key>
-			<string>50.0882389</string>
+			<string>50.086673</string>
 			<key>lng</key>
-			<string>14.3450108</string>
+			<string>14.34506</string>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>Nádraží Veleslavín</string>
 			<key>lat</key>
-			<string>50.0959133</string>
+			<string>50.095718</string>
 			<key>lng</key>
-			<string>14.3470875</string>
+			<string>14.347968</string>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>Bořislavka</string>
 			<key>lat</key>
-			<string>50.0985881</string>
+			<string>50.098491</string>
 			<key>lng</key>
-			<string>14.3639067</string>
+			<string>14.363176</string>
 		</dict>
 		<dict>
 			<key>name</key>

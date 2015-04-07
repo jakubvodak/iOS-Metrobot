@@ -101,7 +101,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,15 +111,20 @@
     switch (indexPath.row) {
         case 0:
             cell.photo.image = [UIImage imageNamed:@"Img-Kuba"];
-            cell.aboutLabel.text = @"Vývoj";
+            cell.aboutLabel.text = @"Vývoj iOS";
             cell.nameLabel.text = @"Jakub Vodák";
             break;
         case 1:
+            cell.photo.image = [UIImage imageNamed:@"Img-Leos"];
+            cell.aboutLabel.text = @"Vývoj Android";
+            cell.nameLabel.text = @"Leoš Dostál";
+            break;
+        case 2:
             cell.photo.image = [UIImage imageNamed:@"Img-Pavel"];
             cell.aboutLabel.text = @"Design";
             cell.nameLabel.text = @"Pavel Zeifart";
             break;
-        case 2:
+        case 3:
             cell.photo.image = [UIImage imageNamed:@"Img-Adam"];
             cell.aboutLabel.text = @"Nápad";
             cell.nameLabel.text = @"Adam Vajdák";
