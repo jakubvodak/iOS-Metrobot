@@ -12,6 +12,7 @@
 		CB57BFF5196016440055978A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB57BFF3196016440055978A /* InfoPlist.strings */; };
 		CB57BFF7196016440055978A /* MetrobotTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57BFF6196016440055978A /* MetrobotTests.m */; };
 		CBC4859B1C7DA7E6009CFFF1 /* Metrobot-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBC4859A1C7DA7E6009CFFF1 /* Metrobot-Info.plist */; };
+		CBC4859E1C7DB263009CFFF1 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC4859D1C7DB263009CFFF1 /* Fabric.framework */; };
 		CBEA546E19A12687000DAB33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB57BFD7196016440055978A /* main.m */; };
 		CBEA546F19A12687000DAB33 /* TimeEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2769B9197A4214002FB0E6 /* TimeEntity.m */; };
 		CBEA547019A12687000DAB33 /* BaseEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9668CD1961CE9700EEC868 /* BaseEntity.m */; };
@@ -132,6 +133,7 @@
 		CBB62CD5198E757C009B7BF5 /* SmallCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmallCircleView.h; path = Classes/SmallCircleView.h; sourceTree = "<group>"; };
 		CBB62CD6198E757C009B7BF5 /* SmallCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmallCircleView.m; path = Classes/SmallCircleView.m; sourceTree = "<group>"; };
 		CBC4859A1C7DA7E6009CFFF1 /* Metrobot-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Metrobot-Info.plist"; sourceTree = SOURCE_ROOT; };
+		CBC4859D1C7DB263009CFFF1 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		CBEA54A219A12687000DAB33 /* Metrobot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Metrobot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 				CBEA548C19A12687000DAB33 /* MapKit.framework in Frameworks */,
 				CBEA548D19A12687000DAB33 /* CoreGraphics.framework in Frameworks */,
 				CBEA548E19A12687000DAB33 /* Crashlytics.framework in Frameworks */,
+				CBC4859E1C7DB263009CFFF1 /* Fabric.framework in Frameworks */,
 				CBEA548F19A12687000DAB33 /* UIKit.framework in Frameworks */,
 				CBEA549019A12687000DAB33 /* Foundation.framework in Frameworks */,
 				CBEA549119A12687000DAB33 /* libPods.a in Frameworks */,
@@ -190,6 +193,7 @@
 		CB57BFCA196016440055978A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBC4859D1C7DB263009CFFF1 /* Fabric.framework */,
 				CB3729F21969B4B5006CCC4E /* MessageUI.framework */,
 				CB9668D91962137E00EEC868 /* libz.dylib */,
 				CB9668D71962137400EEC868 /* libsqlite3.dylib */,
@@ -383,6 +387,7 @@
 				CBEA549C19A12687000DAB33 /* Copy Pods Resources */,
 				CBEA549D19A12687000DAB33 /* ShellScript */,
 				CBEA549E19A12687000DAB33 /* ShellScript */,
+				CBC4859C1C7DAE63009CFFF1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -407,7 +412,7 @@
 						TestTargetID = CB57BFC7196016440055978A;
 					};
 					CBEA546B19A12687000DAB33 = {
-						DevelopmentTeam = D6532TRNCE;
+						DevelopmentTeam = XWQ4Y8CJ93;
 					};
 				};
 			};
@@ -458,6 +463,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CBC4859C1C7DAE63009CFFF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 0ed0bf8ea049bcd401a5af5c3fa42e425a9bfcf9 9e56e08d8523e9dd631bb338c5a76f54fcabd9fab1f2e93a31c874e7992319c2\n";
+		};
 		CBEA546C19A12687000DAB33 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -686,8 +704,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -695,8 +714,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.metrobot;
 				PRODUCT_NAME = Metrobot;
-				PROVISIONING_PROFILE = "233bed4c-a41b-4c48-a475-2884f149e113";
+				PROVISIONING_PROFILE = "92609ad1-f07e-4133-af72-90b52518c031";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -707,8 +727,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -716,8 +737,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Metrobot/Metrobot-Prefix.pch";
 				INFOPLIST_FILE = "Metrobot-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = cz.metrobot;
 				PRODUCT_NAME = Metrobot;
-				PROVISIONING_PROFILE = "233bed4c-a41b-4c48-a475-2884f149e113";
+				PROVISIONING_PROFILE = "92609ad1-f07e-4133-af72-90b52518c031";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
