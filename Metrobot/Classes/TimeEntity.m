@@ -12,9 +12,11 @@
 
 + (NSString *)getNextDepartureTime: (NSTimeInterval)addTime
 {
+    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"cz_CZ_POSIX"];
+    
     NSDateFormatter *df = [NSDateFormatter new];
     [df setDateFormat:@"HH:mm"];
-    
+    [df setLocale:enUSPOSIXLocale];
     NSDateFormatter *dfsec = [NSDateFormatter new];
     [dfsec setDateFormat:@"s"];
     
@@ -35,8 +37,8 @@
     
     NSTimeInterval secondsInMin = 60;
     NSDate *nextDepartureTime = [actualDate dateByAddingTimeInterval:secondsInMin];
-    
-    return [df stringFromDate:nextDepartureTime];
+    NSString *finalString = [df stringFromDate:nextDepartureTime];
+    return finalString;
 }
 
 + (NSNumber *)countRemainingTime:(NSString *)departure
@@ -92,8 +94,13 @@
                 
                 NSDateFormatter *mmddccyy = [[NSDateFormatter alloc] init];
                 mmddccyy.timeStyle = NSDateFormatterNoStyle;
-                mmddccyy.dateFormat = @"yyyy-MM-dd HH:mm";
-                NSDate *d = [mmddccyy dateFromString:[NSString stringWithFormat:@"%@ %@", [df stringFromDate:[gregorian dateFromComponents:components]], result]];
+                mmddccyy.dateFormat = @"yyyy-MM-dd H:mm";
+                NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"cz_CZ_POSIX"];
+                [mmddccyy setLocale:enUSPOSIXLocale];
+
+                NSString *dateString = [df stringFromDate:[gregorian dateFromComponents:components]];
+                NSString *finalString = [NSString stringWithFormat:@"%@ %@", dateString, result];
+                NSDate *d = [mmddccyy dateFromString:finalString];
                 
                 
                 [_regularDepartures addObject: d];
