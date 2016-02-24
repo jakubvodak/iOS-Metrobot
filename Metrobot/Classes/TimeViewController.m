@@ -183,14 +183,14 @@
     
     if (result == MessageComposeResultCancelled) {
         NSLog(@"Message cancelled");
-        [Flurry logEvent:@"sms" withParameters:@{@"status": @"cancelled"}];
+        //[Flurry logEvent:@"sms" withParameters:@{@"status": @"cancelled"}];
     }
     else if (result == MessageComposeResultSent) {
         NSLog(@"Message sent");
-        [Flurry logEvent:@"sms" withParameters:@{@"status": @"sent"}];
+        //[Flurry logEvent:@"sms" withParameters:@{@"status": @"sent"}];
     }
     else {
-        [Flurry logEvent:@"sms" withParameters:@{@"status": @"failed"}];
+        //[Flurry logEvent:@"sms" withParameters:@{@"status": @"failed"}];
         NSLog(@"Message failed");
     }
 }
@@ -360,7 +360,7 @@
 
 - (void)loadNextTime
 {
-    [Flurry logEvent:@"Next"];
+    //[Flurry logEvent:@"Next"];
     NSInteger additionalTime = [[self getRemainingTimeForTime:0] integerValue]+200;
     
     if (additionalTime > 3000) {
@@ -379,7 +379,7 @@
 
 - (void)showInfo
 {
-    [Flurry logEvent:@"Info"];
+    //[Flurry logEvent:@"Info"];
     InfoViewController *infoController = [InfoViewController new];
     infoController.reloadBlock = ^{
         [self updateCounter];

@@ -7,7 +7,6 @@
 //
 
 #define CrashlyticsApiKey @"6a2c06aa6bfac2826abdd4be36988a3124a1f00b"
-#define FlurryAPIKey @"3597KHCW5C7X2XB9K7JF"
 #define HockeyAppIdentifier @"98452080ecfa5f6d5c960845b012a6ca"
 #define MapBoxID @"jakubvodak.ilbppm8e"
 

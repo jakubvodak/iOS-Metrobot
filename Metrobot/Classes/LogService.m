@@ -7,7 +7,6 @@
 //
 
 #import "LogService.h"
-#import "Flurry.h"
 
 @implementation LogService
 
@@ -28,7 +27,7 @@
     
     NSLog(@"%@", error);
     
-    [Flurry logError:@"API Error" message:error.localizedDescription error:error];
+    //[Flurry logError:@"API Error" message:error.localizedDescription error:error];
     
     [[[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
 }

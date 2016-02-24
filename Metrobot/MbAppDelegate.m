@@ -19,9 +19,6 @@
     
     [Crashlytics startWithAPIKey:CrashlyticsApiKey];
     
-    [Flurry setCrashReportingEnabled:NO];
-    [Flurry startSession:FlurryAPIKey];
-    
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:HockeyAppIdentifier];
     [[BITHockeyManager sharedHockeyManager] startManager];
     [[BITHockeyManager sharedHockeyManager].authenticator

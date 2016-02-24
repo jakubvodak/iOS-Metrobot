@@ -17,5 +17,4 @@
     #import "Macros.h"
     #import "MbAppearanceManager.h"
     #import "LogService.h"
-    #import <Flurry.h>
 #endif
